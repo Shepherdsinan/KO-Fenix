@@ -1,0 +1,815 @@
+
+#userprofile_content {
+    display: none;
+    z-index: 2;
+    width: 1085px;
+    height: 710px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius:3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+    display: block;
+	margin-top:100px;
+	margin-left:20px;
+	font-family: 'Arial',Sans Serif; 
+}
+
+
+/****************************/
+/*     EXP BAR              */
+/****************************/
+
+#exp_bar {
+	position:absolute;
+	margin:-35px 0 0 300px;
+}
+
+#exp_bar .exp_bg {
+	background: url('../images/inventory/mainbtns.png') no-repeat 0 -68px;
+	width: 424px;
+	height: 53px;	
+}
+
+#exp_bar .exp_line {
+	background: url('../images/inventory/mainbtns.png') no-repeat -54px -156px;
+	width: 325px;
+	height: 3px;
+	margin:-5px 0 0 50px;
+}
+
+#exp_bar .exp_left {
+	background: url('../images/inventory/mainbtns.png') no-repeat -425px -68px;
+	width: 50px;
+	height: 52px;
+	margin:-50px 0 0 17px;
+}
+
+#exp_bar .exp_right {
+	background: url('../images/inventory/mainbtns.png') no-repeat -1px -157px;
+	width: 52px;
+	height: 52px;
+	margin:-50px 0 0 355px;
+}
+
+/****************************/
+/*     HP STATE BAR         */
+/****************************/
+
+#hpbar {
+	margin-top:5px;
+	margin-left:5px;
+	position: relative;
+    font-size: 16px;
+    width: 246px;
+    height: 89px;
+    background-image: url("../images/inventory/hpbar.png");
+}
+
+#hpbar p.name {	
+	font-size:12px;
+	color:#a59e52;
+	padding:4px 0 0 25px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);
+	width:200px;
+}
+#hpbar p.position {
+	font-size:12px;
+	color:#c5c3c3;
+	padding:6px 0 0 0;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);
+	text-align:center;
+	width:200px;
+	top:-4px;
+}
+#hpbar .bar p {	
+	font-size:12px;
+	color:#c5c3c3;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);
+	text-align:center;
+	top:-4px;
+}
+
+#hpbar .bar {
+	margin:0 0 0 19px;
+	width:160px;
+}
+#hpbar .redx {
+	margin-top:10px;
+	background-image: url("../images/inventory/red.png");	
+	width:100%;
+	height:10px;
+}
+
+#hpbar .bluex {
+	margin-top:4px;
+	background-image: url("../images/inventory/blue.png");	
+	width:100%;
+	height:10px;
+}
+
+#bottombar {
+	margin-top:-14px;
+	position: relative;
+    font-size: 16px;
+    width: 100%;
+    height: 33px;
+    background-image: url("../images/inventory/bottom.png");
+}
+#bottombar .exp {
+	width:300px;
+	top:12px;
+	margin-top:30px;
+	font-size:12px;
+	color:#c5c3c3;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);
+	text-align:right;	
+}
+#bottombtns {
+	float:right;
+	margin-top:-25px;
+	margin-right:-20px;
+}
+
+#bottombar .zincir {
+	background: url('../images/inventory/mainbtns.png') no-repeat -109px -160px;
+	width: 54px;
+	height: 38px;
+	margin-top:-15px;
+	float:right;
+}
+#bottombar .skillbtn {
+	background: url('../images/inventory/mainbtns.png') no-repeat -281px -210px;
+	width: 34px;
+	height: 34px;
+	float:right;
+}
+#bottombar .skillbtn:hover {
+	background: url('../images/inventory/mainbtns.png') no-repeat -281px -245px;
+}
+#bottombar .skillbtn:active {
+	background: url('../images/inventory/mainbtns.png') no-repeat -281px -280px;
+}
+#bottombar .characterbtn {
+	background: url('../images/inventory/mainbtns.png') no-repeat -246px -210px;
+	width: 34px;
+	height: 34px;
+	float:right;
+}
+#bottombar .characterbtn:hover {
+	background: url('../images/inventory/mainbtns.png') no-repeat -246px -245px;
+}
+#bottombar .characterbtn:active {
+	background: url('../images/inventory/mainbtns.png') no-repeat -246px -280px;
+}
+
+#bottombar .invbtn {
+	background: url('../images/inventory/mainbtns.png') no-repeat -211px -210px;
+	width: 34px;
+	height: 34px;
+	float:right;
+}
+#bottombar .invbtn:hover {
+	background: url('../images/inventory/mainbtns.png') no-repeat -211px -245px;
+}
+#bottombar .invbtn:active {
+	background: url('../images/inventory/mainbtns.png') no-repeat -211px -280px;
+}
+
+#bottombar .townbtn {
+	background: url('../images/inventory/mainbtns.png') no-repeat -176px -210px;
+	width: 34px;
+	height: 34px;
+	float:right;
+}
+#bottombar .townbtn:hover {
+	background: url('../images/inventory/mainbtns.png') no-repeat -176px -245px;
+}
+#bottombar .townbtn:active {
+	background: url('../images/inventory/mainbtns.png') no-repeat -176px -280px;
+}
+
+#buffbar {
+	float: right;
+    width: 14px;
+    height: 30px;
+    background: no-repeat url("../images/inventory/char-buff.png");
+}
+
+#buffs {
+    float: right;
+    height: 32px;
+    margin-top: 4px;
+}
+
+#statebar {
+	margin-top:10px;
+    width: 270px;
+    height: 510px;
+    background: no-repeat url("../images/inventory/statebar.png");	
+    position: relative;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#statebar_case {
+	margin-top:10px;
+    width: 270px;
+    height: 510px;
+}
+
+#statebar .close {
+	width:25px;
+	height:25px;
+	float:right;
+	margin-right:7px;
+	margin-top:9px;
+	background: url('../images/inventory/close.png') no-repeat -1px 0;
+	width: 27px;
+	height: 24px;	
+}
+
+#statebar .close:hover {
+	background: url('../images/inventory/close.png') no-repeat -29px 0;
+}
+#statebar .close:active {
+	background: url('../images/inventory/close.png') no-repeat -57px 0;
+}
+
+#statebar .state_label {
+	position:absolute;
+	color:#99997f;	
+	font-size:11px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);	
+}
+#statebar .state_text {
+	position:absolute;
+	color:#fff;	
+	font-size:11px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);	
+}
+
+#statebar .state_name {
+	position:absolute;		
+	font-size:12px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);	
+	left:95px;
+	top:17px;
+	color:#fffdef;
+}
+
+#statebar .state_job {
+	position:absolute;
+	color:#bebc3f;
+	font-size:12px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);	
+}
+#statebar .state_box {
+	position:absolute;
+	width:60px;
+	position:absolute;
+	color:#fff;	
+	font-size:11px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .15), 1px 1px 1px rgba(0, 0, 0, 1);	
+	text-align:center;
+}
+
+#statebar .buttons{
+	float:left;
+	margin-top:52px;
+	margin-left:27px;
+}
+
+#statebar .btns{
+	background: url('../images/inventory/tabs.png') no-repeat -2px -53px;
+	width: 69px;
+	height: 29px;
+	color:#4d5519;
+	font-size:11px;	
+	padding-top:5px;
+	text-align:center;
+	text-shadow: 1px 0px 5px rgba(0, 0, 0, 1);
+	float:left;
+}
+
+#statebar .btns.hover, #statebar .btns:hover{
+	background: url('../images/inventory/tabs.png')  no-repeat -80px -12px;
+	color:#616b1f;
+}
+
+#statebar .btns.active, #statebar .btns:active{
+	background: url('../images/inventory/tabs.png') no-repeat -2px -6px;
+	width: 69px;
+	height: 29px;
+	color:#ffe400;
+	padding-top:8px;
+	margin-top:-6px;
+}
+
+#inventory {
+	margin-top:-10px;
+    background: no-repeat url("../images/inventory/inventory.png");	
+    width: 585px;
+    height: 523px;
+    float: right;
+    position: relative;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#inventory .corpse_page{	
+	display:none;
+	margin-left:10px;
+    background: no-repeat url("../images/inventory/inventory2.png");	
+    width: 178px;
+    height: 459px;
+    float: left;
+    position: relative;
+}
+
+#inventory  .corpse_btn_open:hover{
+    background: no-repeat url("../images/inventory/closeinv.png");	
+}
+
+#inventory  .corpse_btn_close:hover{
+    background: no-repeat url("../images/inventory/openinv.png");	
+}
+
+#inventory  .corpse_btn_close{
+    background: no-repeat url("../images/inventory/closeinv2.png");	
+    width: 9px;
+    height: 141px;
+	margin-top:85px;
+    margin-left:191px;
+	float: left;
+	z-index:5;
+	cursor:pointer;
+}
+
+#inventory  .corpse_btn_open{
+    background: no-repeat url("../images/inventory/openinv2.png");	
+    width: 9px;
+    height: 141px;
+	margin-top:85px;
+    margin-left:191px;
+	float: left;
+	z-index:5;
+	cursor:pointer;
+}
+
+
+#inventory .close {
+	width:25px;
+	height:25px;
+	float:right;
+	margin-right:5px;
+	margin-top:18px;
+	background: url('../images/inventory/close.png') no-repeat -1px 0;
+	width: 27px;
+	height: 24px;	
+}
+
+#inventory .close:hover {
+	background: url('../images/inventory/close.png') no-repeat -29px 0;
+}
+#inventory .close:active {
+	background: url('../images/inventory/close.png') no-repeat -57px 0;
+}
+
+#bag1btn,#bag2btn {
+  cursor: pointer;	
+	font-size:10px;		
+	text-align:center;
+	text-shadow: 0px 0px 5px rgba(000, 000, 000, 1);	
+	position:absolute;
+}
+
+#inventory .bagon {
+	width:49px;
+	height:27px;
+    background: no-repeat url('../images/inventory/bagbtn3.png');
+	margin-top:-5px;
+	padding-top:7px;
+	color:yellow;
+}
+
+#inventory .bagoff{  
+	width:49px;
+	height:21px;
+    background: no-repeat url('../images/inventory/bagbtn2.png');
+	padding-top:3px;
+	color:#7d7d28;
+}
+
+#inventory .bagoff:active, #inventory .bagoff:hover {	
+	width:49px;
+	height:27px;
+    background: no-repeat url('../images/inventory/bagbtn3.png');
+	margin-top:-5px;
+	padding-top:7px;
+	color:yellow;
+}
+
+
+#keys {
+    z-index: 1000;
+	left:61px;
+	top:8px;
+}
+
+/****************************/
+/*      HOT KEYS PAGE       */
+/****************************/
+
+#hotkey2{
+	width:440px;
+	height:48px;
+	background:no-repeat url("../images/inventory/skillbar.png");
+}
+
+A#hotup, A#hotdown,A#hotpager,A#hotlock,A#hottransform {
+	position:absolute;
+	cursor:pointer;
+}
+A#hotup{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	margin:1px 0 0 34px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -5px;
+	width: 17px;
+	height: 16px;
+}
+
+#num0{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 52px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -12px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num1{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 82px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -48px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num2{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 112px;
+	background: url('../images/inventory/skillbar_btns.png')  no-repeat -84px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num3{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 142px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -120px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num4{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 172px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -156px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num5{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 202px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -192px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num6{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 232px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -228px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+#num7{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 262px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -264px -81px;
+	width: 13px;
+	height: 14px;	
+}
+#num8{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 292px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -294px -81px;
+	width: 13px;
+	height: 14px;	
+}
+#num9{
+	z-index: 1000;
+	position:absolute;
+	width:10px;
+	height:10px;
+	margin:7px 0 0 322px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -339px -81px;
+	width: 13px;
+	height: 14px;	
+}
+
+A#hotdown{
+	margin:23px 0 0 32px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -5px;
+	width: 17px;
+	height: 16px;
+}
+A#hottransform{
+	margin:11px 0 0 361px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -4px -52px;
+	width: 21px;
+	height: 19px;
+}
+A#hottransform:hover { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -37px -52px;
+	width: 24px;
+	height: 19px;
+}
+A#hottransform:active { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -73px -52px;
+	width: 22px;
+	height: 18px;
+}
+
+A#hotlock{
+	margin:3px 0 0 349px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -81px -5px;
+	width: 18px;
+	height: 34px;
+}
+A#hotlock:hover { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -105px -5px;
+	width: 18px;
+	height: 34px;
+}
+A#hotlock:active { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -128px -5px;
+	width: 18px;
+	height: 34px;
+}
+
+A#hotpager{
+	margin:3px 0 0 20px;
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -7px -4px;
+	width: 18px;
+	height: 35px;
+	
+}
+A#hotpager:hover { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -30px -4px;
+	width: 19px;
+	height: 35px;
+}
+A#hotpager:active { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -53px -4px;
+	width: 18px;
+	height: 35px;
+}
+
+A#hotup:hover { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -30px;
+	width: 17px;
+	height: 16px;
+}
+A#hotup:active { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -54px;
+	width: 17px;
+	height: 16px;
+}
+
+
+A#hotdown:hover { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -30px;
+	width: 17px;
+	height: 16px;
+}
+
+A#hotdown:active { 
+	background: url('../images/inventory/skillbar_btns.png') no-repeat -152px -54px;
+	width: 17px;
+	height: 16px;
+}
+
+#hotnum {
+	 color:#acffac;
+	 position:absolute;
+	 left:38px;
+	 top:15px;
+	 width:10px;
+	 font-size:9px;	 
+}
+
+A.hicon {
+	position:absolute;
+	background-repeat: no-repeat;
+	width:32px;
+	height:32px;
+	cursor:pointer;
+}
+A.h0 {left:-9px;}
+A.h1 {left:21px;}
+A.h2 {left:52px;}
+A.h3 {left:82px;}
+A.h4 {left:112px;}
+A.h5 {left:143px;}
+A.h6 {left:173px;}
+A.h7 {left:202px;}
+A.h8 {left:233px;}
+A.h9 {left:263px;}
+
+
+#loaditems {
+	z-index:10;
+	position:absolute;
+}
+
+
+#items_v2{
+	margin-left:62px;
+	margin-top:24px;
+}
+
+#items_v2 DIV, #items_v2 IMG{
+	position:absolute;
+	width:38px;
+	height:38px;
+	background-size: 38px 38px;	
+}
+#items_v2 .itemcount {	
+	font-size:11px;
+	color:#fff;
+	text-align:left;
+	top:21px;
+	left:3px;
+	text-shadow: 0px 0px 5px rgba(000, 000, 000, 1);
+}
+
+#item_v2 h1, #item_v2 h2, #item_v2 h3, #item_v2 h4 ,#item_v2 li{
+	padding:0px;	
+}
+
+#item_v2 h1 {
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	
+}	
+#item_v2 h2 {
+	text-align:center;
+	font-size:13px;
+}
+#item_v2 h3 {
+	text-align:center;
+	color:#dbdcdb;
+	font-size:13px;
+}
+#item_v2 h4 {
+	text-align:center;
+	color:#dbdcdb;
+	font-size:13px;
+}	
+#item_v2 ul li {
+	text-align:left;
+	color:#dbdcdb;
+	font-size:13px;	
+}	
+#item_v2 ul {
+	list-style-type:none;
+}
+#item_v2 .type_4{
+	color:#c3b170;
+}	
+#item_v2 .type_3{
+	color:#70dd02;
+}
+#item_v2 .type_12{
+	color:#ffad4d;
+}
+#item_v2 .type_11{
+	color:#ff83a6;
+}
+#item_v2 .type_0{
+	color:#dbdcdb;
+}
+#item_v2 .type_0{
+	color:#dbdcdb;
+}
+#item_v2 .type_1{
+	color:#8080ff;
+}
+#item_v2 .type_2{
+	color:#ffff00;
+}
+#item_v2 .type_equipped{
+	color:#eaf50c;
+	text-align:center;
+}
+#item_v2 .type_unequipped{
+	color:#969696;
+	text-align:center;
+}
+#item_v2 .type_setname{
+	color:#cdc300;
+	text-align:center;
+}
+#item_v2 .type_5{
+	color:#c87cc7;
+}
+#item_v2 .type_setitem{
+	color:#d20000;
+}
+#item_v2 .type_6{
+	color:#19ffff;
+}
+#item_v2 .type_7{
+	color:#c87cc7;
+}
+#item_v2 .type_8{
+	color:#04e0b3;
+}
+
+#item_v2 .type_9{
+	color:red;
+	text-align:center;
+}
+
+.binded {	
+	background: url("../images/inventory/binded.png") 0 0 no-repeat;
+	background-size: 36px 36px;
+}	
+
+.sealed { 	
+	background-color: rgba(76, 142, 233, 0.3);
+}
+
+.rented {	
+	background-color: rgba(244, 241, 27, 0.3);
+}
+
+.dublicated {	
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#userprofile_content #error {
+	display:none;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	top: 40%;
+	padding: 20px;
+	color: #80bd53;	
+	font-size: 13px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+	border: 1px solid rgba(0, 0, 0, .35);
+	border-radius: 3px;
+	box-shadow: inset 0 1px 0 rgba(194, 181, 132, .05), inset 0 0 3px rgba(255, 255, 255, .02), 0 0 10px rgba(0, 0, 0, .25);
+	background: rgba(0, 0, 0, 0.6);
+}

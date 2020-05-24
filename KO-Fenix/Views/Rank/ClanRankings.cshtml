@@ -1,0 +1,141 @@
+﻿@model IEnumerable<KO_Fenix.Models.Sinif.MyModel>
+@{
+    ViewBag.Title = "Klan Sıralaması";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoNeFiX</span> &#129138; Sıralamalar</h3>
+            <div id="cache_time"></div>
+        </div>
+        <div class="mainbox-body page-body self_clear">
+            <!-- CONTENT -->
+            <form action="" method="post" id="frmranking" onchange="ajaxRoute('ClanRankings')">
+                <div id="ranking_select_container">
+                    <select styled="true" name="rank_nation" id="frmselect">
+                        <option value="0" selected="selected" disabled="disabled">Irk</option>
+                        <option value="0">Hepsi</option>
+                        <option value="1">Karus</option>
+                        <option value="2">El Morad</option>
+                    </select>
+                </div>
+            </form>
+            <div id="dataDiv">
+                <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-6"></div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="dataTable" class="rankTable All2 dataTable no-footer" role="grid" style="width: 708px;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 200px;">Klan</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 157px;">Lider</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Üyeler</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{int RowNo = 0;}
+                                    @foreach (var klnveri in Model)
+                                    {
+                                        <tr role="row">
+                                            <td class="sorting_1">@{RowNo++;} @RowNo</td>
+                                            <td class="sorting_1">
+                                                @if (klnveri.Nation == 1)
+                                                {<span class="nation n1"></span> }
+                                                else
+                                                {<span class="nation n2"></span>}
+                                                @switch (klnveri.Ranking)
+                                                {
+                                                    case 1:
+                                                        <span class="grade g15"></span>
+                                                        break;
+                                                    case 2:
+                                                        <span class="grade g14"></span>
+                                                        break;
+                                                    case 3:
+                                                        <span class="grade g13"></span>
+                                                        break;
+                                                    case 4:
+                                                        <span class="grade g12"></span>
+                                                        break;
+                                                    case 5:
+                                                        <span class="grade g11"></span>
+                                                        break;
+                                                }
+
+                                                <a href="@klnveri.IDName"> @klnveri.IDName</a>
+
+                                            </td>
+                                            <td class="sorting_1">
+                                                @if (klnveri.Class == 201 || klnveri.Class == 205 || klnveri.Class == 206)
+                                                {
+                                                    <span class="class c21"></span>
+                                                }
+                                                else if (klnveri.Class == 202 || klnveri.Class == 207 || klnveri.Class == 208)
+                                                {
+                                                    <span class="class c22"></span>
+                                                }
+                                                else if (klnveri.Class == 203 || klnveri.Class == 209 || klnveri.Class == 210)
+                                                {
+                                                    <span class="class c23"></span>
+                                                }
+                                                else if (klnveri.Class == 204 || klnveri.Class == 211 || klnveri.Class == 212)
+                                                {
+                                                    <span class="class c24"></span>
+                                                }
+
+                                                @*Karus Sınıf Simgeleri*@
+
+                                                else if (klnveri.Class == 101 || klnveri.Class == 105 || klnveri.Class == 106)
+                                                {
+                                                    <span class="class c11"></span>
+                                                }
+                                                else if (klnveri.Class == 102 || klnveri.Class == 107 || klnveri.Class == 108)
+                                                {
+                                                    <span class="class c12"></span>
+                                                }
+                                                else if (klnveri.Class == 103 || klnveri.Class == 109 || klnveri.Class == 110)
+                                                {
+                                                    <span class="class c13"></span>
+                                                }
+                                                else if (klnveri.Class == 104 || klnveri.Class == 111 || klnveri.Class == 112)
+                                                {
+                                                    <span class="class c14"></span>
+                                                }
+
+
+                                                <a href="@klnveri.Chief"> @klnveri.Chief</a>
+
+
+                                            </td>
+                                            <td class="sorting_1">@klnveri.Members</td>
+                                            <td class="sorting_1">@klnveri.Points</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+                </div>
+            </div>
+            <!-- CONTENT -->
+        </div>
+    </div>
+</div>
+
+

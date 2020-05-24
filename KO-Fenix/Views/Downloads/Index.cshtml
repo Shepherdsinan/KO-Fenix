@@ -1,0 +1,45 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "İndirmeler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span><i class="glyphicon glyphicon-cloud-download"></i> KoFeniX</span> &#129138; İndirilecekler</h3>
+            <div id="cache_time"></div>
+        </div>
+        <div class="mainbox-body page-body self_clear">
+            <!-- CONTENT -->
+            <div class="store_product_list">
+                <div id="download_box">
+                    @foreach (var item in Model.Deger6)
+                    {
+                    <div class="download_item">
+                        <div id="hover"></div>
+                        <a id="icon" class="download_icon" href="@item.url" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTI7LJN9sbIY61KYZ_1MgdgCufFj2bN1Qknr000bB1lxvF7nQ98&amp;usqp=CAU);"></a>
+                        <div id="middle">
+                            <a href="@item.url"><span style="color: #e03948;">(KoFeniX)</span> @item.titletr.</a>
+                            <p>İndirilme sayısı :<font color="#927a4b"> 115</font></p>
+                        </div>
+                        <div class="login-button download_btn">
+                            <input type="submit" name="login_submit" value="İndirmek için tıklayınız" onclick="location.href='@item.url';">
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            <!-- CONTENT -->
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Krallık Adayları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <style type="text/css">
+        .mainside .mainbox .mainbox-inner .mainbox-body {
+            padding: 0
+        }
+    </style>
+    <div id="page-character" class="mainbox page page-character">
+
+
+        <div class="mainbox-inner page-inner">
+            <div class="mainbox-header page-header border_box">
+                <h3 class="page_title overflow_ellipsis"><span>KoNeFiX</span> &#129138; Krallık Se&#231;imi</h3>
+                <div id="cache_time"></div>
+            </div>
+            <div class="mainbox-body page-body self_clear">
+                <!-- CONTENT -->
+                <form action="" method="post" id="frmranking" onchange="ajaxRoute('KingSystem')">
+                    <div id="ranking_select_container">
+                        <select styled="true" id="frmselect" name="rank_type">
+                            <option value="0" selected="selected" disabled="disabled">Kral Adayları</option>
+                            <option value="0">Kral Adayları</option>
+                            <option value="1">Oy Verenler</option>
+                        </select>
+                    </div>
+                </form>
+                 <div id="dataDiv">
+                <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-6"></div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="dataTable" class="rankTable All2 dataTable no-footer" role="grid" style="width: 708px;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 250px;">Aday</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 97px;">Klan</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Oy Sayısı</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                                       
+                                    
+                                    <tr role="row">
+                                        <td></td>
+                                        
+                                        <td class="sorting_1"><center>No Data Veriable</center></td>
+                                    </tr>
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+                </div>
+            </div>
+                <!-- CONTENT -->
+            </div>
+        </div>
+    </div>
+

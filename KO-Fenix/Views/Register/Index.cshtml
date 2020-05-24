@@ -1,0 +1,89 @@
+﻿@model KO_Fenix.Models.Entity.TB_USER
+
+@{
+    ViewBag.Title = "Kayıt Ol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; Kayıt Ol</h3>
+            <div id="cache_time"></div>
+        </div>
+
+        <div class="mainbox-body page-body self_clear">
+            <div id="forgotpw_container">
+                @if (@Session["strAccountID"] != null)
+                {
+                    <img src="~/Content/images/danger.png" />
+                }
+                else
+                {
+
+                using (Html.BeginForm("SaveMember", "Register", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(true)
+                    <table style="width:85%;">
+                        <tr>
+                            <td><label>Kullanıcı Adı</label></td>
+                            <td>:</td>
+                            <td>@Html.EditorFor(c => c.strAccountID, new { style = "width=75px" })</td>
+                            <td>@Html.ValidationMessageFor(c => c.strAccountID)</td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Parola</label></td>
+                            <td>:</td>
+                            <td>@Html.PasswordFor(c => c.Password)</td>
+                            <td>@Html.ValidationMessageFor(c => c.Password)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Parola Tekrar</label></td>
+                            <td>:</td>
+                            <td>@Html.PasswordFor(c => c.Sifre)</td>
+                            <td>@Html.ValidationMessageFor(c => c.Sifre)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Eşya Kilit</label></td>
+                            <td>:</td>
+                            <td>@Html.TextBoxFor(c => c.SealPassword)</td>
+                            <td>@Html.ValidationMessageFor(c => c.SealPassword)</td>
+                        </tr>
+                        <tr>
+                            <td><label>E-Mail</label></td>
+                            <td>:</td>
+                            <td>@Html.TextBoxFor(c => c.Email)</td>
+                            <td>@Html.ValidationMessageFor(c => c.Email)</td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Telefon Numarası</label></td>
+                            <td>:</td>
+                            <td>@Html.TextBoxFor(c => c.Phone)</td>
+                            <td>@Html.ValidationMessageFor(c => c.Phone)</td>
+                        </tr>
+
+                        <tr>
+
+                            <br />
+                            <br />
+                            <td colspan="3" align="Right"><input type="submit" value="Tamamla!" /></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                }
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

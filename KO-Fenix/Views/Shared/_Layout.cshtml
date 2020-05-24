@@ -1,0 +1,384 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr" class="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="Content\images\favicon.ico">
+    <!-- Responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Search engine related -->
+    <base href="/">
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Load styles -->
+
+    <link href="Content/css/default.css" rel="stylesheet">
+    <link href="Content/css/cms.css" rel="stylesheet">
+    <link href="Content/css/main.css" rel="stylesheet">
+    <link href="Content/css/selectbox.css" rel="stylesheet">
+    <link href="Content/css/icheck.css" rel="stylesheet">
+    <link href="Content/css/custom.css" rel="stylesheet">
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="Content/css/inventory.css" rel="stylesheet">
+
+    <script>
+        var $FileURL = '/Content/';
+        var $BaseURL = '/';
+        var isIE = false;
+    </script>
+  
+
+    <!--[if IE]>
+
+    <script type="text/javascript">isIE = true;</script>
+    <![endif]-->
+    <!-- Load scripts -->
+
+    <script src="Content/js/jquery.min.js"></script>
+    <script src="Content/js/html5shiv.min.js"></script>
+
+    <!-- Load Extra scripts -->
+    <link href="css.css?family=Asap|Cairo|Encode+Sans+Condensed|Exo|Lato|Merriweather+Sans|Montserrat|Questrial|Raleway|Varela+Round" rel="stylesheet">
+    <script async="" src='/cdn-cgi/bm/cv/2181903173/api.js'></script>
+</head>
+
+<body class="theme_havoc">
+    <div id="popup_bg"></div>
+    <!-- confirm box -->
+    <div id="confirm" class="confirm_box vertical_center">
+        <div id="confirm_question" class="confirm_question popup_question"></div>
+        <div class="popup_links">
+            <a href="javascript:void(0)" id="confirm_button" class="nice_button confirm_button"></a>
+            <a href="javascript:void(0)" id="confirm_hide" class="nice_button confirm_hide" onclick="UI.hidePopup()">İptal</a>
+        </div>
+    </div>
+    <!-- alert box -->
+    <div id="alert" class="alert_box vertical_center">
+        <div id="alert_message" class="alert_message"></div>
+        <div class="popup_links">
+            <a href="javascript:void(0)" id="alert_button" class="nice_button alert_button">Tamam</a>
+        </div>
+    </div>
+    <!-- Topbar.Start -->
+    <div id="topbar" class="topbar">
+        <div class="topbar-inner border_box anti_blur self_clear">
+            <div class="topbar-left" style="display:block">
+                <div class="topbar-noti">
+                    <div class="noti_title">[Bilgilendirme] : </div>
+                    <div class="noti_text">
+                        <p>Hoşgeldiniz, Eğer henüz bir üyeliğiniz yoksa <a href="/Register/">Buradan</a> kayıt olabilirsiniz. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-misc">
+                    <span style="display:block" class="misc_readfaq">Lütfen <a href="rules">Kuralları</a> okuyunuz.</span>
+                    <span style="display:block" class="topbar-sep"></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar.End -->
+    <!-- Header.Start -->
+    <header id="header" class="header">
+        <div class="header-inner">
+            <!-- Logo.Start -->
+            <div class="logo_holder">
+                <h1><a href="/" class="logo" title=""></a></h1>
+            </div>
+            <!-- Logo.End -->
+            <!-- Navigation.Start -->
+            <div class="navigation border_box self_clear">
+                <ul class="nav_menu left_area">
+                    <li>
+                        <a href="/" class="nav_item type-menu nav_active">
+                            <span>
+                                Anasayfa
+                                <i>Anasayfa</i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        @if (@Session["strAccountID"] != null)
+                        {
+                            <a href="/Forum/" class="nav_item type-menu">
+                                <span>Forum<i>Forum</i></span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/Register/" class="nav_item type-menu">
+                                <span>Kayıt Ol<i>Kayıt Ol</i></span>
+                            </a>
+                        }
+
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="nav_item type-menu  hasSubmenu">
+                            <span>Sıralamalar<i>Sıralamalar</i></span>
+                        </a>
+                        <div id="menutrim3" class="dropdown-holder">
+                            <ul class="dropdown-nav">
+                                <li><a href="/Rank/UserRankings" class="nav_item type-submenu">Oyuncu Sıralaması</a></li> |
+                                <li><a href="/Rank/ClanRankings" class="nav_item type-submenu">Klan Sıralaması</a></li> |
+                                <li><a href="/Rank/ForbidUsers" class="nav_item type-submenu">Yasaklılar</a></li> |
+                                <li><a href="/Rank/KingSystem" class="nav_item type-submenu">Krallık Seçimleri</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav_menu right_area">
+                    <li>
+                        <a href="javascript:void(0)" class="nav_item type-menu  hasSubmenu">
+                            <span>Rehber<i>Rehber</i></span>
+                        </a>
+                        <div id="menutrim1" class="dropdown-holder">
+                            <ul class="dropdown-nav">
+                                <li><a href="/Guide/Upgrade" class="nav_item type-submenu">Upgrade</a></li> |
+                                <li><a href="/Guide/Mining_Fishing" class="nav_item type-submenu">Madencilik ve Balıçılık</a></li> |
+                                <li><a href="/Guide/Gem_Chest_Fragment" class="nav_item type-submenu">Gem & Chest & Fragment</a></li> |
+                                <li><a href="/Guide/DropSearch" class="nav_item type-submenu">Drop Arama</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="nav_item type-menu  hasSubmenu">
+                            <span>Power Up Store<i>Power Up Store</i></span>
+                        </a>
+                        <div id="menutrim3" class="dropdown-holder">
+                            <ul class="dropdown-nav">
+                                <li><a href="/Shop/Resellers" class="nav_item type-submenu">Bayiler</a></li> |
+                                <li><a href="/Shop/Products" class="nav_item type-submenu">Ürünler</a></li> |
+                                <li><a href="/Shop/Premiums" class="nav_item type-submenu">Premiumlar</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/Downloads/" class="nav_item type-menu">
+                            <span>İndirilecekler<i>İndirilecekler</i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Navigation.End -->
+        </div>
+    </header>
+    <!-- Header.End -->
+    <!-- Slider.Start -->
+    <div id="slider_container" class="slider_container border_box anti_blur">
+        <div id="slider">
+            <img src="Content\images\slides\1.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>">
+            <img src="Content\images\slides\2.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>" style="display:none">
+            <img src="Content\images\slides\3.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>" style="display:none">
+            <img src="Content\images\slides\4.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>" style="display:none">
+            <img src="Content\images\slides\5.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>" style="display:none">
+            <img src="Content\images\slides\6.png" width="1317" height="308" alt="" title="<span>Header<i> </i></span><a href='#'></a>" style="display:none">
+        </div>
+        <div class="slider_pagination"></div>
+    </div>
+    <!-- Slider.End -->
+    <div class="main_b_holder">
+        <div class="body_content">
+            <!-- Body Content start here -->
+            <div class="body_effects">
+                <div class="body-border top-left-to-right"></div>
+                <div class="body-border left-top-to-bottom"></div>
+                <div class="body-border right-top-to-bottom"></div>
+                <div class="body-border bottom-left-to-right"></div>
+                <div class="mainside-bg border_box"></div>
+                <div class="sidebar-bg border_box"></div>
+            </div>
+            <!-- Membershipbar.Start -->
+            <div id="membershipbar" class="membershipbar">
+                <div class="membershipbar-inner self_clear">
+                    <div class="membershipbar-left border_box self_clear">
+                        <div class="membershipbar-ulinks" style="display:none">
+                            <a href="index-1.htm" target="_blank">Forum</a>
+                            <span class="membershipbar-sep"></span>
+                            <a href="admin@KofeniX.net" target="_blank">İletişim</a>
+                        </div>
+                        <div class="membershipbar-socials">
+                            @*<a href="OracleGamer2019.html" target="_blank" class="social_btn facebook_btn border_box" title=""></a>
+                                <a href="invite\SAcqfWr.html" target="_blank" class="social_btn discord_btn border_box" title=""></a>*@
+                            <a target="_blank" class="social_btn youtube_btn border_box" title=""></a>
+                            <span class="membershipbar-sep"></span>
+                            <span>Sosyal Medya <i> üzerinden takip edebilirsiniz.</i></span>
+                        </div>
+                    </div>
+                    <div class="membershipbar-right border_box self_clear" style="display:none">
+                        <div class="membershipbar-welcomemsg">
+                            <span>Merhaba, <i>Ziyaretçi,</i>!</span>
+                        </div>
+                        <div class="membershipbar-accmenu">
+                            <a href="/Register/">Kayıt Ol</a>
+                            <span class="membershipbar-sep"></span>
+                            <a href="#" class="btn_red" id="login2">Giriş yapın</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Membershipbar.End -->
+            <!-- Mainside.Start -->
+            <aside id="right" class="mainside">
+                @RenderBody()
+            </aside>
+            <!-- Mainside.End -->
+            <!-- Sidebar.Start -->
+
+            <aside id="left" class="sidebar border_box">
+                <!-- Coupon Box.Start -->
+                <a href="Coupon.html">
+                    <div id="coupon_box" class="coupon_box border_box ">
+                        <div class="coupon_text"><span>Full PUS</span> Kodunu aktif etmek için tıkla</div>
+                        <div class="coupon_desc">- Kalan Süre : <span id="coupon_expiry"></span></div>
+                    </div>
+                </a>
+                <!-- Coupon Box.End -->
+                <section id="sidebox_info_login" class="sidebox">
+                    <h4 class="sidebox_title border_box"><i>Kullanıcı</i> Girişi</h4>
+                    <div class="sidebox_body border_box login-block">
+                        @using (Html.BeginForm("Girisyap", "Home", FormMethod.Post))
+                        {
+                            if (@Session["strAccountID"] != null)
+                            {
+                                
+                                    <section class="sidebox_info">
+                                        <table width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td><img src="https://panel.oraclegamer.net/Content/images/icons/user.png"> Kullanıcı Adı</td>
+                                                    <td id="info_vp">@Session["strAccountID"].ToString()</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="https://panel.oraclegamer.net/Content/images/icons/coins.png"> NPoint</td>
+                                                    <td id="info_vp">0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <center>
+                                            <a href="/Account" class="nice_button">Kullanıcı Paneli</a>
+
+                                            <a href="/Account/Logout" class="nice_button">Çıkış yap</a>
+                                        </center>
+                                            
+                                     </section>
+                                    
+                                
+                            }
+                            else
+                            {
+                                <center>
+                                    <p class="login-in"><input type="text" value="" name="strAccountID" id="login_input" placeholder="Kullanıcı Adı" maxlength="10"></p>
+                                    <p class="password-in"><input type="password" value="" name="Sifre" id="password_input" placeholder="Parola" maxlength="20"></p>
+                                    <div class="login-button flex-center">
+                                        <input type="submit" name="login_submit" value="Giriş!">
+                                        <a href="Home\ForgotPassword.html">Şifremi Unuttum ?</a>
+                                    </div>
+                                </center>
+                            }
+                        }
+                        <section class="sidebox_info" style="display:none"></section>
+                    </div>
+                </section>
+                <section id="sidebox_status" class="sidebox">
+                    <div class="sidebox_body border_box">
+                        <div id="realm_1" class="realm_1 realm_holder">
+                            <div class="onlinecount"><span>@ViewBag.dgr1</span> Çevrimiçi Oyuncu!</div>
+                            <div class="realm_row row-2 border_box">
+                                <div class="r_bar border_box">
+                                    <div class="r_bar-inner">
+                                        <div class="r_bar-fill bar-h index" style="width:50%"><span>50% Karus </span></div>
+                                        <div class="r_bar-fill bar-a " style="width:50%"><span>50% El Morad </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <br>
+                <div id="home_next_event"></div>
+                <!-- Side button.Start -->
+                <div class="sidebtn sidebtn_1 border_box">
+                    <a href="https://panel.kofenix.net/Tournament" class="border_box overflow_ellipsis" title="">
+                        <span>Turnuva - <i> Detaylar!</i></span>
+                    </a>
+                </div>
+
+                @*<section id="sidebox_discord" class="sidebox   ">
+                        <h4 class="sidebox_title border_box"><i>Discord</i> Kanalımız</h4>
+                        <div class="sidebox_body border_box">
+                            <section class="sidebox_discord">
+                                <iframe src="widget.html?id=403592804800004096&amp;theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0"></iframe>
+                            </section>
+                        </div>
+                    </section>*@
+
+                <!-- Side button.End -->
+
+            </aside>
+            <!-- Sidebar.End -->
+            <div class="clear"></div>
+            <!-- Body Content ends here -->
+        </div>
+    </div>
+    <!-- Footer.Start -->
+    <div id="footer" class="footer">
+        <div class="footer-inner inner-1">
+            <div class="footer-feedback border_box overflow_ellipsis"><a href="#">KoFeNiX</a></div>
+        </div>
+        <div class="footer-inner inner-2 border_box self_clear">
+            <div class="footer-left">
+                <ul class="footer_nav">
+                    <li><a href="/" class="nav_item nav_active">Anasayfa</a></li>
+                    <li><a href="/" class="nav_item">Forum</a></li>
+                    <li><a href="/" class="nav_item">Kullanıcı Sözleşmesi</a></li>
+                    <li><a href="/" class="nav_item">İletişim</a></li>
+                    <li><a href="/" class="nav_item">Güncelleme Notları</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <div class="footer_copyright vertical_center overflow_ellipsis">
+                    <span title="">Tüm hakları <i>&copy;</i><strong>KoFeniX</strong> `e aittir.</span>
+                    <span title="">Tasarımı <a target="_blank" href="javascript:void(0)">ateS</a> tarafından çalınmıştır.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer.End -->
+    <!-- Needed Footer JS.Start -->
+
+    <script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script>
+    <script>var EventCount = 0; var EventList = null;</script>
+    <script src="Content/js/jquery.validate.js"></script>
+    <script src="Content/js/tooltip.js"></script>
+    <script src="Content/js/flux.min.js"></script>
+    <script src="Content/js/jquery.tinyscrollbar.min.js"></script>
+    <script src="Content/js/footer_include.js"></script>
+    <script src="Content/js/jquery.dataTables.min.js"></script>
+    <script src="Content/js/dataTables.bootstrap.min.js"></script>
+    <script src="Content/js/selectbox.js"></script>
+    <script src="Content/js/custom.js"></script>
+    <script src="Content/js/ajaxRouter.js"></script>
+    <script src="Content/js/eventscheduler.js"></script>
+
+    <script>Eventscheduler.initialize(new Date());</script>
+
+    <!-- Needed Footer JS.End -->
+    <script>
+        $(document).ready(function () {
+            $("#language_switcher").selectbox();
+            if (typeof CustomJS !== 'undefined')
+                CustomJS.initialize();
+        });
+    </script>
+
+
+    <script type="text/javascript">(function () { window['__CF$cv$params'] = { r: '58fe44e98c0cfa88', m: '03b20b1cec68ba876c9551a8ce714e94aecdd298-1588889406-1800-AfW+bs/EXbn/fBs87RHN8EuRA4JiABj9NX5bcQFxss2YCtRbfHvo5BzIby5PdSEN0FRDhqvv5nG1p1ZWlMfkQRNbDj18USWtZvvsMxVNy9QKUGCqgbTTmcP4EQvctL8zIA==', s: [0xca606c8c0e, 0xe11137a974], fb: 0, } })();</script>
+</body>
+</html>

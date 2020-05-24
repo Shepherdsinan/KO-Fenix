@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <aside id="right" class="mainside">
+        <style type="text/css">
+            .mainside .mainbox .mainbox-inner .mainbox-body {
+                padding: 0
+            }
+        </style>
+        <div id="page-character" class="mainbox page page-character">
+
+
+
+            <link href="/Content/css/ucp.css" rel="stylesheet">
+
+            <div id="content_ajax">
+                <div id="page-ucp" class="mainbox page page-ucp">
+                    <div class="mainbox-inner page-inner">
+                        <div class="mainbox-header page-header border_box">
+                            <h3 class="page_title overflow_ellipsis"><span>KoFeniX</span> 🡲 Kullanıcı Paneli</h3>
+                        </div>
+                        <!-- CONTENT -->
+                        <div class="mainbox-body page-body self_clear" style="padding:25px;">
+                            <div class="ucp_ui border_box">
+                                <div class="ucp_ui-inner self_clear">
+                                    <div class="ui_col col_1 border_box">
+                                        <div class="ucp_avatar"><img src="Content/images/default_avatar.png"></div>
+                                        <br>
+                                    </div>
+                                    <div class="ui_col col_2 border_box">
+                                        <div class="info-table">
+                                            <div class="info-row row-1">
+                                                <div class="info-col col-1 overflow_ellipsis"><img src="Content/images/icons/user.png"></div>
+                                                <div class="info-col col-2 overflow_ellipsis">Kullanıcı Adı:</div>
+                                                <div class="info-col col-3 overflow_ellipsis">@Session["strAccountID"].ToString()</div>
+                                            </div>
+                                            <div class="info-row row-2">
+                                                <div class="info-col col-1 overflow_ellipsis"><img src="Content/images/icons/world.png"></div>
+                                                <div class="info-col col-2 overflow_ellipsis">Telefon:</div>
+                                                <div class="info-col col-3 overflow_ellipsis">@Session["phone"].ToString()</div>
+                                            </div>
+                                            <div class="info-row row-3">
+                                                <div class="info-col col-1 overflow_ellipsis"><img src="Content/images/icons/email.png"></div>
+                                                <div class="info-col col-2 overflow_ellipsis">Email:</div>
+                                                <div class="info-col col-3 overflow_ellipsis">@Session["Email"].ToString()</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui_col col_3 border_box">
+                                        <div class="info-table">
+                                            <div class="info-row row-2">
+                                                <div class="info-col col-1 overflow_ellipsis"><img src="Content/images/icons/coins.png"></div>
+                                                <div class="info-col col-2 overflow_ellipsis">NPoint:</div>
+                                                <div class="info-col col-3 overflow_ellipsis">0</div>
+                                                <div class="info-col col-4 overflow_ellipsis"></div>
+                                            </div>
+                                            <div class="info-row row-4">
+                                                <div class="info-col col-1 overflow_ellipsis"><img src="Content/images/icons/date.png"></div>
+                                                <div class="info-col col-2 overflow_ellipsis">Kayıt Tarihi:</div>
+                                                <div class="info-col col-3 overflow_ellipsis">@Session["CreateTime"].ToString()</div>
+                                                <div class="info-col col-4 overflow_ellipsis"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ucp_divider_top"></div>
+
+                            <div class="ucp_btns">
+                                <div class="ucp_btns-inner self_clear">
+
+                                    <div class="ucp_btn  border_box" title="">
+                                        <a href="https://panel.oraclegamer.net/Account/PasswordChange">
+                                            <div class="ucp_btn-icon border_box"><img src="Content/images/icons/pwc.png"></div>
+                                            <div class="ucp_btn-text border_box">
+                                                Hesap Parola Güncelle
+
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="ucp_btn  border_box" title="">
+                                        <a href="https://panel.oraclegamer.net/Account/SealPasswordChange">
+                                            <div class="ucp_btn-icon border_box"><img src="Content/images/icons/pwc.png"></div>
+                                            <div class="ucp_btn-text border_box">
+                                                Eşya Kilit Parola Güncelle
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="ucp_btn border_box" style="width:725px">
+                                        <a href="https://panel.oraclegamer.net/Coupon" class="special-btn">
+                                            <div class="ucp_btn-icon border_box"><img src="Content/images/icons/gift.png"></div>
+                                            <div class="ucp_btn-text border_box">
+                                                FULL PUS Hediyesi <i>Hediye kodunu kullanmak veya Kod almak için tıklayın</i>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="ucp_btn border_box" title="">
+                                        <a href="https://panel.oraclegamer.net/Account/Ticket">
+                                            <div class="ucp_btn-icon border_box"><img src="Content/images/icons/tickt.png"></div>
+                                            <div class="ucp_btn-text border_box">
+                                                Ticket Gönder
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONTENT -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>

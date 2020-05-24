@@ -1,0 +1,204 @@
+.chests {	
+    background: rgba(0, 0, 0, 0) url(../images/chaotic.png) no-repeat top center;
+	width:100%;
+}
+
+.chests fieldset {
+    color: #706352;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .35);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: inset 0 1px 0 rgba(194, 181, 132, .05), inset 0 0 3px rgba(255, 255, 255, .02), 0 0 10px rgba(0, 0, 0, .25);
+    background-image: url(../images/store_item_hover.png);
+    position: relative;
+    width: 430px;
+    text-align: left;
+    margin-left: 50px;
+
+}
+.chests legend {
+    color: #a48f4f;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    display: block;
+    background: rgb(26, 25, 24,0.8);
+    border: 1px solid rgba(0, 0, 0, .35);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(194, 181, 132, .05), inset 0 0 3px rgba(255, 255, 255, .02), 0 0 10px rgba(0, 0, 0, .25);
+    min-width: 100px;
+    padding: 5px;
+	margin-left:10px;
+	margin-bottom:0px;
+    z-index: 99;
+}
+
+#chestform img {
+	cursor:pointer;
+	padding: 3px;
+	margin: 2px;	
+	float:left;
+	border: 3px solid rgba(0, 0, 0, 0.1);
+ }
+ 
+#chestform img:hover {	
+	border: 3px solid rgb(151, 121, 59); 
+}
+
+#chestform .selected_item {	
+	border: 3px solid rgb(151, 121, 59) !important;
+}
+
+
+#chest-container {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+	margin-left:15px;
+    width: 530px;
+    clear: both;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, .4), 0 1px 0 rgba(255, 255, 255, .05);
+    overflow: hidden;
+	color: #706352;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .35);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+	box-shadow: inset 0 1px 0 rgba(194, 181, 132, .05), inset 0 0 3px rgba(255, 255, 255, .02), 0 0 10px rgba(0, 0, 0, .25);
+    background-image: url(../images/store_item_hover.png);
+	
+	
+}
+#chest-container .viewport {
+    width: 520px;
+    min-height: 405px;
+    overflow: hidden;
+    position: relative;
+    float: left
+}
+#chest-container .overview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+    padding: 5px;
+    color: #6c6c6c
+}
+.chest-shadow {
+    width: 700px;
+    height: 34px;
+    --background: url(../images/chest-shadow.png) repeat-x;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1
+}
+#chest-container .scrollbar {
+    position: relative;
+    float: right;
+    width: 10px;
+    left: -2px;
+    z-index: 2
+}
+#chest-container .track {
+    background: rgba(0, 0, 0, .4);
+    height: 100%;
+    width: 10px;
+    position: relative;
+    padding: 0 1px
+}
+#chest-container .thumb {
+    background: #191816;
+    width: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: inset 0 2px 0 #0a0908, inset 0 -2px 0 #0a0908
+}
+
+
+#chest_details {
+    color: rgba(229, 204, 128, 0.51);
+    padding: 10px;
+}
+
+
+#chest_details .p_left {   	
+	width:50px;
+	display: table-cell;
+}
+
+
+#chest_details .p_right {	
+   display: table-cell;
+   width:120px;
+   margin-left:50px;
+   padding:10px;
+   vertical-align: middle;   
+}
+#chest_details li img {
+	margin-left:5px;
+	margin-top:6px;
+}
+
+#chest_details li { 	
+	width:230px;	
+	margin-top:5px;
+	margin-left:4px;
+	display: inline-block;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+	border: 1px solid rgba(0, 0, 0, .35);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 3px;
+	box-shadow: inset 0 1px 0 rgba(194, 181, 132, .05), inset 0 0 3px rgba(255, 255, 255, .02), 0 0 10px rgba(0, 0, 0, .25);
+	background-image: url(../images/store_item_hover.png);   
+	margin-bottom:2px;
+}
+
+#chest_details .p_right h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	width:155px;
+}
+
+#chest_details .p_right p {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#chestdiv {
+	margin-top:21px;
+}
+
+#chestdiv .chestloading {
+	width:430px;
+	height:400px;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 420px;
+}

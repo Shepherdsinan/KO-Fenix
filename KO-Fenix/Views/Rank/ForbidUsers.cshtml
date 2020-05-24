@@ -1,0 +1,151 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Banlanan Oyuncular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoNeFiX</span> &#129138; Yasaklı Oyuncular</h3>
+            <div id="cache_time"></div>
+        </div>
+        <div class="mainbox-body page-body self_clear">
+            <!-- CONTENT -->
+            <form action="" method="post" id="frmranking" onchange="ajaxRoute('ForbidUsers')">
+                <div id="ranking_select_container">
+                    <select styled="true" name="rank_type" id="frmselect">
+                        <option value="0" selected="selected" disabled="disabled">Sıralama Türü</option>
+                        <option value="0">Süreli Yasaklılar</option>
+                        <option value="1">Süresiz Yasaklılar</option>
+                    </select>
+                </div>
+            </form>
+            <div id="dataDiv">
+                <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-6"></div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="dataTable" class="rankTable All2 dataTable no-footer" role="grid" style="width: 708px;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 250px;">Takma İsim</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 97px;">Klan</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Seviye</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Durum</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{int RowNo = 0;}
+                                    @foreach (var banusrveri in Model.Deger1)
+                                    {
+                                        <tr role="row">
+                                            <td class="sorting_1">@{RowNo++;} @RowNo</td>
+                                            <td class="sorting_1">
+                                                @if (banusrveri.Nation == 1)
+                                                {<span class="nation n1"></span> }
+                                                else
+                                                {<span class="nation n2"></span>}
+
+                                                @*Human Sınıf Simgeleri*@
+                                                @if (banusrveri.Class == 201 || banusrveri.Class == 205 || banusrveri.Class == 206)
+                                                {
+                                                    <span class="class c21"></span>
+                                                }
+                                                else if (banusrveri.Class == 202 || banusrveri.Class == 207 || banusrveri.Class == 208)
+                                                {
+                                                    <span class="class c22"></span>
+                                                }
+                                                else if (banusrveri.Class == 203 || banusrveri.Class == 209 || banusrveri.Class == 210)
+                                                {
+                                                    <span class="class c23"></span>
+                                                }
+                                                else if (banusrveri.Class == 204 || banusrveri.Class == 211 || banusrveri.Class == 212)
+                                                {
+                                                    <span class="class c24"></span>
+                                                }
+
+                                                @*Karus Sınıf Simgeleri*@
+
+                                                else if (banusrveri.Class == 101 || banusrveri.Class == 105 || banusrveri.Class == 106)
+                                                {
+                                                    <span class="class c11"></span>
+                                                }
+                                                else if (banusrveri.Class == 102 || banusrveri.Class == 107 || banusrveri.Class == 108)
+                                                {
+                                                    <span class="class c12"></span>
+                                                }
+                                                else if (banusrveri.Class == 103 || banusrveri.Class == 109 || banusrveri.Class == 110)
+                                                {
+                                                    <span class="class c13"></span>
+                                                }
+                                                else if (banusrveri.Class == 104 || banusrveri.Class == 111 || banusrveri.Class == 112)
+                                                {
+                                                    <span class="class c14"></span>
+                                                }
+
+
+                                                <a href="@banusrveri.strUserID"> @banusrveri.strUserID</a>
+
+
+                                            </td>
+                                            <td class="sorting_1">
+                                                @foreach (var x in Model.Deger3)
+                                                {
+                                                    if (banusrveri.ClanID == x.IDNum)
+                                                    {
+
+                                                        switch (x.Ranking)
+                                                        {
+                                                            case 1:
+                                                                <span class="grade g15"></span>
+                                                                break;
+                                                            case 2:
+                                                                <span class="grade g14"></span>
+                                                                break;
+                                                            case 3:
+                                                                <span class="grade g13"></span>
+                                                                break;
+                                                            case 4:
+                                                                <span class="grade g12"></span>
+                                                                break;
+                                                            case 5:
+                                                                <span class="grade g11"></span>
+                                                                break;
+                                                        }
+                                                        <a href="@x.IDNum"> @x.IDName</a>
+                                                    }
+                                                }
+
+
+
+
+                                            </td>
+                                            <td class="sorting_1">@banusrveri.Level</td>
+                                            <td class="sorting_1">Süresiz Ban</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+                </div>
+            </div>
+            <!-- CONTENT -->
+        </div>
+    </div>
+</div>
