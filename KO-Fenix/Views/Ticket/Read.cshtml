@@ -1,0 +1,71 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Read";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; TİCKET</h3>
+            <div id="cache_time"></div>
+        </div>
+
+        <div class="mainbox-body page-body self_clear">
+            <div id="forgotpw_container">
+                <div id="pm_read">
+                    @foreach (var mesajayr in Model.Deger11)
+                    {
+                        if (mesajayr.Senduser == "0")
+                        {
+                            <table class="left_msg">
+
+                                <tr>
+                                    <th class="author"># @mesajayr.StrUserID </th>
+                                    <th class="date">@mesajayr.Date</th>
+                                </tr>
+                                <tr>
+                                    <td class="msg">  <p>@mesajayr.Message</p></td>
+                                </tr>
+
+                            </table>
+                        }
+                        else
+                        {
+                            <table class="right_msg">
+
+                                <tr>
+                                    <th class="author"># @mesajayr.StrUserID </th>
+                                    <th class="date">@mesajayr.Date</th>
+                                </tr>
+                                <tr>
+                                    <td class="msg">  <p>@mesajayr.Message</p></td>
+                                </tr>
+
+                            </table>
+                        }
+                    }
+                <form action="/Ticket/Answer" enctype="multipart/form-data" id="register_form" method="post">
+                    <textarea cols="70" rows="10" name="Messageanswer"></textarea>
+                    @foreach (var item in Model.Deger11)
+                    {
+                        <input type="hidden" name="Ticketid" value="@item.Ticketid" />
+                        <input type="hidden" name="StrUserID" value="@item.StrUserID" />
+                    }
+
+
+
+                    <input type="submit" value="Mesaj Gönder" />
+                </form>
+                </div>
+        </div>
+    </div>
+</div>
+

@@ -17,9 +17,9 @@ namespace KO_Fenix.Models.Entity
         public int id { get; set; }
         public string StrUserID { get; set; }
         public string StrTitle { get; set; }
-        public string StrSoru { get; set; }
-        public string StrCevap { get; set; }
         public string StrCatID { get; set; }
         public string StrDurum { get; set; }
+        public Nullable<System.DateTime> StrTarih { get; set; }
+        public string StrAccountID { get; set; }
     }
 }

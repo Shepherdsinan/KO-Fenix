@@ -1,4 +1,5 @@
 ﻿@model KO_Fenix.Models.Sinif.Class1
+
 @{
     ViewBag.Title = "Anasayfa";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,8 +9,26 @@
     .mainside .mainbox .mainbox-inner .mainbox-body {
         padding: 0
     }
+    .tab input:hover {
+        color: #f0a31c;
+        border-color: #792121;
+    }
+
+    /* Create an active/current tablink class */
+    .a.tablinks.active {
+        color: #f0a31c;
+        border-color: #792121;
+    }
+
+    .tablinks {
+        margin: 10px;
+    }
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+    }
 </style>
-<script src="~/Content/js/jquery.min.js"></script>
+
 <div id="page-character" class="mainbox page page-character">
 
 
@@ -59,122 +78,125 @@
             <span>Oyunun <i>En iyileri</i></span>
         </div>
         <div id="home_rankings">
+
             <ul id="tabs">
-                <li><a href="#General" class="selected">Genel Sıralama</a></li>
-                <li><a href="#Monthly" class="">Aylık Sıralama</a></li>
-                <li><a href="#Clan" class="">Klan Sıralaması</a></li>
-                <li><a href="#Kings" class="">Krallar</a></li>
-                <li><a href="#GameMasters" class="">Yöneticiler</a></li>
+                <div id="tab">
+                    <li><a onclick="openCity(event, '1')" class="tablinks active">Genel Sıralama</a></li>
+                    <li><a onclick="openCity(event, '2')" class="tablinks">Aylık Sıralama</a></li>
+                    <li><a onclick="openCity(event, '3')" class="tablinks">Klan Sıralaması</a></li>
+                    <li><a onclick="openCity(event, '4')" class="tablinks">Krallar</a></li>
+                    <li><a onclick="openCity(event, '5')" class="tablinks">Yöneticiler</a></li>
+                </div>
             </ul>
             <div id="content">
-                <div id="General" display="none">
-                    <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
-                        <thead>
-                            <tr role="row">
-                                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 250px;">Takma İsim</th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 97px;">Klan</th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Seviye</th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{int RowNo = 0;}
-                            @foreach (var usrveri in Model.Deger1)
-                            {
+                <div id="1" style="display: block;" class="tabcontent">                    
+                        <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
+                            <thead>
                                 <tr role="row">
-                                    <td class="sorting_1">@{RowNo++;} @RowNo</td>
-                                    <td class="sorting_1">
-                                        @if (usrveri.Nation == 1)
-                                        {<span class="nation n1"></span> }
-                                        else
-                                        {<span class="nation n2"></span>}
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 250px;">Takma İsim</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 97px;">Klan</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Seviye</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th>
 
-                                        @*Human Sınıf Simgeleri*@
-                                        @if (usrveri.Class == 201 || usrveri.Class == 205 || usrveri.Class == 206)
-                                        {
-                                            <span class="class c21"></span>
-                                        }
-                                        else if (usrveri.Class == 202 || usrveri.Class == 207 || usrveri.Class == 208)
-                                        {
-                                            <span class="class c22"></span>
-                                        }
-                                        else if (usrveri.Class == 203 || usrveri.Class == 209 || usrveri.Class == 210)
-                                        {
-                                            <span class="class c23"></span>
-                                        }
-                                        else if (usrveri.Class == 204 || usrveri.Class == 211 || usrveri.Class == 212)
-                                        {
-                                            <span class="class c24"></span>
-                                        }
-
-                                        @*Karus Sınıf Simgeleri*@
-
-                                        else if (usrveri.Class == 101 || usrveri.Class == 105 || usrveri.Class == 106)
-                                        {
-                                            <span class="class c11"></span>
-                                        }
-                                        else if (usrveri.Class == 102 || usrveri.Class == 107 || usrveri.Class == 108)
-                                        {
-                                            <span class="class c12"></span>
-                                        }
-                                        else if (usrveri.Class == 103 || usrveri.Class == 109 || usrveri.Class == 110)
-                                        {
-                                            <span class="class c13"></span>
-                                        }
-                                        else if (usrveri.Class == 104 || usrveri.Class == 111 || usrveri.Class == 112)
-                                        {
-                                            <span class="class c14"></span>
-                                        }
-
-
-                                        <a href="@usrveri.strUserID"> @usrveri.strUserID</a>
-
-
-                                    </td>
-                                    <td class="sorting_1">
-                                        @foreach (var x in Model.Deger3)
-                                        {
-                                            if (usrveri.ClanID == x.IDNum)
-                                            {
-
-                                                switch (x.Ranking)
-                                                {
-                                                    case 1:
-                                                        <span class="grade g15"></span>
-                                                        break;
-                                                    case 2:
-                                                        <span class="grade g14"></span>
-                                                        break;
-                                                    case 3:
-                                                        <span class="grade g13"></span>
-                                                        break;
-                                                    case 4:
-                                                        <span class="grade g12"></span>
-                                                        break;
-                                                    case 5:
-                                                        <span class="grade g11"></span>
-                                                        break;
-                                                }
-                                                <a href="@x.IDNum"> @x.IDName</a>
-                                            }
-                                        }
-
-
-
-
-                                    </td>
-                                    <td class="sorting_1">@usrveri.Level</td>
-                                    <td class="sorting_1">@usrveri.Loyalty</td>
                                 </tr>
-                            }
+                            </thead>
+                            <tbody>
+                                @{int RowNo = 0;}
+                                @foreach (var usrveri in Model.Deger1)
+                                {
+                                    <tr role="row">
+                                        <td class="sorting_1">@{RowNo++;} @RowNo</td>
+                                        <td class="sorting_1">
+                                            @if (usrveri.Nation == 1)
+                                            {<span class="nation n1"></span> }
+                                            else
+                                            {<span class="nation n2"></span>}
 
-                        </tbody>
-                    </table>
+                                            @*Human Sınıf Simgeleri*@
+                                            @if (usrveri.Class == 201 || usrveri.Class == 205 || usrveri.Class == 206)
+                                            {
+                                                <span class="class c21"></span>
+                                            }
+                                            else if (usrveri.Class == 202 || usrveri.Class == 207 || usrveri.Class == 208)
+                                            {
+                                                <span class="class c22"></span>
+                                            }
+                                            else if (usrveri.Class == 203 || usrveri.Class == 209 || usrveri.Class == 210)
+                                            {
+                                                <span class="class c23"></span>
+                                            }
+                                            else if (usrveri.Class == 204 || usrveri.Class == 211 || usrveri.Class == 212)
+                                            {
+                                                <span class="class c24"></span>
+                                            }
+
+                                            @*Karus Sınıf Simgeleri*@
+
+                                            else if (usrveri.Class == 101 || usrveri.Class == 105 || usrveri.Class == 106)
+                                            {
+                                                <span class="class c11"></span>
+                                            }
+                                            else if (usrveri.Class == 102 || usrveri.Class == 107 || usrveri.Class == 108)
+                                            {
+                                                <span class="class c12"></span>
+                                            }
+                                            else if (usrveri.Class == 103 || usrveri.Class == 109 || usrveri.Class == 110)
+                                            {
+                                                <span class="class c13"></span>
+                                            }
+                                            else if (usrveri.Class == 104 || usrveri.Class == 111 || usrveri.Class == 112)
+                                            {
+                                                <span class="class c14"></span>
+                                            }
+
+
+                                            <a href="/Rank/UserProfile/@usrveri.strUserID"> @usrveri.strUserID</a>
+
+
+                                        </td>
+                                        <td class="sorting_1">
+                                            @foreach (var x in Model.Deger3)
+                                            {
+                                                if (usrveri.ClanID == x.IDNum)
+                                                {
+
+                                                    switch (x.Ranking)
+                                                    {
+                                                        case 1:
+                                                            <span class="grade g15"></span>
+                                                            break;
+                                                        case 2:
+                                                            <span class="grade g14"></span>
+                                                            break;
+                                                        case 3:
+                                                            <span class="grade g13"></span>
+                                                            break;
+                                                        case 4:
+                                                            <span class="grade g12"></span>
+                                                            break;
+                                                        case 5:
+                                                            <span class="grade g11"></span>
+                                                            break;
+                                                    }
+                                                    <a href="/Rank/ClanProfile/@x.IDNum"> @x.IDName</a>
+                                                }
+                                            }
+
+
+
+
+                                        </td>
+                                        <td class="sorting_1">@usrveri.Level</td>
+                                        <td class="sorting_1">@usrveri.Loyalty</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>                    
                 </div>
-                <div id="Monthly">
-                    <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
+                <div id="2" class="tabcontent">
+                        <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
                         <thead>
                             <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
@@ -235,7 +257,7 @@
                                         }
 
 
-                                        <a href="@usrveri.strUserID"> @usrveri.strUserID</a>
+                                        <a href="/Rank/UserProfile/@usrveri.strUserID"> @usrveri.strUserID</a>
 
 
                                     </td>
@@ -263,7 +285,7 @@
                                                         <span class="grade g11"></span>
                                                         break;
                                                 }
-                                                <a href="@x.IDNum"> @x.IDName</a>
+                                                <a href="/Rank/ClanProfile/@x.IDNum"> @x.IDName</a>
                                             }
                                         }
 
@@ -279,7 +301,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="Clan">
+                <div id="3" class="tabcontent">
                     <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
                         <thead>
                             <tr role="row">
@@ -321,7 +343,7 @@
                                                 break;
                                         }
 
-                                        <a href="@klnveri.IDName"> @klnveri.IDName</a>
+                                        <a href="/Rank/ClanProfile/@klnveri.IDNum"> @klnveri.IDName</a>
 
                                     </td>
                                     <td class="sorting_1">
@@ -362,7 +384,7 @@
                                         }
 
 
-                                        <a href="@klnveri.Chief"> @klnveri.Chief</a>
+                                        <a href="/Rank/UserProfile/@klnveri.Chief"> @klnveri.Chief</a>
 
 
                                     </td>
@@ -374,7 +396,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="Kings">
+                <div id="4" class="tabcontent">
                     <table id="dataTable" class="rankTable dataTable no-footer" role="grid" style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;">
                         <thead>
                             <tr role="row">
@@ -399,7 +421,24 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="GameMasters"><table style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;" id="GameMasters_table" class="rankTable dataTable no-footer" role="grid"><thead><tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 101px;">#</th><th class="sorting" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 284px;">Takma İsim</th><th class="sorting" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-label="Durum: activate to sort column ascending" style="width: 186px;">Durum</th></tr></thead><tbody><tr role="row" class="odd"><td class="sorting_1">1</td><td><span class="nation n1"></span> <span class="class c12"></span> <a href="#">GMahmut</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="even"><td class="sorting_1">2</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GMExpunGe</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="odd"><td class="sorting_1">3</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GMMyDanGeR</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="even"><td class="sorting_1">4</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GM4teS</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr></tbody></table>  </div>
+                <div id="5" class="tabcontent">
+                    <table style="margin-top: -5px !important; width: 105.6%; margin-bottom: -5px !important;" id="GameMasters_table" class="rankTable dataTable no-footer" role="grid"><thead><tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 101px;">#</th><th class="sorting" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 284px;">Takma İsim</th><th class="sorting" tabindex="0" aria-controls="GameMasters_table" rowspan="1" colspan="1" aria-label="Durum: activate to sort column ascending" style="width: 186px;">Durum</th></tr></thead><tbody><tr role="row" class="odd"><td class="sorting_1">1</td><td><span class="nation n1"></span> <span class="class c12"></span> <a href="#">GMahmut</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="even"><td class="sorting_1">2</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GMExpunGe</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="odd"><td class="sorting_1">3</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GMMyDanGeR</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr><tr role="row" class="even"><td class="sorting_1">4</td><td><span class="nation n2"></span> <span class="class c22"></span> <a href="#">GM4teS</a></td><td><span class="badge badge-outline-danger">Çevrimdışı</span></td></tr></tbody></table>
+                </div>
+                <script>
+                    function openCity(evt, cityName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                </script>
             </div>
         </div>
     </div>

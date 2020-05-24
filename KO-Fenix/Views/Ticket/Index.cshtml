@@ -1,0 +1,93 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; TİCKET</h3>
+            <div id="cache_time"></div>
+        </div>
+
+        <div class="mainbox-body page-body self_clear">
+            <div id="forgotpw_container">
+                <br>
+                <center><a href="/Ticket/Send" class="nice_button">Yeni Mesaj Gönder</a></center>
+                <br>
+                <div id="dataTable_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
+                        <div class="col-sm-12">
+                            <table id="dataTable_0" class="rankTable All2 dataTable no-footer" colspace="0" role="grid">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Talep</th>
+                                        <th>Durum</th>
+                                        <th>Tarih</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var destek in Model.Deger9)
+                                    {
+                                        <tr>
+
+                                            @if (destek.StrAccountID == @Session["strAccountID"].ToString())
+                                            {
+                                                <td><a href="/Ticket/Read/@destek.id"># @destek.id</a></td>
+                                                switch (destek.StrCatID)
+                                                {
+                                                case "1":
+                                                <td><a href="/Ticket/Read/@destek.id">Power Up Store</a></td>
+                                                break;
+                                                case "2":
+                                                <td><a href="/Ticket/Read/@destek.id">Hesap Islemleri</a></td>
+                                                break;
+                                                case "3":
+                                                <td><a href="/Ticket/Read/@destek.id">Bug Bildirimi</a></td>
+                                                break;
+                                                case "4":
+                                                <td><a href="/Ticket/Read/@destek.id">Diger</a></td>
+                                                break;
+                                                case "5":
+                                                <td><a href="/Ticket/Read/@destek.id">Neden Banlandim ?</a></td>
+                                                break;
+                                                case "6":
+                                                <td><a href="/Ticket/Read/@destek.id">TL/KC IHBAR</a></td>
+                                                break;
+                                                }
+                                                
+                                                switch (destek.StrDurum)
+                                                {
+                                                case "0":
+                                                <td>İşleme Alındı</td>
+                                                break;
+                                                case "1":
+                                                <td>Cevaplandı</td>
+                                                break;
+                                                }
+                                                <td>@destek.StrTarih</td>
+                                                <td><a href="/Ticket/Read/@destek.id"><img src="~/Content/images/shop-30-24.png"></a></td>
+                                            }
+                                            
+                                        </tr>
+                                    }
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

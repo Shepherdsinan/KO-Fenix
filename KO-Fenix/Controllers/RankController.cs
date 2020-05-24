@@ -37,11 +37,12 @@ namespace KO_Fenix.Controllers
             ViewBag.dgr1 = qery;
             IEnumerable<MyModel> myModel = (from k in db.KNIGHTS
                         join u in db.USERDATA on k.Chief equals u.strUserID
-                        orderby (k.Points) descending
+                        orderby (k.Ranking) ascending
                         select new MyModel()
                         {
                             Class=u.Class,
                             IDName=k.IDName,
+                            IDNum = k.IDNum,
                             Nation=k.Nation,
                             Ranking=k.Ranking,
                             Members = k.Members,
@@ -66,5 +67,50 @@ namespace KO_Fenix.Controllers
             ViewBag.dgr1 = qery;
             return View();
         }
+        public ActionResult ClanProfile(int id)
+        {
+            var query = db.KNIGHTS.FirstOrDefault(x => x.IDNum == id);
+            ViewBag.klanadi = query.IDName;
+            ViewBag.Chief = query.Chief;
+            ViewBag.ViceChief_1 = query.ViceChief_1;
+            ViewBag.ViceChief_2 = query.ViceChief_2;
+            ViewBag.Members = query.Members;
+            ViewBag.Ranking = query.Ranking;
+            cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 && a.ClanID == id orderby a.Loyalty descending select a).ToList();
+            cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
+            cs.Deger3 = db.KNIGHTS.ToList();
+            var qery = db.CURRENTUSER.Count();
+            ViewBag.dgr1 = qery;
+
+            return View(cs);
+        }
+        public ActionResult UserProfile(string id)
+        {
+            
+            var queryusr = db.USERDATA.FirstOrDefault(x => x.strUserID == id);            
+            ViewBag.Hp = queryusr.Hp;
+            ViewBag.Mp = queryusr.Mp;
+            ViewBag.strUserID = queryusr.strUserID;
+            ViewBag.Class = queryusr.Class;
+            ViewBag.Level = queryusr.Level;
+            ViewBag.nation = queryusr.Nation; 
+            ViewBag.Exp = queryusr.Exp;
+            ViewBag.Points = queryusr.Points;
+            ViewBag.Str = queryusr.Strong;
+            ViewBag.Sta = queryusr.Sta;
+            ViewBag.Dex = queryusr.Dex;
+            ViewBag.Cha = queryusr.Cha;
+            ViewBag.intel = queryusr.Intel;
+            ViewBag.Loyalty = queryusr.Loyalty;
+
+            var levelupexp = db.LEVEL_UP.FirstOrDefault(x => x.level == queryusr.Level);
+            ViewBag.levelupexp = levelupexp.Exp;
+ 
+            var degerler = db.Database.ExecuteSqlCommand("Exec [ITEMLERI_BUL] @p0", id);
+            degerler.ToString();
+
+            return View(degerler);
+        }
+
     }
 }

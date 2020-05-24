@@ -33,6 +33,7 @@ namespace KO_Fenix.Controllers
                          {
                              Class = u.Class,
                              IDName = k.IDName,
+                             IDNum = k.IDNum,
                              Nation = k.Nation,
                              Ranking = k.Ranking,
                              Members = k.Members,
@@ -67,6 +68,11 @@ namespace KO_Fenix.Controllers
             }
             
         }
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
 
+        
     }
 }

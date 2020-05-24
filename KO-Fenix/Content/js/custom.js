@@ -202,39 +202,14 @@ function getContent(pURL, pData) {
 
 }
 
-var tabs = $("#home_rankings #tabs li a");
-var contents = $("#home_rankings #content div");
-var selected;
 
-var defaultSelected = $("#General");
 
-$(contents).each(function () {
-	$(this).hide();
-});
-getContentRankings("General");
-$(defaultSelected).show();
-$(defaultSelected).addClass("selected");
 
-$(tabs).on('click', function (e) {
 
-	e.preventDefault();
 
-	selected = $(this).attr("href");
 
-	$(tabs).each(function () {
 
-		$(this).removeClass("selected");
-	});
-	$(contents).each(function () {
-		$(this).hide();
-	});
-	var href = selected.replace("#", "");
 
-	getContentRankings(href);
-
-	$(selected).show();
-	$(this).addClass("selected");
-});
 
 function getContentRankings(tab) {
 

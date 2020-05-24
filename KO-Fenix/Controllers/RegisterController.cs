@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using KO_Fenix.Models.Entity;
 
 namespace KO_Fenix.Controllers
@@ -44,6 +45,11 @@ namespace KO_Fenix.Controllers
             {                
                 db.Database.ExecuteSqlCommand("Exec [kayitol] @p0, @p1, @p2, @p3, @p4, @p5", p.strAccountID, p.Password, p.Sifre, p.SealPassword, p.Email, p.Phone);
                 db.SaveChanges();
+                FormsAuthentication.SetAuthCookie(p.strAccountID, false);
+                Session["strAccountID"] = p.strAccountID.ToString();
+                Session["CreateTime"] = p.CreateTime.ToString();
+                Session["phone"] = p.Phone.ToString();
+                Session["Email"] = p.Email.ToString();
                 return View("SaveMember");
             }
 

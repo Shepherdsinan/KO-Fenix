@@ -496,7 +496,7 @@ table.rankTable {
 .pointer {
     cursor: pointer;
 }
-
+/*Anasayfa tab menü css*/
 #home_rankings {
     width: 710px;
     min-height: 340px;
@@ -509,7 +509,7 @@ table.rankTable {
         border-color: #792121
     }
 
-    #home_rankings li a.selected {
+    #home_rankings li a.tablinks.active {
         color: #f0a31c !important;
         border-color: #792121 !important;
     }

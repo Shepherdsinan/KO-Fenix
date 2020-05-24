@@ -1,0 +1,98 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Send";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; TİCKET</h3>
+            <div id="cache_time"></div>
+        </div>
+        
+        <div class="mainbox-body page-body self_clear">
+            <div id="forgotpw_container">
+
+                <form action="/Ticket/Saveticket" enctype="multipart/form-data" id="register_form" method="post">
+                    <table style="width:100%;">
+                        <tbody>
+
+                            <tr>
+                                <td style="width:40%;"><label for="strUserID">Karakteriniz</label> :</td>
+                                <td style="padding-bottom:5px;">
+
+
+                                    <select id="strUserID" name="strUserID">
+                                        @foreach (var karakterler in Model.Deger10)
+                                        {
+                                            if (karakterler.strAccountID.Trim() == @Session["strAccountID"].ToString())
+                                            {
+                                                <option value="">- Karakterinizi seçiniz -</option>
+                                                if (karakterler.strCharID1 != null)
+                                                {
+                                                    <option value="@karakterler.strCharID1">@karakterler.strCharID1</option>
+                                                }
+                                                if (karakterler.strCharID2 != null)
+                                                {
+                                                    <option value="@karakterler.strCharID2">@karakterler.strCharID2</option>
+                                                }
+                                                if (karakterler.strCharID3 != null)
+                                                {
+                                                    <option value="@karakterler.strCharID3">@karakterler.strCharID3</option>
+                                                }
+                                                if (karakterler.strCharID4 != null)
+                                                {
+                                                    <option value="@karakterler.strCharID4">@karakterler.strCharID4</option>
+                                                }
+
+                                            }
+                                        }
+
+                                    </select>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:40%;"><label for="Subject">Konu</label> :</td>
+                                <td>
+
+                                    <select data-val="true" data-val-number="The field Konu must be a number." data-val-required="Konu Boş geçilemez." id="Subject" name="Subject">
+                                        <option value="">- Konu seçiniz -</option>
+                                        <option value="1">Power Up Store</option>
+                                        <option value="2">Hesap Islemleri</option>
+                                        <option value="3">Bug Bildirimi</option>
+                                        <option value="4">Diger</option>
+                                        <option value="5">Neden Banlandim ?</option>
+                                        <option value="6">TL/KC IHBAR</option>
+                                    </select>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <br>
+
+                    <textarea cols="70" rows="20" name="Message"></textarea>
+  
+                    
+
+                    <input type="submit" value="Mesaj Gönder" />
+
+                    
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+

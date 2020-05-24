@@ -24,14 +24,15 @@
     <link href="Content/css/custom.css" rel="stylesheet">
     <link href="Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="Content/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="Content/css/inventory.css" rel="stylesheet">
+
+    <link href="~/Content/css/ucp.css" rel="stylesheet">
 
     <script>
         var $FileURL = '/Content/';
         var $BaseURL = '/';
         var isIE = false;
     </script>
-  
+
 
     <!--[if IE]>
 
@@ -42,9 +43,11 @@
     <script src="Content/js/jquery.min.js"></script>
     <script src="Content/js/html5shiv.min.js"></script>
 
+
     <!-- Load Extra scripts -->
-    <link href="css.css?family=Asap|Cairo|Encode+Sans+Condensed|Exo|Lato|Merriweather+Sans|Montserrat|Questrial|Raleway|Varela+Round" rel="stylesheet">
-    <script async="" src='/cdn-cgi/bm/cv/2181903173/api.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Asap|Cairo|Encode+Sans+Condensed|Exo|Lato|Merriweather+Sans|Montserrat|Questrial|Raleway|Varela+Round" rel="stylesheet">
+
+   
 </head>
 
 <body class="theme_havoc">
@@ -206,12 +209,12 @@
                         <div class="membershipbar-socials">
                             @*<a href="OracleGamer2019.html" target="_blank" class="social_btn facebook_btn border_box" title=""></a>
                                 <a href="invite\SAcqfWr.html" target="_blank" class="social_btn discord_btn border_box" title=""></a>*@
-                            <a target="_blank" class="social_btn youtube_btn border_box" title=""></a>
+                            <a href="#" target="_blank" class="social_btn youtube_btn border_box" title=""></a>
                             <span class="membershipbar-sep"></span>
                             <span>Sosyal Medya <i> üzerinden takip edebilirsiniz.</i></span>
                         </div>
                     </div>
-                    <div class="membershipbar-right border_box self_clear" style="display:none">
+                    <div class="membershipbar-right border_box self_clear" style="display:block">
                         <div class="membershipbar-welcomemsg">
                             <span>Merhaba, <i>Ziyaretçi,</i>!</span>
                         </div>
@@ -247,29 +250,29 @@
                         {
                             if (@Session["strAccountID"] != null)
                             {
-                                
-                                    <section class="sidebox_info">
-                                        <table width="100%">
-                                            <tbody>
-                                                <tr>
-                                                    <td><img src="https://panel.oraclegamer.net/Content/images/icons/user.png"> Kullanıcı Adı</td>
-                                                    <td id="info_vp">@Session["strAccountID"].ToString()</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="https://panel.oraclegamer.net/Content/images/icons/coins.png"> NPoint</td>
-                                                    <td id="info_vp">0</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <center>
-                                            <a href="/Account" class="nice_button">Kullanıcı Paneli</a>
 
-                                            <a href="/Account/Logout" class="nice_button">Çıkış yap</a>
-                                        </center>
-                                            
-                                     </section>
-                                    
-                                
+                                <section class="sidebox_info">
+                                    <table width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="~/Content/images/icons/user.png"> Kullanıcı Adı</td>
+                                                <td id="info_vp">@Session["strAccountID"].ToString()</td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="~/Content/images/icons/coins.png"> NPoint</td>
+                                                <td id="info_vp">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <center>
+                                        <a href="/Account" class="nice_button">Kullanıcı Paneli</a>
+
+                                        <a href="/Account/Logout" class="nice_button">Çıkış yap</a>
+                                    </center>
+
+                                </section>
+
+
                             }
                             else
                             {
@@ -278,7 +281,7 @@
                                     <p class="password-in"><input type="password" value="" name="Sifre" id="password_input" placeholder="Parola" maxlength="20"></p>
                                     <div class="login-button flex-center">
                                         <input type="submit" name="login_submit" value="Giriş!">
-                                        <a href="Home\ForgotPassword.html">Şifremi Unuttum ?</a>
+                                        <a href="Home\ForgotPassword">Şifremi Unuttum ?</a>
                                     </div>
                                 </center>
                             }
@@ -353,7 +356,8 @@
     <!-- Footer.End -->
     <!-- Needed Footer JS.Start -->
 
-    <script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script>
+
+
     <script>var EventCount = 0; var EventList = null;</script>
     <script src="Content/js/jquery.validate.js"></script>
     <script src="Content/js/tooltip.js"></script>
@@ -366,7 +370,9 @@
     <script src="Content/js/custom.js"></script>
     <script src="Content/js/ajaxRouter.js"></script>
     <script src="Content/js/eventscheduler.js"></script>
-
+    <script src="Content/js/itemsearch.js"></script>
+    <script src="/Content/js/fusioneditor.js"></script>
+    <script src="/Content/js/fileinput.js"></script>
     <script>Eventscheduler.initialize(new Date());</script>
 
     <!-- Needed Footer JS.End -->
@@ -377,7 +383,7 @@
                 CustomJS.initialize();
         });
     </script>
-
+    
 
     <script type="text/javascript">(function () { window['__CF$cv$params'] = { r: '58fe44e98c0cfa88', m: '03b20b1cec68ba876c9551a8ce714e94aecdd298-1588889406-1800-AfW+bs/EXbn/fBs87RHN8EuRA4JiABj9NX5bcQFxss2YCtRbfHvo5BzIby5PdSEN0FRDhqvv5nG1p1ZWlMfkQRNbDj18USWtZvvsMxVNy9QKUGCqgbTTmcP4EQvctL8zIA==', s: [0xca606c8c0e, 0xe11137a974], fb: 0, } })();</script>
 </body>

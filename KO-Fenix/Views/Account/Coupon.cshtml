@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Coupon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; HEDİYE KUPON</h3>
+            <div id="cache_time"></div>
+        </div>
+
+        <div class="mainbox-body page-body self_clear">
+
+            <div id="forgotpw_container">
+                <br>
+                <form action="/Coupon" id="register_form" method="post">
+                    <p></p> <br>
+                    <input type="text" name="CouponID" value="" placeholder="### Kupon Kodunuz ###" maxlength="8" style="width: 40%;text-transform: uppercase;letter-spacing: 1px;">
+                    <input type="submit" value="Devam et" name="submit_code">
+                    <br>
+                    <br>
+                    <p>Kupon kodunuz toplamda (8) karakterdir.</p>
+                </form>            <br>
+                <div class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Kullanıcı Adı Boş geçilemez.</p></div><div class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Parola Boş geçilemez.</p></div>
+            </div>
+
+            <br>
+            <br>
+            <div class="ucp_divider"></div>
+
+            <style>
+            </style>
+
+
+            <div id="forgotpw_container" style="float:left;">
+                <br>
+                <form action="/Coupon" id="register_form" method="post">
+                    <div class="giftbox">
+                        <section class="box">
+                            <h4 class="title border_box">Hediye Kodunuzu istermisiniz?</h4>
+                            <div class="body border_box">
+                                <div id="toppvp_realm_0" class="toppvp_realm toppvp_realm_0">
+                                    <div class="toppvp_data">
+                                        <img src="~/Content/images/chest.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <p></p> <br>
+                    <input type="text" name="PhoneNumber" value="" placeholder="Telefon Numaranız" maxlength="10" style="width: 23%;">
+                    <input type="submit" value="Gönder" name="submit_request">
+                    <br>
+                    <br>
+                    <p>Bir telefon üzerinden bir defa katılabilirsiniz..<br> Örnek numara : 5348722671</p>
+                </form>            <br>
+                <div class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Kullanıcı Adı Boş geçilemez.</p></div><div class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Parola Boş geçilemez.</p></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

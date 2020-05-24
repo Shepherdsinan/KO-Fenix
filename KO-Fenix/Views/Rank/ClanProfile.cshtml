@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "ClanProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoNeFiX</span> &#129138; @ViewBag.klanadi</h3>
+            <div id="cache_time"></div>
+        </div>
+        <div class="mainbox-body page-body self_clear" style="padding:25px;">
+            <div class="ucp_ui border_box">
+                <div class="ucp_ui-inner self_clear">
+                    <div class="ui_col col_1 border_box">
+                        <div class="ucp_avatar"><img src="~/Content/images/misc/logo.png"></div>
+                        <br>
+                    </div>
+                    <div class="ui_col col_2 border_box">
+                        <div class="info-table">
+                            <div class="info-row row-1">
+                                <div class="info-col col-5 overflow_ellipsis">Klan : </div>
+                                <div class="info-col col-1 overflow_ellipsis"> </div>
+                                <div class="info-col col-3 overflow_ellipsis">@ViewBag.klanadi</div>
+                            </div>
+                            <div class="info-row row-2">
+                                <div class="info-col col-5 overflow_ellipsis">Lider : </div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis"><a href="#">@ViewBag.Chief</a></div>
+                            </div>
+                            <div class="info-row row-3">
+                                <div class="info-col col-5 overflow_ellipsis">Asistan : </div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis"><a href="#">@ViewBag.ViceChief_1</a></div>
+                            </div>
+                            <div class="info-row row-3">
+                                <div class="info-col col-5 overflow_ellipsis">Asistan : </div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis"><a href="#">@ViewBag.ViceChief_2</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui_col col_3 border_box">
+                        <div class="info-table">
+                            <div class="info-row row-1">
+                                <div class="info-col col-5 overflow_ellipsis">Klan Rütbesi : </div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis">Royal Knight #@ViewBag.Ranking</div>
+                            </div>
+                            <div class="info-row row-2">
+                                <div class="info-col col-5 overflow_ellipsis">Toplam Üye :</div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis">@ViewBag.Members</div>
+                            </div>
+                            <div class="info-row row-2">
+                                <div class="info-col col-5 overflow_ellipsis">Çevrimiçi :</div>
+                                <div class="info-col col-1 overflow_ellipsis"></div>
+                                <div class="info-col col-3 overflow_ellipsis">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="ucp_divider_top"></div>
+            <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="dataTable" class="rankTable All2 dataTable no-footer" role="grid" style="width: 708px;">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 250px;">Takma İsim</th>
+                                    
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Seviye</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int RowNo = 0;}
+                                @foreach (var usrveri in Model.Deger1)
+                                {
+                                    <tr role="row">
+                                        <td class="sorting_1">@{RowNo++;} @RowNo</td>
+                                        <td class="sorting_1">
+                                            @if (usrveri.Nation == 1)
+                                            {<span class="nation n1"></span> }
+                                            else
+                                            {<span class="nation n2"></span>}
+
+                                            @*Human Sınıf Simgeleri*@
+                                            @if (usrveri.Class == 201 || usrveri.Class == 205 || usrveri.Class == 206)
+                                            {
+                                                <span class="class c21"></span>
+                                            }
+                                            else if (usrveri.Class == 202 || usrveri.Class == 207 || usrveri.Class == 208)
+                                            {
+                                                <span class="class c22"></span>
+                                            }
+                                            else if (usrveri.Class == 203 || usrveri.Class == 209 || usrveri.Class == 210)
+                                            {
+                                                <span class="class c23"></span>
+                                            }
+                                            else if (usrveri.Class == 204 || usrveri.Class == 211 || usrveri.Class == 212)
+                                            {
+                                                <span class="class c24"></span>
+                                            }
+
+                                            @*Karus Sınıf Simgeleri*@
+
+                                            else if (usrveri.Class == 101 || usrveri.Class == 105 || usrveri.Class == 106)
+                                            {
+                                                <span class="class c11"></span>
+                                            }
+                                            else if (usrveri.Class == 102 || usrveri.Class == 107 || usrveri.Class == 108)
+                                            {
+                                                <span class="class c12"></span>
+                                            }
+                                            else if (usrveri.Class == 103 || usrveri.Class == 109 || usrveri.Class == 110)
+                                            {
+                                                <span class="class c13"></span>
+                                            }
+                                            else if (usrveri.Class == 104 || usrveri.Class == 111 || usrveri.Class == 112)
+                                            {
+                                                <span class="class c14"></span>
+                                            }
+
+
+                                            <a href="@usrveri.strUserID"> @usrveri.strUserID</a>
+
+
+                                        </td>                                        
+                                        <td class="sorting_1">@usrveri.Level</td>
+                                        <td class="sorting_1">@usrveri.LoyaltyMonthly</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+

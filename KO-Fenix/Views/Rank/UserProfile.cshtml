@@ -1,0 +1,267 @@
+﻿
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/__Layout.cshtml";
+}
+
+<aside id="right" class="mainside">
+    <style type="text/css">
+
+        .welcome_box {
+            display: none
+        }
+
+        .mainside-bg, .sidebar-bg, .sidebar {
+            display: none
+        }
+
+        .mainside {
+            width: 100%;
+            float: none
+        }
+
+            .mainside .mainbox .mainbox-inner .mainbox-body {
+                padding: 0
+            }
+    </style>
+    <div id="page-character" class="mainbox page page-character">
+
+
+        
+
+
+        <style>
+            .sidebar {
+                display: none
+            }
+        </style>
+        <div id="content_x" style="margin-top:-100px;margin-left:-20px;">
+            <div id="userprofile_content" style="background-image: url(&quot;../Content//images/inventory/21.png&quot;);">
+                <div id="error">
+
+                </div>
+                <style>
+                    .profile_error {
+                        width: 100%;
+                        height: 60px;
+                        background: #040404a3;
+                        border: 1px solid #23211a;
+                        top: 300px;
+                    }
+
+                        .profile_error h1 {
+                            text-align: center;
+                            line-height: 60px;
+                            font-family: 'Ebrima';
+                            font-weight: bold;
+                            font-size: 15px;
+                            color: #bdbcbc;
+                            text-transform: uppercase;
+                            text-shadow: 1px 1px 1px rgba(0, 0, 0, .25), 0 0 6px rgba(0, 0, 0, .25);
+                        }
+                </style>
+
+                <div class="profile_error" style="display:none">
+                    <h1>Yetkililerin profini görüntüleyemezsiniz.</h1>
+                </div>
+
+                <div id="userprofile">
+                    <div id="buffbar" style="margin-top:3px;"></div>
+                    <div id="buffs">
+
+                    </div>
+                    <div id="hpbar">
+                        <p class="name">Lv <span class="ilevel">@ViewBag.Level</span> <span class="iusername"></span></p>
+                        <div class="bar">
+                            <div class="redx"><p><span class="imaxhp"></span> @ViewBag.Hp / @ViewBag.Hp <span class="imaxhp"></span></p></div>
+                            <div class="bluex"><p><span class="imaxmp"></span>@ViewBag.Mp / @ViewBag.Mp <span class="imaxmp"></span></p></div>
+                        </div>
+                        <p class="position"><span class="izone"></span> <span class="ix"></span>,<span class="iy"></span></p>
+                    </div>
+                    <div id="inventory">
+                        <div class="close"></div>
+                        <div id="items_v2">
+                            <div id="inv_corpse_btn" class="corpse_btn_close"></div>
+                            <div class="corpse_page">
+                                <a id="bag1btn" class="bagon" href="javascript:void(0);" style="position:absolute;left:22px;top:232px;">Bag 1</a>
+                                <a id="bag2btn" class="bagoff" href="javascript:void(0);" style="position:absolute;left:75px;top:232px;">Bag 2</a>
+                                <div class="bag1"></div>
+                                <div class="bag2" style="display:none"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="statebar_case">
+                        <div id="statebar">
+                            <div class="state_name">Character Info</div>
+                            <div class="close"></div>
+
+                            <div class="buttons">
+                                <div class="btns active" data-tag="character">Character</div>
+                                <div class="btns" data-tag="clan">Clan</div>
+                                <div class="btns" data-tag="friends">Friend</div>
+                            </div>
+
+
+                            <div class="state_name" style="left:35px;top:98px;"><span class="iusername">@ViewBag.strUserID</span></div>
+                            <div class="state_job" style="left:35px;top:113px;"><span class="iclasstext">    
+                            @if (@ViewBag.Class == 201 || @ViewBag.Class == 205 || @ViewBag.Class == 206)
+                            {
+                                <span class="class c21"></span>
+                            }
+                            else if (@ViewBag.Class == 202 || @ViewBag.Class == 207 || @ViewBag.Class == 208)
+                            {
+                                <span class="class c22"></span>
+                            }
+                            else if (@ViewBag.Class == 203 || @ViewBag.Class == 209 || @ViewBag.Class == 210)
+                            {
+                                <span class="class c23"></span>
+                            }
+                            else if (@ViewBag.Class == 204 || @ViewBag.Class == 211 || @ViewBag.Class == 212)
+                            {
+                                <span class="class c24"></span>
+                            }
+
+                            @*Karus Sınıf Simgeleri*@
+
+                            else if (@ViewBag.Class == 101 || @ViewBag.Class == 105 || @ViewBag.Class == 106)
+                            {
+                                <span class="class c11"></span>
+                            }
+                            else if (@ViewBag.Class == 102 || @ViewBag.Class == 107 || @ViewBag.Class == 108)
+                            {
+                                <span class="class c12"></span>
+                            }
+                            else if (@ViewBag.Class == 103 || @ViewBag.Class == 109 || @ViewBag.Class == 110)
+                            {
+                                <span class="class c13"></span>
+                            }
+                            else if (@ViewBag.Class == 104 || @ViewBag.Class == 111 || @ViewBag.Class == 112)
+                            {
+                                <span class="class c14"></span>
+                            }
+                            </span></div>
+
+                            <div class="state_label" style="left:35px;top:143px;">Level</div>
+                            <div class="state_text" style="left:85px;top:143px;"><span class="ilevel">@ViewBag.Level</span></div>
+
+                            <div class="state_label" style="left:138px;top:143px;">Nation</div>
+                            <div class="state_text" style="left:185px;top:143px;"><span class="ination">
+                                                                                    @if (@ViewBag.nation == 1)
+                                                                                    {<span class="nation n1"></span> }
+                                                                                    else
+                                                                                    {<span class="nation n2"></span>}
+                                                                                  </span></div>
+
+                            <div class="state_label" style="left:35px;top:164px;">Exp</div>
+                            <div class="state_text" style="left:85px;top:164px;"><span class="iexp">@ViewBag.Exp / @ViewBag.levelupexp</span></div>
+
+                            <div class="state_label" style="left:35px;top:185px;">Points</div>
+                            <div class="state_text" style="left:85px;top:185px;"><span class="inp">@ViewBag.Loyalty</span></div>
+
+                            <div class="state_label" style="left:32px;top:218px;">Attack</div>
+                            <div class="state_box" style="left:70px;top:218px;"><span class="iattack">0</span></div>
+
+                            <div class="state_label" style="left:32px;top:240px;">Defans</div>
+                            <div class="state_box" style="left:70px;top:240px;"><span class="idefance">0</span></div>
+
+                            <div class="state_label" style="left:32px;top:259px;">Manner</div>
+                            <div class="state_box" style="left:70px;top:259px;"><span class="imanner">0</span></div>
+
+                            <div class="state_label" style="left:138px;top:218px;" id="istr">STR</div>
+                            <div class="state_box" style="left:164px;top:218px;"><span class="istr">(+@ViewBag.Str)</span></div>
+
+                            <div class="state_label" style="left:138px;top:239px;" id="ihp">HP</div>
+                            <div class="state_box" style="left:164px;top:239px;"><span class="ihp">(+@ViewBag.Sta)</span></div>
+
+                            <div class="state_label" style="left:138px;top:259px;" id="idex">DEX</div>
+                            <div class="state_box" style="left:164px;top:259px;"><span class="idex">(+@ViewBag.Dex)</span></div>
+
+                            <div class="state_label" style="left:138px;top:280px;" id="imp">MP</div>
+                            <div class="state_box" style="left:164px;top:280px;"><span class="imp">(+@ViewBag.Cha)</span></div>
+
+                            <div class="state_label" style="left:138px;top:301px;" id="iint">INT</div>
+                            <div class="state_box" style="left:164px;top:301px;"><span class="iint">(+@ViewBag.intel)</span></div>
+
+                            <div class="state_label" style="left:58px;top:289px;">Stats Point</div>
+                            <div class="state_box" style="left:52px;top:301px;color:pink;"><span class="ipoints">@ViewBag.Points</span></div>
+
+                            <div class="state_label" style="left:35px;top:333px;">Resistance (Only Item)</div>
+
+                            <div class="state_label" style="left:40px;top:353px;">Fire</div>
+                            <div class="state_box" style="left:72px;top:353px;"><span class="ifirer"></span></div>
+                            <div class="state_label" style="left:40px;top:373px;">Ice</div>
+                            <div class="state_box" style="left:72px;top:373px;"><span class="iicer"></span></div>
+                            <div class="state_label" style="left:40px;top:393px;">Light</div>
+                            <div class="state_box" style="left:72px;top:393px;"><span class="ilightr"></span></div>
+
+                            <div class="state_label" style="left:138px;top:353px;">Magic</div>
+                            <div class="state_box" style="left:168px;top:353px;"><span class="imagicr"></span></div>
+                            <div class="state_label" style="left:138px;top:373px;">Dark</div>
+                            <div class="state_box" style="left:168px;top:373px;"><span class="icurser"></span></div>
+                            <div class="state_label" style="left:138px;top:393px;">Poisn</div>
+                            <div class="state_box" style="left:168px;top:393px;"><span class="iposionr"></span></div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="hotkey">
+                        <div id="keys">
+                            <div id="hot1">
+                                <a id="b0" class="hicon h0"></a>
+                                <a id="b1" class="hicon h1"></a>
+                                <a id="b2" class="hicon h2"></a>
+                                <a id="b3" class="hicon h3"></a>
+                                <a id="b4" class="hicon h4"></a>
+                                <a id="b5" class="hicon h5"></a>
+                                <a id="b6" class="hicon h6"></a>
+                                <a id="b7" class="hicon h7"></a>
+                                <a id="b8" class="hicon h8"></a>
+                                <a id="b9" class="hicon h9"></a>
+                            </div>
+
+                        </div>
+                        <div id="hotkey2">
+                            <div id="num0"></div>
+                            <div id="num1"></div>
+                            <div id="num2"></div>
+                            <div id="num3"></div>
+                            <div id="num4"></div>
+                            <div id="num5"></div>
+                            <div id="num6"></div>
+                            <div id="num7"></div>
+                            <div id="num8"></div>
+                            <div id="num9"></div>
+                            <div id="hotnum" align="center">1</div>
+                            <a id="hotpager"></a>
+                            <a id="hotup"></a>
+                            <a id="hotdown"></a>
+                            <a id="hotlock"></a>
+                            <a id="hottransform"></a>
+                        </div>
+                    </div>
+
+                    <div id="bottombar">
+                        <div class="exp"></div>
+                        <div id="exp_bar">
+                            <div class="exp_bg"></div>
+                            <div class="exp_line"></div>
+                            <div class="exp_left"></div>
+                            <div class="exp_right"></div>
+                        </div>
+                        <div class="zincir"></div>
+                        <div id="bottombtns">
+
+                            <div class="skillbtn"></div>
+                            <div class="characterbtn"></div>
+                            <div class="invbtn"></div>
+                            <div class="townbtn"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</aside>
+

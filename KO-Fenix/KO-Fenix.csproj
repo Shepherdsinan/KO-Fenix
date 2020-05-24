@@ -132,16 +132,29 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\PTSans\PTSansCaption.svg" />
     <Content Include="Content\fonts\PTSans\PTSansCaptionBold.svg" />
+    <Content Include="Content\images\1.png" />
+    <Content Include="Content\images\10.png" />
+    <Content Include="Content\images\2.png" />
+    <Content Include="Content\images\3.png" />
+    <Content Include="Content\images\4.png" />
     <Content Include="Content\images\404.png" />
+    <Content Include="Content\images\5.png" />
+    <Content Include="Content\images\6.png" />
+    <Content Include="Content\images\7.png" />
+    <Content Include="Content\images\8.png" />
+    <Content Include="Content\images\9.png" />
     <Content Include="Content\images\a.png" />
     <Content Include="Content\images\accessoriesitem.png" />
     <Content Include="Content\images\ajax.gif" />
     <Content Include="Content\images\avatar_frame.png" />
+    <Content Include="Content\images\BALIK.png" />
     <Content Include="Content\images\bullet_arrow_up.png" />
     <Content Include="Content\images\chaotic.png" />
     <Content Include="Content\images\chest.png" />
+    <Content Include="Content\images\CLANPRE.png" />
     <Content Include="Content\images\container_arrow.png" />
     <Content Include="Content\images\danger.png" />
+    <Content Include="Content\images\DC.png" />
     <Content Include="Content\images\default_avatar.png" />
     <Content Include="Content\images\divider.png" />
     <Content Include="Content\images\download.PNG" />
@@ -165,7 +178,9 @@
     <Content Include="Content\images\events\event-xxxx.png" />
     <Content Include="Content\images\events\event-xxxxx.png" />
     <Content Include="Content\images\event_text_bg.png" />
+    <Content Include="Content\images\EXP.png" />
     <Content Include="Content\images\expansions\wotlk.gif" />
+    <Content Include="Content\images\FARMPRE.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\green-button.png" />
     <Content Include="Content\images\icon.bmp" />
@@ -218,6 +233,7 @@
     <Content Include="Content\images\login-icon.png" />
     <Content Include="Content\images\mainbox_bottom.png" />
     <Content Include="Content\images\mainbox_top.png" />
+    <Content Include="Content\images\MATTOCK.png" />
     <Content Include="Content\images\misc\2logo.png" />
     <Content Include="Content\images\misc\bar-bg.jpg" />
     <Content Include="Content\images\misc\bar-bg.png" />
@@ -444,6 +460,30 @@
     <Content Include="Content\images\mobs\9887.png" />
     <Content Include="Content\images\mobs\9888.png" />
     <Content Include="Content\images\mobs\9889.png" />
+    <Content Include="Content\images\nesne1.png" />
+    <Content Include="Content\images\nesne10.png" />
+    <Content Include="Content\images\nesne11.png" />
+    <Content Include="Content\images\nesne12.png" />
+    <Content Include="Content\images\nesne13.png" />
+    <Content Include="Content\images\nesne14.png" />
+    <Content Include="Content\images\nesne15.png" />
+    <Content Include="Content\images\nesne16.png" />
+    <Content Include="Content\images\nesne17.png" />
+    <Content Include="Content\images\nesne18.png" />
+    <Content Include="Content\images\nesne19.png" />
+    <Content Include="Content\images\nesne2.png" />
+    <Content Include="Content\images\nesne20.png" />
+    <Content Include="Content\images\nesne21.png" />
+    <Content Include="Content\images\nesne22.png" />
+    <Content Include="Content\images\nesne3.png" />
+    <Content Include="Content\images\nesne4.png" />
+    <Content Include="Content\images\nesne5.png" />
+    <Content Include="Content\images\nesne6.png" />
+    <Content Include="Content\images\nesne7.png" />
+    <Content Include="Content\images\nesne8.png" />
+    <Content Include="Content\images\nesne9.png" />
+    <Content Include="Content\images\OLTA1.png" />
+    <Content Include="Content\images\OLTA2.png" />
     <Content Include="Content\images\page-ucp\avatar_frame.png" />
     <Content Include="Content\images\page-ucp\dots.png" />
     <Content Include="Content\images\page-ucp\ucp-divider.png" />
@@ -451,6 +491,7 @@
     <Content Include="Content\images\page-ucp\userinfo-shadow-1.png" />
     <Content Include="Content\images\page-ucp\userinfo-shadow-2.png" />
     <Content Include="Content\images\password-icon.png" />
+    <Content Include="Content\images\PKPRE.png" />
     <Content Include="Content\images\plus.png" />
     <Content Include="Content\images\quick-menu-arrow.png" />
     <Content Include="Content\images\replybg.png" />
@@ -489,6 +530,7 @@
     <Content Include="Content\images\userinfo-shadow-1.png" />
     <Content Include="Content\images\userinfo-shadow-2.png" />
     <Content Include="Content\images\vertical_divider.png" />
+    <Content Include="Content\images\WAR.png" />
     <Content Include="Content\itemicons\100010000.png" />
     <Content Include="Content\itemicons\100020000.png" />
     <Content Include="Content\itemicons\100030000.png" />
@@ -5618,8 +5660,10 @@
     <Content Include="Content\itemicons\999017000.png" />
     <Content Include="Content\itemicons\itemicon_noimage.png" />
     <Content Include="Content\js\ajaxRouter.js" />
+    <Content Include="Content\js\api.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\js\email-decode.min.js" />
     <Content Include="Content\js\eventscheduler.js" />
     <Content Include="Content\js\fileinput.js" />
     <Content Include="Content\js\flux.min.js" />
@@ -10988,6 +11032,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -10998,6 +11043,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\api_paywant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\AUTHORITY_CHANGE_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\AUTONOTICE.cs">
@@ -11016,6 +11064,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\BOX_RANDOM_ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\CHARACTER_SEAL_LOAD_USER_DATA_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\COEFFICIENT.cs">
@@ -11040,6 +11091,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\C_DESTEK.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\C_DESTEKMESAJ.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\C_DOWNLOADS.cs">
@@ -11099,10 +11153,22 @@
     <Compile Include="Models\Entity\GAME_SETTINGS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\GET_ALL_CHARID_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\HOME.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\INSERTITEM_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\ITEMLERI_BUL_BANKA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\ITEMLERI_BUL_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\ITEMS_DUPER.cs">
@@ -11156,6 +11222,9 @@
     <Compile Include="Models\Entity\KING_ELECTION_LIST.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\KING_ELECTION_RESULTS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\KING_NOMINATION_LIST.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11166,6 +11235,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\KNIGHTS_ALLIANCE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\KNIGHTS_LOAD_MEMBERSDATA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\KNIGHTS_LOAD_MEMBERS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\KNIGHTS_LOAD_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\KNIGHTS_RATING.cs">
@@ -11201,6 +11279,30 @@
     <Compile Include="Models\Entity\LEVEL_UP_PET.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\LOAD_CHAR_INFO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_DRAKI_RANK_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_DRAKI_RANK_TOP_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_PREMIUM_SERVICE_USER_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_RENTAL_DATA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_SEALED_ITEM_DATA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_USER_DATA_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\LOAD_WEB_ITEMMALL_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\MAGIC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11234,7 +11336,19 @@
     <Compile Include="Models\Entity\MAIL_BOX.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\MAIL_BOX_GET_ITEM_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\MAIL_BOX_REQUEST_LIST_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\MAIL_ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\MAIL_OPEN_NEWLETTER_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\MAIL_TAKE_LETTERITEM_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\MAKE_DEFENSIVE.cs">
@@ -11351,6 +11465,9 @@
     <Compile Include="Models\Entity\SET_ITEM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\SKILLSHORTCUT_LOAD_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\START_POSITION.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11358,6 +11475,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TB_USER_PREMIUM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\UPDATE_RANKS_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\UPDATE_USER_KNIGHTS_RANK_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\UPDATE_USER_PERSONAL_RANK_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\USERDATA.cs">
@@ -11502,6 +11628,17 @@
     <Content Include="Views\Shop\Premiums.cshtml" />
     <Content Include="Views\Register\SaveMember.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Rank\ClanProfile.cshtml" />
+    <Content Include="Views\Account\SealPasswordChange.cshtml" />
+    <Content Include="Views\Account\Coupon.cshtml" />
+    <Content Include="Views\Account\PasswordChange.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Rank\UserProfile.cshtml" />
+    <Content Include="Views\Account\Passsend.cshtml" />
+    <Content Include="Views\Account\SealPasssend.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Ticket\Send.cshtml" />
+    <Content Include="Views\Ticket\Read.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

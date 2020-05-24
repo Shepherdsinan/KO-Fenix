@@ -14,6 +14,7 @@ namespace KO_Fenix.Models.Sinif
         public short? Members { get; set; }
         public string Chief { get; set; }
         public int Points { get; set; }
+        public int IDNum { get; set; }
 
     }
 }

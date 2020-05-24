@@ -15,5 +15,14 @@ namespace KO_Fenix.Models.Sinif
         public IEnumerable<C_DOWNLOADS> Deger6 { get; set; }
         public IEnumerable<USERDATA> Deger7 { get; set; }
         public IEnumerable<MyModel> Deger8 { get; set; }
+        public IEnumerable<C_DESTEK> Deger9 { get; set; }
+        public IEnumerable<ACCOUNT_CHAR> Deger10 { get; set; }
+        public IEnumerable<C_DESTEKMESAJ> Deger11 { get; set; }
+        public string strUserID { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
+        public string Messageanswer { get; set; }
+        public int Ticketid { get; set; }
+        
     }
 }

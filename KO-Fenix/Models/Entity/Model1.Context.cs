@@ -12,6 +12,8 @@ namespace KO_Fenix.Models.Entity
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class kn_onlineEntities2 : DbContext
     {
@@ -25,6 +27,8 @@ namespace KO_Fenix.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C_DESTEK> C_DESTEK { get; set; }
+        public virtual DbSet<C_DESTEKMESAJ> C_DESTEKMESAJ { get; set; }
         public virtual DbSet<api_paywant> api_paywant { get; set; }
         public virtual DbSet<AUTONOTICE> AUTONOTICE { get; set; }
         public virtual DbSet<DUPE_CHECK> DUPE_CHECK { get; set; }
@@ -57,7 +61,6 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<C_BLOCK> C_BLOCK { get; set; }
         public virtual DbSet<C_CASHPAKETI> C_CASHPAKETI { get; set; }
         public virtual DbSet<C_CODEHISTORY> C_CODEHISTORY { get; set; }
-        public virtual DbSet<C_DESTEK> C_DESTEK { get; set; }
         public virtual DbSet<C_DOWNLOADS> C_DOWNLOADS { get; set; }
         public virtual DbSet<C_LINKS> C_LINKS { get; set; }
         public virtual DbSet<C_MENU> C_MENU { get; set; }
@@ -162,5 +165,2994 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<WAREHOUSE_ITEMLER> WAREHOUSE_ITEMLER { get; set; }
         public virtual DbSet<WEB_ITEMMALL_LOG> WEB_ITEMMALL_LOG { get; set; }
         public virtual DbSet<WHEEL_OF_FUN_LOG> WHEEL_OF_FUN_LOG { get; set; }
+    
+        public virtual int ACCOUNT_ADD_NPOINTS(string strAccountID, Nullable<int> knightCash)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var knightCashParameter = knightCash.HasValue ?
+                new ObjectParameter("KnightCash", knightCash) :
+                new ObjectParameter("KnightCash", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_ADD_NPOINTS", strAccountIDParameter, knightCashParameter);
+        }
+    
+        public virtual int ACCOUNT_LOGIN(string strAccountID, string password, string iPAddress, Nullable<int> hardDiskSerial)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var iPAddressParameter = iPAddress != null ?
+                new ObjectParameter("IPAddress", iPAddress) :
+                new ObjectParameter("IPAddress", typeof(string));
+    
+            var hardDiskSerialParameter = hardDiskSerial.HasValue ?
+                new ObjectParameter("HardDiskSerial", hardDiskSerial) :
+                new ObjectParameter("HardDiskSerial", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_LOGIN", strAccountIDParameter, passwordParameter, iPAddressParameter, hardDiskSerialParameter);
+        }
+    
+        public virtual int ACCOUNT_LOGIN_OTP(string strAccountID, string password, string otp)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var otpParameter = otp != null ?
+                new ObjectParameter("Otp", otp) :
+                new ObjectParameter("Otp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_LOGIN_OTP", strAccountIDParameter, passwordParameter, otpParameter);
+        }
+    
+        public virtual int ACCOUNT_LOGOUT(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_LOGOUT", strAccountIDParameter);
+        }
+    
+        public virtual int ACCOUNT_NATION_TRANSFER(string accountID)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_NATION_TRANSFER", accountIDParameter);
+        }
+    
+        public virtual int ACCOUNT_PREMIUM(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACCOUNT_PREMIUM", strAccountIDParameter);
+        }
+    
+        public virtual int ADD_PET_DATA(Nullable<int> owner, Nullable<int> kCID, Nullable<int> kESNCodeCount)
+        {
+            var ownerParameter = owner.HasValue ?
+                new ObjectParameter("Owner", owner) :
+                new ObjectParameter("Owner", typeof(int));
+    
+            var kCIDParameter = kCID.HasValue ?
+                new ObjectParameter("KCID", kCID) :
+                new ObjectParameter("KCID", typeof(int));
+    
+            var kESNCodeCountParameter = kESNCodeCount.HasValue ?
+                new ObjectParameter("KESNCodeCount", kESNCodeCount) :
+                new ObjectParameter("KESNCodeCount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ADD_PET_DATA", ownerParameter, kCIDParameter, kESNCodeCountParameter);
+        }
+    
+        public virtual ObjectResult<AUTHORITY_CHANGE_Result> AUTHORITY_CHANGE(string strUserID, string strGM, string banReason, Nullable<short> newAuthority, Nullable<int> days)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var strGMParameter = strGM != null ?
+                new ObjectParameter("strGM", strGM) :
+                new ObjectParameter("strGM", typeof(string));
+    
+            var banReasonParameter = banReason != null ?
+                new ObjectParameter("BanReason", banReason) :
+                new ObjectParameter("BanReason", typeof(string));
+    
+            var newAuthorityParameter = newAuthority.HasValue ?
+                new ObjectParameter("NewAuthority", newAuthority) :
+                new ObjectParameter("NewAuthority", typeof(short));
+    
+            var daysParameter = days.HasValue ?
+                new ObjectParameter("Days", days) :
+                new ObjectParameter("Days", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AUTHORITY_CHANGE_Result>("AUTHORITY_CHANGE", strUserIDParameter, strGMParameter, banReasonParameter, newAuthorityParameter, daysParameter);
+        }
+    
+        public virtual int CHANGE_CLAN_ID(string clanLeaderID, string oldClanID, string newClanID)
+        {
+            var clanLeaderIDParameter = clanLeaderID != null ?
+                new ObjectParameter("ClanLeaderID", clanLeaderID) :
+                new ObjectParameter("ClanLeaderID", typeof(string));
+    
+            var oldClanIDParameter = oldClanID != null ?
+                new ObjectParameter("OldClanID", oldClanID) :
+                new ObjectParameter("OldClanID", typeof(string));
+    
+            var newClanIDParameter = newClanID != null ?
+                new ObjectParameter("NewClanID", newClanID) :
+                new ObjectParameter("NewClanID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHANGE_CLAN_ID", clanLeaderIDParameter, oldClanIDParameter, newClanIDParameter);
+        }
+    
+        public virtual int CHANGE_HAIR(string strAccountID, string strCharID, Nullable<byte> bType, Nullable<byte> bFace, Nullable<int> nHair)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var bTypeParameter = bType.HasValue ?
+                new ObjectParameter("bType", bType) :
+                new ObjectParameter("bType", typeof(byte));
+    
+            var bFaceParameter = bFace.HasValue ?
+                new ObjectParameter("bFace", bFace) :
+                new ObjectParameter("bFace", typeof(byte));
+    
+            var nHairParameter = nHair.HasValue ?
+                new ObjectParameter("nHair", nHair) :
+                new ObjectParameter("nHair", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHANGE_HAIR", strAccountIDParameter, strCharIDParameter, bTypeParameter, bFaceParameter, nHairParameter);
+        }
+    
+        public virtual int CHANGE_NEW_CLANID(string strClanID, string strNewClanID)
+        {
+            var strClanIDParameter = strClanID != null ?
+                new ObjectParameter("strClanID", strClanID) :
+                new ObjectParameter("strClanID", typeof(string));
+    
+            var strNewClanIDParameter = strNewClanID != null ?
+                new ObjectParameter("strNewClanID", strNewClanID) :
+                new ObjectParameter("strNewClanID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHANGE_NEW_CLANID", strClanIDParameter, strNewClanIDParameter);
+        }
+    
+        public virtual int CHANGE_NEW_ID(Nullable<int> byType, string accountID, string oldCharID, string newCharID)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(int));
+    
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var oldCharIDParameter = oldCharID != null ?
+                new ObjectParameter("OldCharID", oldCharID) :
+                new ObjectParameter("OldCharID", typeof(string));
+    
+            var newCharIDParameter = newCharID != null ?
+                new ObjectParameter("NewCharID", newCharID) :
+                new ObjectParameter("NewCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHANGE_NEW_ID", byTypeParameter, accountIDParameter, oldCharIDParameter, newCharIDParameter);
+        }
+    
+        public virtual int CHANGE_NEW_ID_OFFLINE(string accountID, string oldCharID, string newCharID)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var oldCharIDParameter = oldCharID != null ?
+                new ObjectParameter("OldCharID", oldCharID) :
+                new ObjectParameter("OldCharID", typeof(string));
+    
+            var newCharIDParameter = newCharID != null ?
+                new ObjectParameter("NewCharID", newCharID) :
+                new ObjectParameter("NewCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHANGE_NEW_ID_OFFLINE", accountIDParameter, oldCharIDParameter, newCharIDParameter);
+        }
+    
+        public virtual ObjectResult<CHARACTER_SEAL_LOAD_USER_DATA_Result> CHARACTER_SEAL_LOAD_USER_DATA(string strAccountID, string strCharID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CHARACTER_SEAL_LOAD_USER_DATA_Result>("CHARACTER_SEAL_LOAD_USER_DATA", strAccountIDParameter, strCharIDParameter);
+        }
+    
+        public virtual int CHARACTER_SEAL_PROCEED(string strAccountID, string strCharID, Nullable<long> nItemSerial)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nItemSerialParameter = nItemSerial.HasValue ?
+                new ObjectParameter("nItemSerial", nItemSerial) :
+                new ObjectParameter("nItemSerial", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHARACTER_SEAL_PROCEED", strAccountIDParameter, strCharIDParameter, nItemSerialParameter);
+        }
+    
+        public virtual int CHARACTER_UNSEAL_PROCEED(string strAccountID, Nullable<byte> bIndex, Nullable<long> nItemSerial)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var bIndexParameter = bIndex.HasValue ?
+                new ObjectParameter("bIndex", bIndex) :
+                new ObjectParameter("bIndex", typeof(byte));
+    
+            var nItemSerialParameter = nItemSerial.HasValue ?
+                new ObjectParameter("nItemSerial", nItemSerial) :
+                new ObjectParameter("nItemSerial", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHARACTER_UNSEAL_PROCEED", strAccountIDParameter, bIndexParameter, nItemSerialParameter);
+        }
+    
+        public virtual int CHECK_BANNED_ACCOUNTS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHECK_BANNED_ACCOUNTS");
+        }
+    
+        public virtual int CHECK_COMPUTER_BLACKLIST(Nullable<long> hardDiskSerial, Nullable<int> mACAddress)
+        {
+            var hardDiskSerialParameter = hardDiskSerial.HasValue ?
+                new ObjectParameter("HardDiskSerial", hardDiskSerial) :
+                new ObjectParameter("HardDiskSerial", typeof(long));
+    
+            var mACAddressParameter = mACAddress.HasValue ?
+                new ObjectParameter("MACAddress", mACAddress) :
+                new ObjectParameter("MACAddress", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CHECK_COMPUTER_BLACKLIST", hardDiskSerialParameter, mACAddressParameter);
+        }
+    
+        public virtual int CLAN_TRANSFER_MEMBER_CHECK(string strUserID, Nullable<short> sExceptionClanID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var sExceptionClanIDParameter = sExceptionClanID.HasValue ?
+                new ObjectParameter("sExceptionClanID", sExceptionClanID) :
+                new ObjectParameter("sExceptionClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CLAN_TRANSFER_MEMBER_CHECK", strUserIDParameter, sExceptionClanIDParameter);
+        }
+    
+        public virtual int CLAN_TRANSFER_MEMBER_NATION_TRANSFER(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CLAN_TRANSFER_MEMBER_NATION_TRANSFER", strUserIDParameter);
+        }
+    
+        public virtual int CLAN_TRANSFER_UPDATE(Nullable<short> sNewClanID, Nullable<short> sOldClanID)
+        {
+            var sNewClanIDParameter = sNewClanID.HasValue ?
+                new ObjectParameter("sNewClanID", sNewClanID) :
+                new ObjectParameter("sNewClanID", typeof(short));
+    
+            var sOldClanIDParameter = sOldClanID.HasValue ?
+                new ObjectParameter("sOldClanID", sOldClanID) :
+                new ObjectParameter("sOldClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CLAN_TRANSFER_UPDATE", sNewClanIDParameter, sOldClanIDParameter);
+        }
+    
+        public virtual int CLEAR_REMAIN_USERS(string strServerIP)
+        {
+            var strServerIPParameter = strServerIP != null ?
+                new ObjectParameter("strServerIP", strServerIP) :
+                new ObjectParameter("strServerIP", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CLEAR_REMAIN_USERS", strServerIPParameter);
+        }
+    
+        public virtual int COMMANDLETTER(Nullable<byte> type, Nullable<int> nItemID, Nullable<short> sCount, string @char)
+        {
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(byte));
+    
+            var nItemIDParameter = nItemID.HasValue ?
+                new ObjectParameter("nItemID", nItemID) :
+                new ObjectParameter("nItemID", typeof(int));
+    
+            var sCountParameter = sCount.HasValue ?
+                new ObjectParameter("sCount", sCount) :
+                new ObjectParameter("sCount", typeof(short));
+    
+            var charParameter = @char != null ?
+                new ObjectParameter("char", @char) :
+                new ObjectParameter("char", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("COMMANDLETTER", typeParameter, nItemIDParameter, sCountParameter, charParameter);
+        }
+    
+        public virtual int CREATE_KNIGHTS(Nullable<short> sClanID, Nullable<byte> bNation, Nullable<byte> bFlag, string strKnightsName, string strChief)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var bNationParameter = bNation.HasValue ?
+                new ObjectParameter("bNation", bNation) :
+                new ObjectParameter("bNation", typeof(byte));
+    
+            var bFlagParameter = bFlag.HasValue ?
+                new ObjectParameter("bFlag", bFlag) :
+                new ObjectParameter("bFlag", typeof(byte));
+    
+            var strKnightsNameParameter = strKnightsName != null ?
+                new ObjectParameter("strKnightsName", strKnightsName) :
+                new ObjectParameter("strKnightsName", typeof(string));
+    
+            var strChiefParameter = strChief != null ?
+                new ObjectParameter("strChief", strChief) :
+                new ObjectParameter("strChief", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CREATE_KNIGHTS", sClanIDParameter, bNationParameter, bFlagParameter, strKnightsNameParameter, strChiefParameter);
+        }
+    
+        public virtual int CREATE_NEW_CHAR(string strAccountID, Nullable<byte> index, string strCharID, Nullable<byte> bRace, Nullable<short> sClass, Nullable<int> nHair, Nullable<byte> bFace, Nullable<byte> bStr, Nullable<byte> bSta, Nullable<byte> bDex, Nullable<byte> bIntel, Nullable<byte> bCha)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(byte));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var bRaceParameter = bRace.HasValue ?
+                new ObjectParameter("bRace", bRace) :
+                new ObjectParameter("bRace", typeof(byte));
+    
+            var sClassParameter = sClass.HasValue ?
+                new ObjectParameter("sClass", sClass) :
+                new ObjectParameter("sClass", typeof(short));
+    
+            var nHairParameter = nHair.HasValue ?
+                new ObjectParameter("nHair", nHair) :
+                new ObjectParameter("nHair", typeof(int));
+    
+            var bFaceParameter = bFace.HasValue ?
+                new ObjectParameter("bFace", bFace) :
+                new ObjectParameter("bFace", typeof(byte));
+    
+            var bStrParameter = bStr.HasValue ?
+                new ObjectParameter("bStr", bStr) :
+                new ObjectParameter("bStr", typeof(byte));
+    
+            var bStaParameter = bSta.HasValue ?
+                new ObjectParameter("bSta", bSta) :
+                new ObjectParameter("bSta", typeof(byte));
+    
+            var bDexParameter = bDex.HasValue ?
+                new ObjectParameter("bDex", bDex) :
+                new ObjectParameter("bDex", typeof(byte));
+    
+            var bIntelParameter = bIntel.HasValue ?
+                new ObjectParameter("bIntel", bIntel) :
+                new ObjectParameter("bIntel", typeof(byte));
+    
+            var bChaParameter = bCha.HasValue ?
+                new ObjectParameter("bCha", bCha) :
+                new ObjectParameter("bCha", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CREATE_NEW_CHAR", strAccountIDParameter, indexParameter, strCharIDParameter, bRaceParameter, sClassParameter, nHairParameter, bFaceParameter, bStrParameter, bStaParameter, bDexParameter, bIntelParameter, bChaParameter);
+        }
+    
+        public virtual int CREATE_NEW_PET(string strPetName, Nullable<long> nItemSerial, Nullable<short> nClass)
+        {
+            var strPetNameParameter = strPetName != null ?
+                new ObjectParameter("strPetName", strPetName) :
+                new ObjectParameter("strPetName", typeof(string));
+    
+            var nItemSerialParameter = nItemSerial.HasValue ?
+                new ObjectParameter("nItemSerial", nItemSerial) :
+                new ObjectParameter("nItemSerial", typeof(long));
+    
+            var nClassParameter = nClass.HasValue ?
+                new ObjectParameter("nClass", nClass) :
+                new ObjectParameter("nClass", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CREATE_NEW_PET", strPetNameParameter, nItemSerialParameter, nClassParameter);
+        }
+    
+        public virtual int DELETE_FRIEND_LIST(string strUserID, string strFriend)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var strFriendParameter = strFriend != null ?
+                new ObjectParameter("strFriend", strFriend) :
+                new ObjectParameter("strFriend", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DELETE_FRIEND_LIST", strUserIDParameter, strFriendParameter);
+        }
+    
+        public virtual ObjectResult<string> EditSkillPoints(string strUserId, Nullable<byte> freep, Nullable<byte> skill1, Nullable<byte> skill2, Nullable<byte> skill3, Nullable<byte> master)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("StrUserId", strUserId) :
+                new ObjectParameter("StrUserId", typeof(string));
+    
+            var freepParameter = freep.HasValue ?
+                new ObjectParameter("freep", freep) :
+                new ObjectParameter("freep", typeof(byte));
+    
+            var skill1Parameter = skill1.HasValue ?
+                new ObjectParameter("skill1", skill1) :
+                new ObjectParameter("skill1", typeof(byte));
+    
+            var skill2Parameter = skill2.HasValue ?
+                new ObjectParameter("skill2", skill2) :
+                new ObjectParameter("skill2", typeof(byte));
+    
+            var skill3Parameter = skill3.HasValue ?
+                new ObjectParameter("skill3", skill3) :
+                new ObjectParameter("skill3", typeof(byte));
+    
+            var masterParameter = master.HasValue ?
+                new ObjectParameter("master", master) :
+                new ObjectParameter("master", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("EditSkillPoints", strUserIdParameter, freepParameter, skill1Parameter, skill2Parameter, skill3Parameter, masterParameter);
+        }
+    
+        public virtual int full_ara(string searchStr)
+        {
+            var searchStrParameter = searchStr != null ?
+                new ObjectParameter("SearchStr", searchStr) :
+                new ObjectParameter("SearchStr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("full_ara", searchStrParameter);
+        }
+    
+        public virtual int GAME_LOGIN(string strAccountID, string password)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GAME_LOGIN", strAccountIDParameter, passwordParameter);
+        }
+    
+        public virtual int GAME_LOGIN_OLDER(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GAME_LOGIN_OLDER", strAccountIDParameter);
+        }
+    
+        public virtual int GAME_LOGIN1(string strAccountID, string strPasswd)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strPasswdParameter = strPasswd != null ?
+                new ObjectParameter("strPasswd", strPasswd) :
+                new ObjectParameter("strPasswd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GAME_LOGIN1", strAccountIDParameter, strPasswdParameter);
+        }
+    
+        public virtual ObjectResult<GET_ALL_CHARID_Result> GET_ALL_CHARID(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_ALL_CHARID_Result>("GET_ALL_CHARID", strAccountIDParameter);
+        }
+    
+        public virtual int GET_PREMIUM_TIME(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GET_PREMIUM_TIME", strAccountIDParameter);
+        }
+    
+        public virtual int GIVE_PREMIUM(string strAccountID, string charID, Nullable<byte> premiumType, Nullable<short> premiumTime)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var premiumTypeParameter = premiumType.HasValue ?
+                new ObjectParameter("PremiumType", premiumType) :
+                new ObjectParameter("PremiumType", typeof(byte));
+    
+            var premiumTimeParameter = premiumTime.HasValue ?
+                new ObjectParameter("PremiumTime", premiumTime) :
+                new ObjectParameter("PremiumTime", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GIVE_PREMIUM", strAccountIDParameter, charIDParameter, premiumTypeParameter, premiumTimeParameter);
+        }
+    
+        public virtual int INMOB_NPC(Nullable<int> type, Nullable<int> mobID, Nullable<int> mobAd, Nullable<int> zone, Nullable<int> kX, Nullable<int> kZ, Nullable<int> xZ, Nullable<int> regT)
+        {
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("Type", type) :
+                new ObjectParameter("Type", typeof(int));
+    
+            var mobIDParameter = mobID.HasValue ?
+                new ObjectParameter("MobID", mobID) :
+                new ObjectParameter("MobID", typeof(int));
+    
+            var mobAdParameter = mobAd.HasValue ?
+                new ObjectParameter("MobAd", mobAd) :
+                new ObjectParameter("MobAd", typeof(int));
+    
+            var zoneParameter = zone.HasValue ?
+                new ObjectParameter("Zone", zone) :
+                new ObjectParameter("Zone", typeof(int));
+    
+            var kXParameter = kX.HasValue ?
+                new ObjectParameter("KX", kX) :
+                new ObjectParameter("KX", typeof(int));
+    
+            var kZParameter = kZ.HasValue ?
+                new ObjectParameter("KZ", kZ) :
+                new ObjectParameter("KZ", typeof(int));
+    
+            var xZParameter = xZ.HasValue ?
+                new ObjectParameter("XZ", xZ) :
+                new ObjectParameter("XZ", typeof(int));
+    
+            var regTParameter = regT.HasValue ?
+                new ObjectParameter("RegT", regT) :
+                new ObjectParameter("RegT", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INMOB_NPC", typeParameter, mobIDParameter, mobAdParameter, zoneParameter, kXParameter, kZParameter, xZParameter, regTParameter);
+        }
+    
+        public virtual ObjectResult<string> INSERT_CURRENTUSER(string strAccountID, string charID, string serverIP, string clientIP, Nullable<short> serverPort, Nullable<byte> serverNo, Nullable<byte> init)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var serverIPParameter = serverIP != null ?
+                new ObjectParameter("ServerIP", serverIP) :
+                new ObjectParameter("ServerIP", typeof(string));
+    
+            var clientIPParameter = clientIP != null ?
+                new ObjectParameter("ClientIP", clientIP) :
+                new ObjectParameter("ClientIP", typeof(string));
+    
+            var serverPortParameter = serverPort.HasValue ?
+                new ObjectParameter("ServerPort", serverPort) :
+                new ObjectParameter("ServerPort", typeof(short));
+    
+            var serverNoParameter = serverNo.HasValue ?
+                new ObjectParameter("ServerNo", serverNo) :
+                new ObjectParameter("ServerNo", typeof(byte));
+    
+            var initParameter = init.HasValue ?
+                new ObjectParameter("Init", init) :
+                new ObjectParameter("Init", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("INSERT_CURRENTUSER", strAccountIDParameter, charIDParameter, serverIPParameter, clientIPParameter, serverPortParameter, serverNoParameter, initParameter);
+        }
+    
+        public virtual int INSERT_FRIEND_LIST(string strUserID, string strFriend)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var strFriendParameter = strFriend != null ?
+                new ObjectParameter("strFriend", strFriend) :
+                new ObjectParameter("strFriend", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_FRIEND_LIST", strUserIDParameter, strFriendParameter);
+        }
+    
+        public virtual int INSERT_PET_DATA(Nullable<long> petSerial, string petName, Nullable<int> petExp, Nullable<int> petLevel, Nullable<int> petSatisfaction, Nullable<int> petClass, Nullable<int> petID)
+        {
+            var petSerialParameter = petSerial.HasValue ?
+                new ObjectParameter("PetSerial", petSerial) :
+                new ObjectParameter("PetSerial", typeof(long));
+    
+            var petNameParameter = petName != null ?
+                new ObjectParameter("PetName", petName) :
+                new ObjectParameter("PetName", typeof(string));
+    
+            var petExpParameter = petExp.HasValue ?
+                new ObjectParameter("PetExp", petExp) :
+                new ObjectParameter("PetExp", typeof(int));
+    
+            var petLevelParameter = petLevel.HasValue ?
+                new ObjectParameter("PetLevel", petLevel) :
+                new ObjectParameter("PetLevel", typeof(int));
+    
+            var petSatisfactionParameter = petSatisfaction.HasValue ?
+                new ObjectParameter("PetSatisfaction", petSatisfaction) :
+                new ObjectParameter("PetSatisfaction", typeof(int));
+    
+            var petClassParameter = petClass.HasValue ?
+                new ObjectParameter("PetClass", petClass) :
+                new ObjectParameter("PetClass", typeof(int));
+    
+            var petIDParameter = petID.HasValue ?
+                new ObjectParameter("PetID", petID) :
+                new ObjectParameter("PetID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_PET_DATA", petSerialParameter, petNameParameter, petExpParameter, petLevelParameter, petSatisfactionParameter, petClassParameter, petIDParameter);
+        }
+    
+        public virtual int INSERT_PREMIUM(string strAccountID, Nullable<byte> bType, Nullable<int> pTime)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var bTypeParameter = bType.HasValue ?
+                new ObjectParameter("bType", bType) :
+                new ObjectParameter("bType", typeof(byte));
+    
+            var pTimeParameter = pTime.HasValue ?
+                new ObjectParameter("pTime", pTime) :
+                new ObjectParameter("pTime", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_PREMIUM", strAccountIDParameter, bTypeParameter, pTimeParameter);
+        }
+    
+        public virtual int INSERT_UPGRADE(string itemname, Nullable<int> index, Nullable<int> reqmon, Nullable<byte> tYPE)
+        {
+            var itemnameParameter = itemname != null ?
+                new ObjectParameter("itemname", itemname) :
+                new ObjectParameter("itemname", typeof(string));
+    
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            var reqmonParameter = reqmon.HasValue ?
+                new ObjectParameter("reqmon", reqmon) :
+                new ObjectParameter("reqmon", typeof(int));
+    
+            var tYPEParameter = tYPE.HasValue ?
+                new ObjectParameter("TYPE", tYPE) :
+                new ObjectParameter("TYPE", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_UPGRADE", itemnameParameter, indexParameter, reqmonParameter, tYPEParameter);
+        }
+    
+        public virtual int INSERT_USER_DAILY_OP(string strCharID, Nullable<int> iChaosMapTime, Nullable<int> iUserRankRewardTime, Nullable<int> iPersonalRankRewardTime, Nullable<int> iKingWingTime, Nullable<int> iWarderKillerTime1, Nullable<int> iWarderKillerTime2, Nullable<int> iKeeperKillerTime, Nullable<int> iUserLoyaltyWingRewardTime)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var iChaosMapTimeParameter = iChaosMapTime.HasValue ?
+                new ObjectParameter("iChaosMapTime", iChaosMapTime) :
+                new ObjectParameter("iChaosMapTime", typeof(int));
+    
+            var iUserRankRewardTimeParameter = iUserRankRewardTime.HasValue ?
+                new ObjectParameter("iUserRankRewardTime", iUserRankRewardTime) :
+                new ObjectParameter("iUserRankRewardTime", typeof(int));
+    
+            var iPersonalRankRewardTimeParameter = iPersonalRankRewardTime.HasValue ?
+                new ObjectParameter("iPersonalRankRewardTime", iPersonalRankRewardTime) :
+                new ObjectParameter("iPersonalRankRewardTime", typeof(int));
+    
+            var iKingWingTimeParameter = iKingWingTime.HasValue ?
+                new ObjectParameter("iKingWingTime", iKingWingTime) :
+                new ObjectParameter("iKingWingTime", typeof(int));
+    
+            var iWarderKillerTime1Parameter = iWarderKillerTime1.HasValue ?
+                new ObjectParameter("iWarderKillerTime1", iWarderKillerTime1) :
+                new ObjectParameter("iWarderKillerTime1", typeof(int));
+    
+            var iWarderKillerTime2Parameter = iWarderKillerTime2.HasValue ?
+                new ObjectParameter("iWarderKillerTime2", iWarderKillerTime2) :
+                new ObjectParameter("iWarderKillerTime2", typeof(int));
+    
+            var iKeeperKillerTimeParameter = iKeeperKillerTime.HasValue ?
+                new ObjectParameter("iKeeperKillerTime", iKeeperKillerTime) :
+                new ObjectParameter("iKeeperKillerTime", typeof(int));
+    
+            var iUserLoyaltyWingRewardTimeParameter = iUserLoyaltyWingRewardTime.HasValue ?
+                new ObjectParameter("iUserLoyaltyWingRewardTime", iUserLoyaltyWingRewardTime) :
+                new ObjectParameter("iUserLoyaltyWingRewardTime", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_USER_DAILY_OP", strCharIDParameter, iChaosMapTimeParameter, iUserRankRewardTimeParameter, iPersonalRankRewardTimeParameter, iKingWingTimeParameter, iWarderKillerTime1Parameter, iWarderKillerTime2Parameter, iKeeperKillerTimeParameter, iUserLoyaltyWingRewardTimeParameter);
+        }
+    
+        public virtual int INSERT_USER_HDD_BANS(string strUserID, Nullable<long> hddKey, Nullable<int> macKey)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            var hddKeyParameter = hddKey.HasValue ?
+                new ObjectParameter("HddKey", hddKey) :
+                new ObjectParameter("HddKey", typeof(long));
+    
+            var macKeyParameter = macKey.HasValue ?
+                new ObjectParameter("MacKey", macKey) :
+                new ObjectParameter("MacKey", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_USER_HDD_BANS", strUserIDParameter, hddKeyParameter, macKeyParameter);
+        }
+    
+        public virtual int INSERT_WEBITEM(string account, Nullable<int> itemid, Nullable<short> itemcount, Nullable<int> days)
+        {
+            var accountParameter = account != null ?
+                new ObjectParameter("account", account) :
+                new ObjectParameter("account", typeof(string));
+    
+            var itemidParameter = itemid.HasValue ?
+                new ObjectParameter("itemid", itemid) :
+                new ObjectParameter("itemid", typeof(int));
+    
+            var itemcountParameter = itemcount.HasValue ?
+                new ObjectParameter("itemcount", itemcount) :
+                new ObjectParameter("itemcount", typeof(short));
+    
+            var daysParameter = days.HasValue ?
+                new ObjectParameter("days", days) :
+                new ObjectParameter("days", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_WEBITEM", accountParameter, itemidParameter, itemcountParameter, daysParameter);
+        }
+    
+        public virtual ObjectResult<INSERTITEM_Result> INSERTITEM(string strUserID, Nullable<int> nEWNum, Nullable<int> stackSize)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            var nEWNumParameter = nEWNum.HasValue ?
+                new ObjectParameter("NEWNum", nEWNum) :
+                new ObjectParameter("NEWNum", typeof(int));
+    
+            var stackSizeParameter = stackSize.HasValue ?
+                new ObjectParameter("StackSize", stackSize) :
+                new ObjectParameter("StackSize", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<INSERTITEM_Result>("INSERTITEM", strUserIDParameter, nEWNumParameter, stackSizeParameter);
+        }
+    
+        public virtual ObjectResult<ITEMLERI_BUL_Result> ITEMLERI_BUL(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ITEMLERI_BUL_Result>("ITEMLERI_BUL", strUserIDParameter);
+        }
+    
+        public virtual ObjectResult<ITEMLERI_BUL_BANKA_Result> ITEMLERI_BUL_BANKA(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ITEMLERI_BUL_BANKA_Result>("ITEMLERI_BUL_BANKA", strUserIDParameter);
+        }
+    
+        public virtual int itemleri_encode(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("itemleri_encode", strUserIDParameter);
+        }
+    
+        public virtual int ITEMLERI_ENCODE_BANKA(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ITEMLERI_ENCODE_BANKA", strUserIDParameter);
+        }
+    
+        public virtual int kayitol(string strAccountID, string password, string sifre, string sealPassword, string email, string phone)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var sifreParameter = sifre != null ?
+                new ObjectParameter("Sifre", sifre) :
+                new ObjectParameter("Sifre", typeof(string));
+    
+            var sealPasswordParameter = sealPassword != null ?
+                new ObjectParameter("SealPassword", sealPassword) :
+                new ObjectParameter("SealPassword", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("kayitol", strAccountIDParameter, passwordParameter, sifreParameter, sealPasswordParameter, emailParameter, phoneParameter);
+        }
+    
+        public virtual int KING_CANDIDACY_NOTICE_BOARD_PROC(string strUserId, Nullable<byte> byNation, string strNotice)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var strNoticeParameter = strNotice != null ?
+                new ObjectParameter("strNotice", strNotice) :
+                new ObjectParameter("strNotice", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_CANDIDACY_NOTICE_BOARD_PROC", strUserIdParameter, byNationParameter, strNoticeParameter);
+        }
+    
+        public virtual int KING_CANDIDACY_RECOMMEND(string charID_Nominee, string charID_Nominator, Nullable<byte> nNation)
+        {
+            var charID_NomineeParameter = charID_Nominee != null ?
+                new ObjectParameter("CharID_Nominee", charID_Nominee) :
+                new ObjectParameter("CharID_Nominee", typeof(string));
+    
+            var charID_NominatorParameter = charID_Nominator != null ?
+                new ObjectParameter("CharID_Nominator", charID_Nominator) :
+                new ObjectParameter("CharID_Nominator", typeof(string));
+    
+            var nNationParameter = nNation.HasValue ?
+                new ObjectParameter("nNation", nNation) :
+                new ObjectParameter("nNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_CANDIDACY_RECOMMEND", charID_NomineeParameter, charID_NominatorParameter, nNationParameter);
+        }
+    
+        public virtual int KING_CHANGE_TAX(Nullable<byte> byType, Nullable<byte> byNation, Nullable<byte> nTariff, Nullable<int> nTotalTax)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var nTariffParameter = nTariff.HasValue ?
+                new ObjectParameter("nTariff", nTariff) :
+                new ObjectParameter("nTariff", typeof(byte));
+    
+            var nTotalTaxParameter = nTotalTax.HasValue ?
+                new ObjectParameter("nTotalTax", nTotalTax) :
+                new ObjectParameter("nTotalTax", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_CHANGE_TAX", byTypeParameter, byNationParameter, nTariffParameter, nTotalTaxParameter);
+        }
+    
+        public virtual int KING_ELECTION_PROC(string strAccountID, string strCharID, Nullable<byte> byNation, string strCandidacyID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var strCandidacyIDParameter = strCandidacyID != null ?
+                new ObjectParameter("strCandidacyID", strCandidacyID) :
+                new ObjectParameter("strCandidacyID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_ELECTION_PROC", strAccountIDParameter, strCharIDParameter, byNationParameter, strCandidacyIDParameter);
+        }
+    
+        public virtual ObjectResult<KING_ELECTION_RESULTS_Result> KING_ELECTION_RESULTS(Nullable<byte> byNation)
+        {
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KING_ELECTION_RESULTS_Result>("KING_ELECTION_RESULTS", byNationParameter);
+        }
+    
+        public virtual int KING_IMPEACHMENT_ELECTION(Nullable<byte> byResult, Nullable<byte> byNation, string strAccountID, string strCharID, ObjectParameter nRet)
+        {
+            var byResultParameter = byResult.HasValue ?
+                new ObjectParameter("byResult", byResult) :
+                new ObjectParameter("byResult", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_IMPEACHMENT_ELECTION", byResultParameter, byNationParameter, strAccountIDParameter, strCharIDParameter, nRet);
+        }
+    
+        public virtual int KING_IMPEACHMENT_REQUEST_ELECTION(Nullable<short> byType, Nullable<byte> byNation, string strUserId)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(short));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_IMPEACHMENT_REQUEST_ELECTION", byTypeParameter, byNationParameter, strUserIdParameter);
+        }
+    
+        public virtual int KING_IMPEACHMENT_RESULT(Nullable<byte> byNation, ObjectParameter nTotalMan, ObjectParameter nAgreeMan)
+        {
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_IMPEACHMENT_RESULT", byNationParameter, nTotalMan, nAgreeMan);
+        }
+    
+        public virtual int KING_INSERT_PRIZE_EVENT(Nullable<byte> byType, Nullable<byte> byNation, Nullable<int> nAmount, string strUserId)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var nAmountParameter = nAmount.HasValue ?
+                new ObjectParameter("nAmount", nAmount) :
+                new ObjectParameter("nAmount", typeof(int));
+    
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_INSERT_PRIZE_EVENT", byTypeParameter, byNationParameter, nAmountParameter, strUserIdParameter);
+        }
+    
+        public virtual int KING_UPDATE_DATABASE(Nullable<byte> byNation, Nullable<int> nNationalTreasury, Nullable<int> nKingTax)
+        {
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var nNationalTreasuryParameter = nNationalTreasury.HasValue ?
+                new ObjectParameter("nNationalTreasury", nNationalTreasury) :
+                new ObjectParameter("nNationalTreasury", typeof(int));
+    
+            var nKingTaxParameter = nKingTax.HasValue ?
+                new ObjectParameter("nKingTax", nKingTax) :
+                new ObjectParameter("nKingTax", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_DATABASE", byNationParameter, nNationalTreasuryParameter, nKingTaxParameter);
+        }
+    
+        public virtual int KING_UPDATE_ELECTION_LIST(Nullable<byte> byDBType, Nullable<byte> byType, Nullable<byte> byNation, Nullable<short> nKnights, Nullable<int> nAmount, string strUserId)
+        {
+            var byDBTypeParameter = byDBType.HasValue ?
+                new ObjectParameter("byDBType", byDBType) :
+                new ObjectParameter("byDBType", typeof(byte));
+    
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var nKnightsParameter = nKnights.HasValue ?
+                new ObjectParameter("nKnights", nKnights) :
+                new ObjectParameter("nKnights", typeof(short));
+    
+            var nAmountParameter = nAmount.HasValue ?
+                new ObjectParameter("nAmount", nAmount) :
+                new ObjectParameter("nAmount", typeof(int));
+    
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_ELECTION_LIST", byDBTypeParameter, byTypeParameter, byNationParameter, nKnightsParameter, nAmountParameter, strUserIdParameter);
+        }
+    
+        public virtual int KING_UPDATE_ELECTION_SCHDULE(Nullable<byte> byType, Nullable<byte> byNation, Nullable<short> sYear, Nullable<byte> byMonth, Nullable<byte> byDay, Nullable<byte> byHour, Nullable<byte> byMinute)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var sYearParameter = sYear.HasValue ?
+                new ObjectParameter("sYear", sYear) :
+                new ObjectParameter("sYear", typeof(short));
+    
+            var byMonthParameter = byMonth.HasValue ?
+                new ObjectParameter("byMonth", byMonth) :
+                new ObjectParameter("byMonth", typeof(byte));
+    
+            var byDayParameter = byDay.HasValue ?
+                new ObjectParameter("byDay", byDay) :
+                new ObjectParameter("byDay", typeof(byte));
+    
+            var byHourParameter = byHour.HasValue ?
+                new ObjectParameter("byHour", byHour) :
+                new ObjectParameter("byHour", typeof(byte));
+    
+            var byMinuteParameter = byMinute.HasValue ?
+                new ObjectParameter("byMinute", byMinute) :
+                new ObjectParameter("byMinute", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_ELECTION_SCHDULE", byTypeParameter, byNationParameter, sYearParameter, byMonthParameter, byDayParameter, byHourParameter, byMinuteParameter);
+        }
+    
+        public virtual int KING_UPDATE_ELECTION_STATUS(Nullable<byte> byType, Nullable<byte> byNation)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_ELECTION_STATUS", byTypeParameter, byNationParameter);
+        }
+    
+        public virtual int KING_UPDATE_IMPEACHMENT_STATUS(Nullable<byte> byType, Nullable<byte> byNation, Nullable<short> sYear, Nullable<byte> byMonth, Nullable<byte> byDay, Nullable<byte> byHour, Nullable<byte> byMinute, string strUserId)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var sYearParameter = sYear.HasValue ?
+                new ObjectParameter("sYear", sYear) :
+                new ObjectParameter("sYear", typeof(short));
+    
+            var byMonthParameter = byMonth.HasValue ?
+                new ObjectParameter("byMonth", byMonth) :
+                new ObjectParameter("byMonth", typeof(byte));
+    
+            var byDayParameter = byDay.HasValue ?
+                new ObjectParameter("byDay", byDay) :
+                new ObjectParameter("byDay", typeof(byte));
+    
+            var byHourParameter = byHour.HasValue ?
+                new ObjectParameter("byHour", byHour) :
+                new ObjectParameter("byHour", typeof(byte));
+    
+            var byMinuteParameter = byMinute.HasValue ?
+                new ObjectParameter("byMinute", byMinute) :
+                new ObjectParameter("byMinute", typeof(byte));
+    
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_IMPEACHMENT_STATUS", byTypeParameter, byNationParameter, sYearParameter, byMonthParameter, byDayParameter, byHourParameter, byMinuteParameter, strUserIdParameter);
+        }
+    
+        public virtual int KING_UPDATE_NOAH_OR_EXP_EVENT(Nullable<byte> byType, Nullable<byte> byNation, Nullable<byte> byAmount, Nullable<byte> byDay, Nullable<byte> byHout, Nullable<byte> byMinute, Nullable<short> sDurationTime)
+        {
+            var byTypeParameter = byType.HasValue ?
+                new ObjectParameter("byType", byType) :
+                new ObjectParameter("byType", typeof(byte));
+    
+            var byNationParameter = byNation.HasValue ?
+                new ObjectParameter("byNation", byNation) :
+                new ObjectParameter("byNation", typeof(byte));
+    
+            var byAmountParameter = byAmount.HasValue ?
+                new ObjectParameter("byAmount", byAmount) :
+                new ObjectParameter("byAmount", typeof(byte));
+    
+            var byDayParameter = byDay.HasValue ?
+                new ObjectParameter("byDay", byDay) :
+                new ObjectParameter("byDay", typeof(byte));
+    
+            var byHoutParameter = byHout.HasValue ?
+                new ObjectParameter("byHout", byHout) :
+                new ObjectParameter("byHout", typeof(byte));
+    
+            var byMinuteParameter = byMinute.HasValue ?
+                new ObjectParameter("byMinute", byMinute) :
+                new ObjectParameter("byMinute", typeof(byte));
+    
+            var sDurationTimeParameter = sDurationTime.HasValue ?
+                new ObjectParameter("sDurationTime", sDurationTime) :
+                new ObjectParameter("sDurationTime", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KING_UPDATE_NOAH_OR_EXP_EVENT", byTypeParameter, byNationParameter, byAmountParameter, byDayParameter, byHoutParameter, byMinuteParameter, sDurationTimeParameter);
+        }
+    
+        public virtual int KNIGHTS_ALLIANCE_CREATE(Nullable<short> sMainClanID, Nullable<short> sSubClanID, Nullable<byte> byEmptyIndex)
+        {
+            var sMainClanIDParameter = sMainClanID.HasValue ?
+                new ObjectParameter("sMainClanID", sMainClanID) :
+                new ObjectParameter("sMainClanID", typeof(short));
+    
+            var sSubClanIDParameter = sSubClanID.HasValue ?
+                new ObjectParameter("sSubClanID", sSubClanID) :
+                new ObjectParameter("sSubClanID", typeof(short));
+    
+            var byEmptyIndexParameter = byEmptyIndex.HasValue ?
+                new ObjectParameter("byEmptyIndex", byEmptyIndex) :
+                new ObjectParameter("byEmptyIndex", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_ALLIANCE_CREATE", sMainClanIDParameter, sSubClanIDParameter, byEmptyIndexParameter);
+        }
+    
+        public virtual int KNIGHTS_ALLIANCE_DESTROY(Nullable<short> sMainClanID)
+        {
+            var sMainClanIDParameter = sMainClanID.HasValue ?
+                new ObjectParameter("sMainClanID", sMainClanID) :
+                new ObjectParameter("sMainClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_ALLIANCE_DESTROY", sMainClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_ALLIANCE_INSERT(Nullable<short> sMainClanID, Nullable<short> sSubClanID, Nullable<byte> byEmptyIndex)
+        {
+            var sMainClanIDParameter = sMainClanID.HasValue ?
+                new ObjectParameter("sMainClanID", sMainClanID) :
+                new ObjectParameter("sMainClanID", typeof(short));
+    
+            var sSubClanIDParameter = sSubClanID.HasValue ?
+                new ObjectParameter("sSubClanID", sSubClanID) :
+                new ObjectParameter("sSubClanID", typeof(short));
+    
+            var byEmptyIndexParameter = byEmptyIndex.HasValue ?
+                new ObjectParameter("byEmptyIndex", byEmptyIndex) :
+                new ObjectParameter("byEmptyIndex", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_ALLIANCE_INSERT", sMainClanIDParameter, sSubClanIDParameter, byEmptyIndexParameter);
+        }
+    
+        public virtual int KNIGHTS_ALLIANCE_PUNISH(Nullable<short> sMainClanID, Nullable<short> sSubClanID)
+        {
+            var sMainClanIDParameter = sMainClanID.HasValue ?
+                new ObjectParameter("sMainClanID", sMainClanID) :
+                new ObjectParameter("sMainClanID", typeof(short));
+    
+            var sSubClanIDParameter = sSubClanID.HasValue ?
+                new ObjectParameter("sSubClanID", sSubClanID) :
+                new ObjectParameter("sSubClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_ALLIANCE_PUNISH", sMainClanIDParameter, sSubClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_ALLIANCE_REMOVE(Nullable<short> sMainClanID, Nullable<short> sSubClanID)
+        {
+            var sMainClanIDParameter = sMainClanID.HasValue ?
+                new ObjectParameter("sMainClanID", sMainClanID) :
+                new ObjectParameter("sMainClanID", typeof(short));
+    
+            var sSubClanIDParameter = sSubClanID.HasValue ?
+                new ObjectParameter("sSubClanID", sSubClanID) :
+                new ObjectParameter("sSubClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_ALLIANCE_REMOVE", sMainClanIDParameter, sSubClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_DESTROY(Nullable<short> sClanID)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_DESTROY", sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_HANDOVER(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_HANDOVER", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual ObjectResult<KNIGHTS_LOAD_Result> KNIGHTS_LOAD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KNIGHTS_LOAD_Result>("KNIGHTS_LOAD");
+        }
+    
+        public virtual ObjectResult<KNIGHTS_LOAD_MEMBERS_Result> KNIGHTS_LOAD_MEMBERS(Nullable<short> knightsindex)
+        {
+            var knightsindexParameter = knightsindex.HasValue ?
+                new ObjectParameter("knightsindex", knightsindex) :
+                new ObjectParameter("knightsindex", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KNIGHTS_LOAD_MEMBERS_Result>("KNIGHTS_LOAD_MEMBERS", knightsindexParameter);
+        }
+    
+        public virtual ObjectResult<KNIGHTS_LOAD_MEMBERSDATA_Result> KNIGHTS_LOAD_MEMBERSDATA()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KNIGHTS_LOAD_MEMBERSDATA_Result>("KNIGHTS_LOAD_MEMBERSDATA");
+        }
+    
+        public virtual int KNIGHTS_MEMBER_ADMIT(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_ADMIT", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_CHIEF(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_CHIEF", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_DONATE(string strUserID, Nullable<short> sClanID, Nullable<int> nNationalPoints)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var nNationalPointsParameter = nNationalPoints.HasValue ?
+                new ObjectParameter("nNationalPoints", nNationalPoints) :
+                new ObjectParameter("nNationalPoints", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_DONATE", strUserIDParameter, sClanIDParameter, nNationalPointsParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_JOIN(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_JOIN", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_LEAVE(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_LEAVE", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_OFFICER(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_OFFICER", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_PUNISH(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_PUNISH", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_REFUNDNP(string strCharID, Nullable<int> nAmount)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nAmountParameter = nAmount.HasValue ?
+                new ObjectParameter("nAmount", nAmount) :
+                new ObjectParameter("nAmount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_REFUNDNP", strCharIDParameter, nAmountParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_REJECT(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_REJECT", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_REMOVE(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_REMOVE", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_MEMBER_VICECHIEF(string strCharID, Nullable<short> sClanID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_MEMBER_VICECHIEF", strCharIDParameter, sClanIDParameter);
+        }
+    
+        public virtual int KNIGHTS_POINT_METHOD_CHANGE(Nullable<short> sClanID, Nullable<byte> bDomination)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var bDominationParameter = bDomination.HasValue ?
+                new ObjectParameter("bDomination", bDomination) :
+                new ObjectParameter("bDomination", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_POINT_METHOD_CHANGE", sClanIDParameter, bDominationParameter);
+        }
+    
+        public virtual int KNIGHTS_SAVE(Nullable<short> sClanID, Nullable<byte> bFlag, Nullable<int> nNationalPoints)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var bFlagParameter = bFlag.HasValue ?
+                new ObjectParameter("bFlag", bFlag) :
+                new ObjectParameter("bFlag", typeof(byte));
+    
+            var nNationalPointsParameter = nNationalPoints.HasValue ?
+                new ObjectParameter("nNationalPoints", nNationalPoints) :
+                new ObjectParameter("nNationalPoints", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_SAVE", sClanIDParameter, bFlagParameter, nNationalPointsParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_CAPE(Nullable<short> sClanID, Nullable<short> sCapeC, Nullable<short> sCapeR, Nullable<short> sCapeG, Nullable<short> sCapeB)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var sCapeCParameter = sCapeC.HasValue ?
+                new ObjectParameter("sCapeC", sCapeC) :
+                new ObjectParameter("sCapeC", typeof(short));
+    
+            var sCapeRParameter = sCapeR.HasValue ?
+                new ObjectParameter("sCapeR", sCapeR) :
+                new ObjectParameter("sCapeR", typeof(short));
+    
+            var sCapeGParameter = sCapeG.HasValue ?
+                new ObjectParameter("sCapeG", sCapeG) :
+                new ObjectParameter("sCapeG", typeof(short));
+    
+            var sCapeBParameter = sCapeB.HasValue ?
+                new ObjectParameter("sCapeB", sCapeB) :
+                new ObjectParameter("sCapeB", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_CAPE", sClanIDParameter, sCapeCParameter, sCapeRParameter, sCapeGParameter, sCapeBParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_CLANNOTICE(Nullable<short> sClanID, string strClanNotice)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var strClanNoticeParameter = strClanNotice != null ?
+                new ObjectParameter("strClanNotice", strClanNotice) :
+                new ObjectParameter("strClanNotice", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_CLANNOTICE", sClanIDParameter, strClanNoticeParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_FUND(Nullable<short> sCLanID, Nullable<int> clanFund)
+        {
+            var sCLanIDParameter = sCLanID.HasValue ?
+                new ObjectParameter("sCLanID", sCLanID) :
+                new ObjectParameter("sCLanID", typeof(short));
+    
+            var clanFundParameter = clanFund.HasValue ?
+                new ObjectParameter("clanFund", clanFund) :
+                new ObjectParameter("clanFund", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_FUND", sCLanIDParameter, clanFundParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_GRADE(Nullable<short> sCLanID, Nullable<short> sCape, Nullable<byte> bFlag)
+        {
+            var sCLanIDParameter = sCLanID.HasValue ?
+                new ObjectParameter("sCLanID", sCLanID) :
+                new ObjectParameter("sCLanID", typeof(short));
+    
+            var sCapeParameter = sCape.HasValue ?
+                new ObjectParameter("sCape", sCape) :
+                new ObjectParameter("sCape", typeof(short));
+    
+            var bFlagParameter = bFlag.HasValue ?
+                new ObjectParameter("bFlag", bFlag) :
+                new ObjectParameter("bFlag", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_GRADE", sCLanIDParameter, sCapeParameter, bFlagParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_MARK(Nullable<short> sClanID, byte[] knightMark, Nullable<short> markLen)
+        {
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var knightMarkParameter = knightMark != null ?
+                new ObjectParameter("KnightMark", knightMark) :
+                new ObjectParameter("KnightMark", typeof(byte[]));
+    
+            var markLenParameter = markLen.HasValue ?
+                new ObjectParameter("MarkLen", markLen) :
+                new ObjectParameter("MarkLen", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_MARK", sClanIDParameter, knightMarkParameter, markLenParameter);
+        }
+    
+        public virtual int KNIGHTS_UPDATE_USERMEMO(string strUserID, string strMemo)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            var strMemoParameter = strMemo != null ?
+                new ObjectParameter("strMemo", strMemo) :
+                new ObjectParameter("strMemo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KNIGHTS_UPDATE_USERMEMO", strUserIDParameter, strMemoParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_CHAR_INFO_Result> LOAD_CHAR_INFO(string strCharID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_CHAR_INFO_Result>("LOAD_CHAR_INFO", strCharIDParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_DRAKI_RANK_Result> LOAD_DRAKI_RANK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_DRAKI_RANK_Result>("LOAD_DRAKI_RANK");
+        }
+    
+        public virtual ObjectResult<LOAD_DRAKI_RANK_TOP_Result> LOAD_DRAKI_RANK_TOP(Nullable<short> nation, Nullable<short> baseClass)
+        {
+            var nationParameter = nation.HasValue ?
+                new ObjectParameter("Nation", nation) :
+                new ObjectParameter("Nation", typeof(short));
+    
+            var baseClassParameter = baseClass.HasValue ?
+                new ObjectParameter("BaseClass", baseClass) :
+                new ObjectParameter("BaseClass", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_DRAKI_RANK_TOP_Result>("LOAD_DRAKI_RANK_TOP", nationParameter, baseClassParameter);
+        }
+    
+        public virtual int LOAD_PET_DATA(Nullable<long> petSerial)
+        {
+            var petSerialParameter = petSerial.HasValue ?
+                new ObjectParameter("PetSerial", petSerial) :
+                new ObjectParameter("PetSerial", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LOAD_PET_DATA", petSerialParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_PREMIUM_SERVICE_USER_Result> LOAD_PREMIUM_SERVICE_USER(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_PREMIUM_SERVICE_USER_Result>("LOAD_PREMIUM_SERVICE_USER", strAccountIDParameter);
+        }
+    
+        public virtual int LOAD_PREMIUM_SERVICE_USER_OLD(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LOAD_PREMIUM_SERVICE_USER_OLD", strAccountIDParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_RENTAL_DATA_Result> LOAD_RENTAL_DATA(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_RENTAL_DATA_Result>("LOAD_RENTAL_DATA", strAccountIDParameter);
+        }
+    
+        public virtual int LOAD_SAVED_MAGIC(string strUserId)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LOAD_SAVED_MAGIC", strUserIdParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_SEALED_ITEM_DATA_Result> LOAD_SEALED_ITEM_DATA(string strAccountID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_SEALED_ITEM_DATA_Result>("LOAD_SEALED_ITEM_DATA", strAccountIDParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_USER_DATA_Result> LOAD_USER_DATA(string strAccountID, string strCharID)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_USER_DATA_Result>("LOAD_USER_DATA", strAccountIDParameter, strCharIDParameter);
+        }
+    
+        public virtual ObjectResult<LOAD_WEB_ITEMMALL_Result> LOAD_WEB_ITEMMALL(string strCharID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LOAD_WEB_ITEMMALL_Result>("LOAD_WEB_ITEMMALL", strCharIDParameter);
+        }
+    
+        public virtual int MAIL_BOX_CHECK_COUNT(string strRecipientID)
+        {
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_BOX_CHECK_COUNT", strRecipientIDParameter);
+        }
+    
+        public virtual int MAIL_BOX_DELETE_LETTER(string strRecipientID, Nullable<int> nLetterID)
+        {
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            var nLetterIDParameter = nLetterID.HasValue ?
+                new ObjectParameter("nLetterID", nLetterID) :
+                new ObjectParameter("nLetterID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_BOX_DELETE_LETTER", strRecipientIDParameter, nLetterIDParameter);
+        }
+    
+        public virtual ObjectResult<MAIL_BOX_GET_ITEM_Result> MAIL_BOX_GET_ITEM(string strRecipientID, Nullable<int> nLetterID)
+        {
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            var nLetterIDParameter = nLetterID.HasValue ?
+                new ObjectParameter("nLetterID", nLetterID) :
+                new ObjectParameter("nLetterID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MAIL_BOX_GET_ITEM_Result>("MAIL_BOX_GET_ITEM", strRecipientIDParameter, nLetterIDParameter);
+        }
+    
+        public virtual ObjectResult<string> MAIL_BOX_READ(string strRecipientID, Nullable<int> nLetterID)
+        {
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            var nLetterIDParameter = nLetterID.HasValue ?
+                new ObjectParameter("nLetterID", nLetterID) :
+                new ObjectParameter("nLetterID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("MAIL_BOX_READ", strRecipientIDParameter, nLetterIDParameter);
+        }
+    
+        public virtual ObjectResult<MAIL_BOX_REQUEST_LIST_Result> MAIL_BOX_REQUEST_LIST(string strRecipientID, Nullable<byte> bNewLettersOnly)
+        {
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            var bNewLettersOnlyParameter = bNewLettersOnly.HasValue ?
+                new ObjectParameter("bNewLettersOnly", bNewLettersOnly) :
+                new ObjectParameter("bNewLettersOnly", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MAIL_BOX_REQUEST_LIST_Result>("MAIL_BOX_REQUEST_LIST", strRecipientIDParameter, bNewLettersOnlyParameter);
+        }
+    
+        public virtual int MAIL_BOX_SEND(string strSenderID, string strRecipientID, string strSubject, string strMessage, Nullable<byte> bType, Nullable<int> nItemID, Nullable<short> sCount, Nullable<short> sDurability, Nullable<long> nSerialNum, Nullable<int> nCoins)
+        {
+            var strSenderIDParameter = strSenderID != null ?
+                new ObjectParameter("strSenderID", strSenderID) :
+                new ObjectParameter("strSenderID", typeof(string));
+    
+            var strRecipientIDParameter = strRecipientID != null ?
+                new ObjectParameter("strRecipientID", strRecipientID) :
+                new ObjectParameter("strRecipientID", typeof(string));
+    
+            var strSubjectParameter = strSubject != null ?
+                new ObjectParameter("strSubject", strSubject) :
+                new ObjectParameter("strSubject", typeof(string));
+    
+            var strMessageParameter = strMessage != null ?
+                new ObjectParameter("strMessage", strMessage) :
+                new ObjectParameter("strMessage", typeof(string));
+    
+            var bTypeParameter = bType.HasValue ?
+                new ObjectParameter("bType", bType) :
+                new ObjectParameter("bType", typeof(byte));
+    
+            var nItemIDParameter = nItemID.HasValue ?
+                new ObjectParameter("nItemID", nItemID) :
+                new ObjectParameter("nItemID", typeof(int));
+    
+            var sCountParameter = sCount.HasValue ?
+                new ObjectParameter("sCount", sCount) :
+                new ObjectParameter("sCount", typeof(short));
+    
+            var sDurabilityParameter = sDurability.HasValue ?
+                new ObjectParameter("sDurability", sDurability) :
+                new ObjectParameter("sDurability", typeof(short));
+    
+            var nSerialNumParameter = nSerialNum.HasValue ?
+                new ObjectParameter("nSerialNum", nSerialNum) :
+                new ObjectParameter("nSerialNum", typeof(long));
+    
+            var nCoinsParameter = nCoins.HasValue ?
+                new ObjectParameter("nCoins", nCoins) :
+                new ObjectParameter("nCoins", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_BOX_SEND", strSenderIDParameter, strRecipientIDParameter, strSubjectParameter, strMessageParameter, bTypeParameter, nItemIDParameter, sCountParameter, sDurabilityParameter, nSerialNumParameter, nCoinsParameter);
+        }
+    
+        public virtual int MAIL_CHECK_NEWLETTER(string strUserId, Nullable<byte> status, ObjectParameter nRet)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_CHECK_NEWLETTER", strUserIdParameter, statusParameter, nRet);
+        }
+    
+        public virtual int MAIL_CHECK_USER(string strUserID, ObjectParameter nRet)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_CHECK_USER", strUserIDParameter, nRet);
+        }
+    
+        public virtual int MAIL_DELETE_OLDLETTER(string strUserId, Nullable<int> iD, ObjectParameter nRet)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MAIL_DELETE_OLDLETTER", strUserIdParameter, iDParameter, nRet);
+        }
+    
+        public virtual ObjectResult<MAIL_OPEN_NEWLETTER_Result> MAIL_OPEN_NEWLETTER(string strUserId, Nullable<int> iD)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MAIL_OPEN_NEWLETTER_Result>("MAIL_OPEN_NEWLETTER", strUserIdParameter, iDParameter);
+        }
+    
+        public virtual ObjectResult<MAIL_TAKE_LETTERITEM_Result> MAIL_TAKE_LETTERITEM(string strUserId, Nullable<int> iD)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("strUserId", strUserId) :
+                new ObjectParameter("strUserId", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MAIL_TAKE_LETTERITEM_Result>("MAIL_TAKE_LETTERITEM", strUserIdParameter, iDParameter);
+        }
+    
+        public virtual int NATION_SELECT(string strAccountID, Nullable<byte> bNation)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var bNationParameter = bNation.HasValue ?
+                new ObjectParameter("bNation", bNation) :
+                new ObjectParameter("bNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NATION_SELECT", strAccountIDParameter, bNationParameter);
+        }
+    
+        public virtual int NATION_TRANSFER_SAVEUSER(string accountID, string charID, Nullable<byte> bIndex, Nullable<byte> newRace, Nullable<byte> newClass, Nullable<byte> newNation, Nullable<byte> newFace, Nullable<int> iNewHair)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var bIndexParameter = bIndex.HasValue ?
+                new ObjectParameter("bIndex", bIndex) :
+                new ObjectParameter("bIndex", typeof(byte));
+    
+            var newRaceParameter = newRace.HasValue ?
+                new ObjectParameter("newRace", newRace) :
+                new ObjectParameter("newRace", typeof(byte));
+    
+            var newClassParameter = newClass.HasValue ?
+                new ObjectParameter("newClass", newClass) :
+                new ObjectParameter("newClass", typeof(byte));
+    
+            var newNationParameter = newNation.HasValue ?
+                new ObjectParameter("newNation", newNation) :
+                new ObjectParameter("newNation", typeof(byte));
+    
+            var newFaceParameter = newFace.HasValue ?
+                new ObjectParameter("newFace", newFace) :
+                new ObjectParameter("newFace", typeof(byte));
+    
+            var iNewHairParameter = iNewHair.HasValue ?
+                new ObjectParameter("iNewHair", iNewHair) :
+                new ObjectParameter("iNewHair", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NATION_TRANSFER_SAVEUSER", accountIDParameter, charIDParameter, bIndexParameter, newRaceParameter, newClassParameter, newNationParameter, newFaceParameter, iNewHairParameter);
+        }
+    
+        public virtual int PET_CREATE_OLD(string strCharID, string strPetName, Nullable<long> serial, Nullable<short> exp, Nullable<byte> level, Nullable<short> satisfaction, Nullable<int> itemID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var strPetNameParameter = strPetName != null ?
+                new ObjectParameter("strPetName", strPetName) :
+                new ObjectParameter("strPetName", typeof(string));
+    
+            var serialParameter = serial.HasValue ?
+                new ObjectParameter("Serial", serial) :
+                new ObjectParameter("Serial", typeof(long));
+    
+            var expParameter = exp.HasValue ?
+                new ObjectParameter("Exp", exp) :
+                new ObjectParameter("Exp", typeof(short));
+    
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("Level", level) :
+                new ObjectParameter("Level", typeof(byte));
+    
+            var satisfactionParameter = satisfaction.HasValue ?
+                new ObjectParameter("Satisfaction", satisfaction) :
+                new ObjectParameter("Satisfaction", typeof(short));
+    
+            var itemIDParameter = itemID.HasValue ?
+                new ObjectParameter("ItemID", itemID) :
+                new ObjectParameter("ItemID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PET_CREATE_OLD", strCharIDParameter, strPetNameParameter, serialParameter, expParameter, levelParameter, satisfactionParameter, itemIDParameter);
+        }
+    
+        public virtual int PET_UPDATE_OLD(string strCharID, string strPetName, Nullable<short> exp, Nullable<byte> level, Nullable<short> satisfaction)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var strPetNameParameter = strPetName != null ?
+                new ObjectParameter("strPetName", strPetName) :
+                new ObjectParameter("strPetName", typeof(string));
+    
+            var expParameter = exp.HasValue ?
+                new ObjectParameter("Exp", exp) :
+                new ObjectParameter("Exp", typeof(short));
+    
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("Level", level) :
+                new ObjectParameter("Level", typeof(byte));
+    
+            var satisfactionParameter = satisfaction.HasValue ?
+                new ObjectParameter("Satisfaction", satisfaction) :
+                new ObjectParameter("Satisfaction", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PET_UPDATE_OLD", strCharIDParameter, strPetNameParameter, expParameter, levelParameter, satisfactionParameter);
+        }
+    
+        public virtual int RENTAL_ITEM_CANCEL(string accountID, string charID, Nullable<int> nRentalIndex, Nullable<int> nItemNumber, ObjectParameter nRet)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var nRentalIndexParameter = nRentalIndex.HasValue ?
+                new ObjectParameter("nRentalIndex", nRentalIndex) :
+                new ObjectParameter("nRentalIndex", typeof(int));
+    
+            var nItemNumberParameter = nItemNumber.HasValue ?
+                new ObjectParameter("nItemNumber", nItemNumber) :
+                new ObjectParameter("nItemNumber", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RENTAL_ITEM_CANCEL", accountIDParameter, charIDParameter, nRentalIndexParameter, nItemNumberParameter, nRet);
+        }
+    
+        public virtual int RENTAL_ITEM_DESTORY(string accountID, string charID, Nullable<int> nItemNumber, Nullable<int> nRentalIndex, Nullable<short> nDurability, ObjectParameter nRet)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var nItemNumberParameter = nItemNumber.HasValue ?
+                new ObjectParameter("nItemNumber", nItemNumber) :
+                new ObjectParameter("nItemNumber", typeof(int));
+    
+            var nRentalIndexParameter = nRentalIndex.HasValue ?
+                new ObjectParameter("nRentalIndex", nRentalIndex) :
+                new ObjectParameter("nRentalIndex", typeof(int));
+    
+            var nDurabilityParameter = nDurability.HasValue ?
+                new ObjectParameter("nDurability", nDurability) :
+                new ObjectParameter("nDurability", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RENTAL_ITEM_DESTORY", accountIDParameter, charIDParameter, nItemNumberParameter, nRentalIndexParameter, nDurabilityParameter, nRet);
+        }
+    
+        public virtual int RENTAL_ITEM_DURABILITY_UPDATE(Nullable<int> nRentalIndex, Nullable<int> nDurability)
+        {
+            var nRentalIndexParameter = nRentalIndex.HasValue ?
+                new ObjectParameter("nRentalIndex", nRentalIndex) :
+                new ObjectParameter("nRentalIndex", typeof(int));
+    
+            var nDurabilityParameter = nDurability.HasValue ?
+                new ObjectParameter("nDurability", nDurability) :
+                new ObjectParameter("nDurability", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RENTAL_ITEM_DURABILITY_UPDATE", nRentalIndexParameter, nDurabilityParameter);
+        }
+    
+        public virtual int RENTAL_ITEM_LEND(string accountID, string charID, Nullable<int> nRentalIndex, Nullable<int> nItemNumber, ObjectParameter nRet)
+        {
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var charIDParameter = charID != null ?
+                new ObjectParameter("CharID", charID) :
+                new ObjectParameter("CharID", typeof(string));
+    
+            var nRentalIndexParameter = nRentalIndex.HasValue ?
+                new ObjectParameter("nRentalIndex", nRentalIndex) :
+                new ObjectParameter("nRentalIndex", typeof(int));
+    
+            var nItemNumberParameter = nItemNumber.HasValue ?
+                new ObjectParameter("nItemNumber", nItemNumber) :
+                new ObjectParameter("nItemNumber", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RENTAL_ITEM_LEND", accountIDParameter, charIDParameter, nRentalIndexParameter, nItemNumberParameter, nRet);
+        }
+    
+        public virtual int RENTAL_ITEM_REGISTER(string charID, string accountID, Nullable<short> sRentalTime, Nullable<int> nItemID, Nullable<short> sDurability, Nullable<int> nMoney, Nullable<byte> bGameBangType, Nullable<byte> bItemType, Nullable<byte> bItemClass, Nullable<long> nSerialNumber, ObjectParameter nRet_Index, ObjectParameter nRet)
+        {
+            var charIDParameter = charID != null ?
+                new ObjectParameter("charID", charID) :
+                new ObjectParameter("charID", typeof(string));
+    
+            var accountIDParameter = accountID != null ?
+                new ObjectParameter("AccountID", accountID) :
+                new ObjectParameter("AccountID", typeof(string));
+    
+            var sRentalTimeParameter = sRentalTime.HasValue ?
+                new ObjectParameter("sRentalTime", sRentalTime) :
+                new ObjectParameter("sRentalTime", typeof(short));
+    
+            var nItemIDParameter = nItemID.HasValue ?
+                new ObjectParameter("nItemID", nItemID) :
+                new ObjectParameter("nItemID", typeof(int));
+    
+            var sDurabilityParameter = sDurability.HasValue ?
+                new ObjectParameter("sDurability", sDurability) :
+                new ObjectParameter("sDurability", typeof(short));
+    
+            var nMoneyParameter = nMoney.HasValue ?
+                new ObjectParameter("nMoney", nMoney) :
+                new ObjectParameter("nMoney", typeof(int));
+    
+            var bGameBangTypeParameter = bGameBangType.HasValue ?
+                new ObjectParameter("bGameBangType", bGameBangType) :
+                new ObjectParameter("bGameBangType", typeof(byte));
+    
+            var bItemTypeParameter = bItemType.HasValue ?
+                new ObjectParameter("bItemType", bItemType) :
+                new ObjectParameter("bItemType", typeof(byte));
+    
+            var bItemClassParameter = bItemClass.HasValue ?
+                new ObjectParameter("bItemClass", bItemClass) :
+                new ObjectParameter("bItemClass", typeof(byte));
+    
+            var nSerialNumberParameter = nSerialNumber.HasValue ?
+                new ObjectParameter("nSerialNumber", nSerialNumber) :
+                new ObjectParameter("nSerialNumber", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RENTAL_ITEM_REGISTER", charIDParameter, accountIDParameter, sRentalTimeParameter, nItemIDParameter, sDurabilityParameter, nMoneyParameter, bGameBangTypeParameter, bItemTypeParameter, bItemClassParameter, nSerialNumberParameter, nRet_Index, nRet);
+        }
+    
+        public virtual int RESET_DATABASE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RESET_DATABASE");
+        }
+    
+        public virtual int RESET_LOYALTY_MONTHLY()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RESET_LOYALTY_MONTHLY");
+        }
+    
+        public virtual int RunDupeCheck(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RunDupeCheck", strUserIDParameter);
+        }
+    
+        public virtual int SAVE_PREMIUM_SERVICE_USER(string strAccountID, Nullable<byte> bInUse, Nullable<byte> pType1, Nullable<int> pTime1, Nullable<byte> pType2, Nullable<int> pTime2, Nullable<byte> pType3, Nullable<int> pTime3, Nullable<byte> pType4, Nullable<int> pTime4, Nullable<byte> pType5, Nullable<int> pTime5, Nullable<byte> pType6, Nullable<int> pTime6)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var bInUseParameter = bInUse.HasValue ?
+                new ObjectParameter("bInUse", bInUse) :
+                new ObjectParameter("bInUse", typeof(byte));
+    
+            var pType1Parameter = pType1.HasValue ?
+                new ObjectParameter("pType1", pType1) :
+                new ObjectParameter("pType1", typeof(byte));
+    
+            var pTime1Parameter = pTime1.HasValue ?
+                new ObjectParameter("pTime1", pTime1) :
+                new ObjectParameter("pTime1", typeof(int));
+    
+            var pType2Parameter = pType2.HasValue ?
+                new ObjectParameter("pType2", pType2) :
+                new ObjectParameter("pType2", typeof(byte));
+    
+            var pTime2Parameter = pTime2.HasValue ?
+                new ObjectParameter("pTime2", pTime2) :
+                new ObjectParameter("pTime2", typeof(int));
+    
+            var pType3Parameter = pType3.HasValue ?
+                new ObjectParameter("pType3", pType3) :
+                new ObjectParameter("pType3", typeof(byte));
+    
+            var pTime3Parameter = pTime3.HasValue ?
+                new ObjectParameter("pTime3", pTime3) :
+                new ObjectParameter("pTime3", typeof(int));
+    
+            var pType4Parameter = pType4.HasValue ?
+                new ObjectParameter("pType4", pType4) :
+                new ObjectParameter("pType4", typeof(byte));
+    
+            var pTime4Parameter = pTime4.HasValue ?
+                new ObjectParameter("pTime4", pTime4) :
+                new ObjectParameter("pTime4", typeof(int));
+    
+            var pType5Parameter = pType5.HasValue ?
+                new ObjectParameter("pType5", pType5) :
+                new ObjectParameter("pType5", typeof(byte));
+    
+            var pTime5Parameter = pTime5.HasValue ?
+                new ObjectParameter("pTime5", pTime5) :
+                new ObjectParameter("pTime5", typeof(int));
+    
+            var pType6Parameter = pType6.HasValue ?
+                new ObjectParameter("pType6", pType6) :
+                new ObjectParameter("pType6", typeof(byte));
+    
+            var pTime6Parameter = pTime6.HasValue ?
+                new ObjectParameter("pTime6", pTime6) :
+                new ObjectParameter("pTime6", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SAVE_PREMIUM_SERVICE_USER", strAccountIDParameter, bInUseParameter, pType1Parameter, pTime1Parameter, pType2Parameter, pTime2Parameter, pType3Parameter, pTime3Parameter, pType4Parameter, pTime4Parameter, pType5Parameter, pTime5Parameter, pType6Parameter, pTime6Parameter);
+        }
+    
+        public virtual int SET_LOGIN_INFO_ESKI(string strAccountID, string strCharID, Nullable<short> nServerno, string strServerIP, string strClientIP, string nation, Nullable<byte> bInit)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nServernoParameter = nServerno.HasValue ?
+                new ObjectParameter("nServerno", nServerno) :
+                new ObjectParameter("nServerno", typeof(short));
+    
+            var strServerIPParameter = strServerIP != null ?
+                new ObjectParameter("strServerIP", strServerIP) :
+                new ObjectParameter("strServerIP", typeof(string));
+    
+            var strClientIPParameter = strClientIP != null ?
+                new ObjectParameter("strClientIP", strClientIP) :
+                new ObjectParameter("strClientIP", typeof(string));
+    
+            var nationParameter = nation != null ?
+                new ObjectParameter("nation", nation) :
+                new ObjectParameter("nation", typeof(string));
+    
+            var bInitParameter = bInit.HasValue ?
+                new ObjectParameter("bInit", bInit) :
+                new ObjectParameter("bInit", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SET_LOGIN_INFO_ESKI", strAccountIDParameter, strCharIDParameter, nServernoParameter, strServerIPParameter, strClientIPParameter, nationParameter, bInitParameter);
+        }
+    
+        public virtual ObjectResult<SKILLSHORTCUT_LOAD_Result> SKILLSHORTCUT_LOAD(string strCharID)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SKILLSHORTCUT_LOAD_Result>("SKILLSHORTCUT_LOAD", strCharIDParameter);
+        }
+    
+        public virtual ObjectResult<string> SKILLSHORTCUT_SAVE(string strCharID, Nullable<short> nCount, byte[] strSkillData)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nCountParameter = nCount.HasValue ?
+                new ObjectParameter("nCount", nCount) :
+                new ObjectParameter("nCount", typeof(short));
+    
+            var strSkillDataParameter = strSkillData != null ?
+                new ObjectParameter("strSkillData", strSkillData) :
+                new ObjectParameter("strSkillData", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SKILLSHORTCUT_SAVE", strCharIDParameter, nCountParameter, strSkillDataParameter);
+        }
+    
+        public virtual int UPDATE_DRAKI_RANK(string strCharID, Nullable<int> drakiTimer, Nullable<int> stage, Nullable<byte> nation, Nullable<byte> baseClass)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var drakiTimerParameter = drakiTimer.HasValue ?
+                new ObjectParameter("DrakiTimer", drakiTimer) :
+                new ObjectParameter("DrakiTimer", typeof(int));
+    
+            var stageParameter = stage.HasValue ?
+                new ObjectParameter("Stage", stage) :
+                new ObjectParameter("Stage", typeof(int));
+    
+            var nationParameter = nation.HasValue ?
+                new ObjectParameter("Nation", nation) :
+                new ObjectParameter("Nation", typeof(byte));
+    
+            var baseClassParameter = baseClass.HasValue ?
+                new ObjectParameter("BaseClass", baseClass) :
+                new ObjectParameter("BaseClass", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_DRAKI_RANK", strCharIDParameter, drakiTimerParameter, stageParameter, nationParameter, baseClassParameter);
+        }
+    
+        public virtual int UPDATE_KNIGHTS_RATING()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_KNIGHTS_RATING");
+        }
+    
+        public virtual int UPDATE_PET_DATA(Nullable<byte> @class, Nullable<byte> level, Nullable<short> exp, Nullable<int> hp, Nullable<int> mp, Nullable<short> satisfaction, Nullable<long> serial, byte[] strItem, byte[] strItemEx, byte[] strSerial)
+        {
+            var classParameter = @class.HasValue ?
+                new ObjectParameter("Class", @class) :
+                new ObjectParameter("Class", typeof(byte));
+    
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("Level", level) :
+                new ObjectParameter("Level", typeof(byte));
+    
+            var expParameter = exp.HasValue ?
+                new ObjectParameter("Exp", exp) :
+                new ObjectParameter("Exp", typeof(short));
+    
+            var hpParameter = hp.HasValue ?
+                new ObjectParameter("Hp", hp) :
+                new ObjectParameter("Hp", typeof(int));
+    
+            var mpParameter = mp.HasValue ?
+                new ObjectParameter("Mp", mp) :
+                new ObjectParameter("Mp", typeof(int));
+    
+            var satisfactionParameter = satisfaction.HasValue ?
+                new ObjectParameter("Satisfaction", satisfaction) :
+                new ObjectParameter("Satisfaction", typeof(short));
+    
+            var serialParameter = serial.HasValue ?
+                new ObjectParameter("Serial", serial) :
+                new ObjectParameter("Serial", typeof(long));
+    
+            var strItemParameter = strItem != null ?
+                new ObjectParameter("strItem", strItem) :
+                new ObjectParameter("strItem", typeof(byte[]));
+    
+            var strItemExParameter = strItemEx != null ?
+                new ObjectParameter("strItemEx", strItemEx) :
+                new ObjectParameter("strItemEx", typeof(byte[]));
+    
+            var strSerialParameter = strSerial != null ?
+                new ObjectParameter("strSerial", strSerial) :
+                new ObjectParameter("strSerial", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_PET_DATA", classParameter, levelParameter, expParameter, hpParameter, mpParameter, satisfactionParameter, serialParameter, strItemParameter, strItemExParameter, strSerialParameter);
+        }
+    
+        public virtual ObjectResult<UPDATE_RANKS_Result> UPDATE_RANKS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UPDATE_RANKS_Result>("UPDATE_RANKS");
+        }
+    
+        public virtual int UPDATE_SAVED_MAGIC(string strCharID, Nullable<int> skillID1, Nullable<int> nExpiry1, Nullable<int> skillID2, Nullable<int> nExpiry2, Nullable<int> skillID3, Nullable<int> nExpiry3, Nullable<int> skillID4, Nullable<int> nExpiry4, Nullable<int> skillID5, Nullable<int> nExpiry5, Nullable<int> skillID6, Nullable<int> nExpiry6, Nullable<int> skillID7, Nullable<int> nExpiry7, Nullable<int> skillID8, Nullable<int> nExpiry8, Nullable<int> skillID9, Nullable<int> nExpiry9, Nullable<int> skillID10, Nullable<int> nExpiry10)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var skillID1Parameter = skillID1.HasValue ?
+                new ObjectParameter("SkillID1", skillID1) :
+                new ObjectParameter("SkillID1", typeof(int));
+    
+            var nExpiry1Parameter = nExpiry1.HasValue ?
+                new ObjectParameter("nExpiry1", nExpiry1) :
+                new ObjectParameter("nExpiry1", typeof(int));
+    
+            var skillID2Parameter = skillID2.HasValue ?
+                new ObjectParameter("SkillID2", skillID2) :
+                new ObjectParameter("SkillID2", typeof(int));
+    
+            var nExpiry2Parameter = nExpiry2.HasValue ?
+                new ObjectParameter("nExpiry2", nExpiry2) :
+                new ObjectParameter("nExpiry2", typeof(int));
+    
+            var skillID3Parameter = skillID3.HasValue ?
+                new ObjectParameter("SkillID3", skillID3) :
+                new ObjectParameter("SkillID3", typeof(int));
+    
+            var nExpiry3Parameter = nExpiry3.HasValue ?
+                new ObjectParameter("nExpiry3", nExpiry3) :
+                new ObjectParameter("nExpiry3", typeof(int));
+    
+            var skillID4Parameter = skillID4.HasValue ?
+                new ObjectParameter("SkillID4", skillID4) :
+                new ObjectParameter("SkillID4", typeof(int));
+    
+            var nExpiry4Parameter = nExpiry4.HasValue ?
+                new ObjectParameter("nExpiry4", nExpiry4) :
+                new ObjectParameter("nExpiry4", typeof(int));
+    
+            var skillID5Parameter = skillID5.HasValue ?
+                new ObjectParameter("SkillID5", skillID5) :
+                new ObjectParameter("SkillID5", typeof(int));
+    
+            var nExpiry5Parameter = nExpiry5.HasValue ?
+                new ObjectParameter("nExpiry5", nExpiry5) :
+                new ObjectParameter("nExpiry5", typeof(int));
+    
+            var skillID6Parameter = skillID6.HasValue ?
+                new ObjectParameter("SkillID6", skillID6) :
+                new ObjectParameter("SkillID6", typeof(int));
+    
+            var nExpiry6Parameter = nExpiry6.HasValue ?
+                new ObjectParameter("nExpiry6", nExpiry6) :
+                new ObjectParameter("nExpiry6", typeof(int));
+    
+            var skillID7Parameter = skillID7.HasValue ?
+                new ObjectParameter("SkillID7", skillID7) :
+                new ObjectParameter("SkillID7", typeof(int));
+    
+            var nExpiry7Parameter = nExpiry7.HasValue ?
+                new ObjectParameter("nExpiry7", nExpiry7) :
+                new ObjectParameter("nExpiry7", typeof(int));
+    
+            var skillID8Parameter = skillID8.HasValue ?
+                new ObjectParameter("SkillID8", skillID8) :
+                new ObjectParameter("SkillID8", typeof(int));
+    
+            var nExpiry8Parameter = nExpiry8.HasValue ?
+                new ObjectParameter("nExpiry8", nExpiry8) :
+                new ObjectParameter("nExpiry8", typeof(int));
+    
+            var skillID9Parameter = skillID9.HasValue ?
+                new ObjectParameter("SkillID9", skillID9) :
+                new ObjectParameter("SkillID9", typeof(int));
+    
+            var nExpiry9Parameter = nExpiry9.HasValue ?
+                new ObjectParameter("nExpiry9", nExpiry9) :
+                new ObjectParameter("nExpiry9", typeof(int));
+    
+            var skillID10Parameter = skillID10.HasValue ?
+                new ObjectParameter("SkillID10", skillID10) :
+                new ObjectParameter("SkillID10", typeof(int));
+    
+            var nExpiry10Parameter = nExpiry10.HasValue ?
+                new ObjectParameter("nExpiry10", nExpiry10) :
+                new ObjectParameter("nExpiry10", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_SAVED_MAGIC", strCharIDParameter, skillID1Parameter, nExpiry1Parameter, skillID2Parameter, nExpiry2Parameter, skillID3Parameter, nExpiry3Parameter, skillID4Parameter, nExpiry4Parameter, skillID5Parameter, nExpiry5Parameter, skillID6Parameter, nExpiry6Parameter, skillID7Parameter, nExpiry7Parameter, skillID8Parameter, nExpiry8Parameter, skillID9Parameter, nExpiry9Parameter, skillID10Parameter, nExpiry10Parameter);
+        }
+    
+        public virtual int UPDATE_SIEGE(Nullable<short> m_sCastleIndex, Nullable<short> m_sMasterKnights, Nullable<short> m_bySiegeType, Nullable<short> m_byWarDay, Nullable<short> m_byWarTime, Nullable<short> m_byWarMinute)
+        {
+            var m_sCastleIndexParameter = m_sCastleIndex.HasValue ?
+                new ObjectParameter("m_sCastleIndex", m_sCastleIndex) :
+                new ObjectParameter("m_sCastleIndex", typeof(short));
+    
+            var m_sMasterKnightsParameter = m_sMasterKnights.HasValue ?
+                new ObjectParameter("m_sMasterKnights", m_sMasterKnights) :
+                new ObjectParameter("m_sMasterKnights", typeof(short));
+    
+            var m_bySiegeTypeParameter = m_bySiegeType.HasValue ?
+                new ObjectParameter("m_bySiegeType", m_bySiegeType) :
+                new ObjectParameter("m_bySiegeType", typeof(short));
+    
+            var m_byWarDayParameter = m_byWarDay.HasValue ?
+                new ObjectParameter("m_byWarDay", m_byWarDay) :
+                new ObjectParameter("m_byWarDay", typeof(short));
+    
+            var m_byWarTimeParameter = m_byWarTime.HasValue ?
+                new ObjectParameter("m_byWarTime", m_byWarTime) :
+                new ObjectParameter("m_byWarTime", typeof(short));
+    
+            var m_byWarMinuteParameter = m_byWarMinute.HasValue ?
+                new ObjectParameter("m_byWarMinute", m_byWarMinute) :
+                new ObjectParameter("m_byWarMinute", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_SIEGE", m_sCastleIndexParameter, m_sMasterKnightsParameter, m_bySiegeTypeParameter, m_byWarDayParameter, m_byWarTimeParameter, m_byWarMinuteParameter);
+        }
+    
+        public virtual int UPDATE_SIEGE_DATABASE(Nullable<int> nMoradonTax, Nullable<int> nDelosTax, Nullable<int> nDungeonCharge)
+        {
+            var nMoradonTaxParameter = nMoradonTax.HasValue ?
+                new ObjectParameter("nMoradonTax", nMoradonTax) :
+                new ObjectParameter("nMoradonTax", typeof(int));
+    
+            var nDelosTaxParameter = nDelosTax.HasValue ?
+                new ObjectParameter("nDelosTax", nDelosTax) :
+                new ObjectParameter("nDelosTax", typeof(int));
+    
+            var nDungeonChargeParameter = nDungeonCharge.HasValue ?
+                new ObjectParameter("nDungeonCharge", nDungeonCharge) :
+                new ObjectParameter("nDungeonCharge", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_SIEGE_DATABASE", nMoradonTaxParameter, nDelosTaxParameter, nDungeonChargeParameter);
+        }
+    
+        public virtual int UPDATE_USER_ACCOUNTNATIONDATA(string strAccountID, Nullable<byte> bNation)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var bNationParameter = bNation.HasValue ?
+                new ObjectParameter("bNation", bNation) :
+                new ObjectParameter("bNation", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_ACCOUNTNATIONDATA", strAccountIDParameter, bNationParameter);
+        }
+    
+        public virtual int UPDATE_USER_DAILY_OP(string strCharID, Nullable<byte> bType, Nullable<int> iUnixTime)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var bTypeParameter = bType.HasValue ?
+                new ObjectParameter("bType", bType) :
+                new ObjectParameter("bType", typeof(byte));
+    
+            var iUnixTimeParameter = iUnixTime.HasValue ?
+                new ObjectParameter("iUnixTime", iUnixTime) :
+                new ObjectParameter("iUnixTime", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_DAILY_OP", strCharIDParameter, bTypeParameter, iUnixTimeParameter);
+        }
+    
+        public virtual int UPDATE_USER_DATA(string strCharID, Nullable<byte> bLevel, Nullable<byte> bRebirthLevel, Nullable<long> iExp, Nullable<int> nLoyalty, Nullable<int> nMannerPoint, Nullable<int> nLoyaltyMonthly, Nullable<short> sClanID, Nullable<byte> bFame, Nullable<short> sHp, Nullable<short> sMp, Nullable<short> sSp, Nullable<byte> bStr, Nullable<byte> bSta, Nullable<byte> bDex, Nullable<byte> bIntel, Nullable<byte> bCha, Nullable<short> sPoints, byte[] strSkill, Nullable<byte> bRebStr, Nullable<byte> bRebSta, Nullable<byte> bRebDex, Nullable<byte> bRebIntel, Nullable<byte> bRebCha, Nullable<int> nCoins, Nullable<byte> bZone, Nullable<short> sBind, Nullable<int> iPosX, Nullable<int> iPosZ, Nullable<int> iPosY, Nullable<int> dwTime, byte[] strItem, byte[] strItemEx, byte[] strItemFlag, byte[] strDeletedItem, byte[] strSerial, Nullable<short> sQuestCount, byte[] strQuest, Nullable<int> sGenieRemaning, byte[] strGenieOptions, Nullable<byte> bAuthority, Nullable<int> iTimePunishment, Nullable<byte> bRace, Nullable<short> sClass, Nullable<int> iHair, Nullable<byte> bRank, Nullable<byte> bTitle, Nullable<byte> bFace, Nullable<byte> bCity, Nullable<int> lastLogin, Nullable<int> nDonatedNP, Nullable<byte> bFirstLogin, Nullable<byte> draki, Nullable<int> lastOnline, Nullable<byte> isReturnee, Nullable<int> drakiLastUpdate)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var bLevelParameter = bLevel.HasValue ?
+                new ObjectParameter("bLevel", bLevel) :
+                new ObjectParameter("bLevel", typeof(byte));
+    
+            var bRebirthLevelParameter = bRebirthLevel.HasValue ?
+                new ObjectParameter("bRebirthLevel", bRebirthLevel) :
+                new ObjectParameter("bRebirthLevel", typeof(byte));
+    
+            var iExpParameter = iExp.HasValue ?
+                new ObjectParameter("iExp", iExp) :
+                new ObjectParameter("iExp", typeof(long));
+    
+            var nLoyaltyParameter = nLoyalty.HasValue ?
+                new ObjectParameter("nLoyalty", nLoyalty) :
+                new ObjectParameter("nLoyalty", typeof(int));
+    
+            var nMannerPointParameter = nMannerPoint.HasValue ?
+                new ObjectParameter("nMannerPoint", nMannerPoint) :
+                new ObjectParameter("nMannerPoint", typeof(int));
+    
+            var nLoyaltyMonthlyParameter = nLoyaltyMonthly.HasValue ?
+                new ObjectParameter("nLoyaltyMonthly", nLoyaltyMonthly) :
+                new ObjectParameter("nLoyaltyMonthly", typeof(int));
+    
+            var sClanIDParameter = sClanID.HasValue ?
+                new ObjectParameter("sClanID", sClanID) :
+                new ObjectParameter("sClanID", typeof(short));
+    
+            var bFameParameter = bFame.HasValue ?
+                new ObjectParameter("bFame", bFame) :
+                new ObjectParameter("bFame", typeof(byte));
+    
+            var sHpParameter = sHp.HasValue ?
+                new ObjectParameter("sHp", sHp) :
+                new ObjectParameter("sHp", typeof(short));
+    
+            var sMpParameter = sMp.HasValue ?
+                new ObjectParameter("sMp", sMp) :
+                new ObjectParameter("sMp", typeof(short));
+    
+            var sSpParameter = sSp.HasValue ?
+                new ObjectParameter("sSp", sSp) :
+                new ObjectParameter("sSp", typeof(short));
+    
+            var bStrParameter = bStr.HasValue ?
+                new ObjectParameter("bStr", bStr) :
+                new ObjectParameter("bStr", typeof(byte));
+    
+            var bStaParameter = bSta.HasValue ?
+                new ObjectParameter("bSta", bSta) :
+                new ObjectParameter("bSta", typeof(byte));
+    
+            var bDexParameter = bDex.HasValue ?
+                new ObjectParameter("bDex", bDex) :
+                new ObjectParameter("bDex", typeof(byte));
+    
+            var bIntelParameter = bIntel.HasValue ?
+                new ObjectParameter("bIntel", bIntel) :
+                new ObjectParameter("bIntel", typeof(byte));
+    
+            var bChaParameter = bCha.HasValue ?
+                new ObjectParameter("bCha", bCha) :
+                new ObjectParameter("bCha", typeof(byte));
+    
+            var sPointsParameter = sPoints.HasValue ?
+                new ObjectParameter("sPoints", sPoints) :
+                new ObjectParameter("sPoints", typeof(short));
+    
+            var strSkillParameter = strSkill != null ?
+                new ObjectParameter("strSkill", strSkill) :
+                new ObjectParameter("strSkill", typeof(byte[]));
+    
+            var bRebStrParameter = bRebStr.HasValue ?
+                new ObjectParameter("bRebStr", bRebStr) :
+                new ObjectParameter("bRebStr", typeof(byte));
+    
+            var bRebStaParameter = bRebSta.HasValue ?
+                new ObjectParameter("bRebSta", bRebSta) :
+                new ObjectParameter("bRebSta", typeof(byte));
+    
+            var bRebDexParameter = bRebDex.HasValue ?
+                new ObjectParameter("bRebDex", bRebDex) :
+                new ObjectParameter("bRebDex", typeof(byte));
+    
+            var bRebIntelParameter = bRebIntel.HasValue ?
+                new ObjectParameter("bRebIntel", bRebIntel) :
+                new ObjectParameter("bRebIntel", typeof(byte));
+    
+            var bRebChaParameter = bRebCha.HasValue ?
+                new ObjectParameter("bRebCha", bRebCha) :
+                new ObjectParameter("bRebCha", typeof(byte));
+    
+            var nCoinsParameter = nCoins.HasValue ?
+                new ObjectParameter("nCoins", nCoins) :
+                new ObjectParameter("nCoins", typeof(int));
+    
+            var bZoneParameter = bZone.HasValue ?
+                new ObjectParameter("bZone", bZone) :
+                new ObjectParameter("bZone", typeof(byte));
+    
+            var sBindParameter = sBind.HasValue ?
+                new ObjectParameter("sBind", sBind) :
+                new ObjectParameter("sBind", typeof(short));
+    
+            var iPosXParameter = iPosX.HasValue ?
+                new ObjectParameter("iPosX", iPosX) :
+                new ObjectParameter("iPosX", typeof(int));
+    
+            var iPosZParameter = iPosZ.HasValue ?
+                new ObjectParameter("iPosZ", iPosZ) :
+                new ObjectParameter("iPosZ", typeof(int));
+    
+            var iPosYParameter = iPosY.HasValue ?
+                new ObjectParameter("iPosY", iPosY) :
+                new ObjectParameter("iPosY", typeof(int));
+    
+            var dwTimeParameter = dwTime.HasValue ?
+                new ObjectParameter("dwTime", dwTime) :
+                new ObjectParameter("dwTime", typeof(int));
+    
+            var strItemParameter = strItem != null ?
+                new ObjectParameter("strItem", strItem) :
+                new ObjectParameter("strItem", typeof(byte[]));
+    
+            var strItemExParameter = strItemEx != null ?
+                new ObjectParameter("strItemEx", strItemEx) :
+                new ObjectParameter("strItemEx", typeof(byte[]));
+    
+            var strItemFlagParameter = strItemFlag != null ?
+                new ObjectParameter("strItemFlag", strItemFlag) :
+                new ObjectParameter("strItemFlag", typeof(byte[]));
+    
+            var strDeletedItemParameter = strDeletedItem != null ?
+                new ObjectParameter("strDeletedItem", strDeletedItem) :
+                new ObjectParameter("strDeletedItem", typeof(byte[]));
+    
+            var strSerialParameter = strSerial != null ?
+                new ObjectParameter("strSerial", strSerial) :
+                new ObjectParameter("strSerial", typeof(byte[]));
+    
+            var sQuestCountParameter = sQuestCount.HasValue ?
+                new ObjectParameter("sQuestCount", sQuestCount) :
+                new ObjectParameter("sQuestCount", typeof(short));
+    
+            var strQuestParameter = strQuest != null ?
+                new ObjectParameter("strQuest", strQuest) :
+                new ObjectParameter("strQuest", typeof(byte[]));
+    
+            var sGenieRemaningParameter = sGenieRemaning.HasValue ?
+                new ObjectParameter("sGenieRemaning", sGenieRemaning) :
+                new ObjectParameter("sGenieRemaning", typeof(int));
+    
+            var strGenieOptionsParameter = strGenieOptions != null ?
+                new ObjectParameter("strGenieOptions", strGenieOptions) :
+                new ObjectParameter("strGenieOptions", typeof(byte[]));
+    
+            var bAuthorityParameter = bAuthority.HasValue ?
+                new ObjectParameter("bAuthority", bAuthority) :
+                new ObjectParameter("bAuthority", typeof(byte));
+    
+            var iTimePunishmentParameter = iTimePunishment.HasValue ?
+                new ObjectParameter("iTimePunishment", iTimePunishment) :
+                new ObjectParameter("iTimePunishment", typeof(int));
+    
+            var bRaceParameter = bRace.HasValue ?
+                new ObjectParameter("bRace", bRace) :
+                new ObjectParameter("bRace", typeof(byte));
+    
+            var sClassParameter = sClass.HasValue ?
+                new ObjectParameter("sClass", sClass) :
+                new ObjectParameter("sClass", typeof(short));
+    
+            var iHairParameter = iHair.HasValue ?
+                new ObjectParameter("iHair", iHair) :
+                new ObjectParameter("iHair", typeof(int));
+    
+            var bRankParameter = bRank.HasValue ?
+                new ObjectParameter("bRank", bRank) :
+                new ObjectParameter("bRank", typeof(byte));
+    
+            var bTitleParameter = bTitle.HasValue ?
+                new ObjectParameter("bTitle", bTitle) :
+                new ObjectParameter("bTitle", typeof(byte));
+    
+            var bFaceParameter = bFace.HasValue ?
+                new ObjectParameter("bFace", bFace) :
+                new ObjectParameter("bFace", typeof(byte));
+    
+            var bCityParameter = bCity.HasValue ?
+                new ObjectParameter("bCity", bCity) :
+                new ObjectParameter("bCity", typeof(byte));
+    
+            var lastLoginParameter = lastLogin.HasValue ?
+                new ObjectParameter("LastLogin", lastLogin) :
+                new ObjectParameter("LastLogin", typeof(int));
+    
+            var nDonatedNPParameter = nDonatedNP.HasValue ?
+                new ObjectParameter("nDonatedNP", nDonatedNP) :
+                new ObjectParameter("nDonatedNP", typeof(int));
+    
+            var bFirstLoginParameter = bFirstLogin.HasValue ?
+                new ObjectParameter("bFirstLogin", bFirstLogin) :
+                new ObjectParameter("bFirstLogin", typeof(byte));
+    
+            var drakiParameter = draki.HasValue ?
+                new ObjectParameter("Draki", draki) :
+                new ObjectParameter("Draki", typeof(byte));
+    
+            var lastOnlineParameter = lastOnline.HasValue ?
+                new ObjectParameter("LastOnline", lastOnline) :
+                new ObjectParameter("LastOnline", typeof(int));
+    
+            var isReturneeParameter = isReturnee.HasValue ?
+                new ObjectParameter("isReturnee", isReturnee) :
+                new ObjectParameter("isReturnee", typeof(byte));
+    
+            var drakiLastUpdateParameter = drakiLastUpdate.HasValue ?
+                new ObjectParameter("DrakiLastUpdate", drakiLastUpdate) :
+                new ObjectParameter("DrakiLastUpdate", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_DATA", strCharIDParameter, bLevelParameter, bRebirthLevelParameter, iExpParameter, nLoyaltyParameter, nMannerPointParameter, nLoyaltyMonthlyParameter, sClanIDParameter, bFameParameter, sHpParameter, sMpParameter, sSpParameter, bStrParameter, bStaParameter, bDexParameter, bIntelParameter, bChaParameter, sPointsParameter, strSkillParameter, bRebStrParameter, bRebStaParameter, bRebDexParameter, bRebIntelParameter, bRebChaParameter, nCoinsParameter, bZoneParameter, sBindParameter, iPosXParameter, iPosZParameter, iPosYParameter, dwTimeParameter, strItemParameter, strItemExParameter, strItemFlagParameter, strDeletedItemParameter, strSerialParameter, sQuestCountParameter, strQuestParameter, sGenieRemaningParameter, strGenieOptionsParameter, bAuthorityParameter, iTimePunishmentParameter, bRaceParameter, sClassParameter, iHairParameter, bRankParameter, bTitleParameter, bFaceParameter, bCityParameter, lastLoginParameter, nDonatedNPParameter, bFirstLoginParameter, drakiParameter, lastOnlineParameter, isReturneeParameter, drakiLastUpdateParameter);
+        }
+    
+        public virtual int UPDATE_USER_HDD_BANS(string strUserID, Nullable<int> status)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("StrUserID", strUserID) :
+                new ObjectParameter("StrUserID", typeof(string));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_HDD_BANS", strUserIDParameter, statusParameter);
+        }
+    
+        public virtual int UPDATE_USER_ITEMDATA(string strCharID, byte[] strItem, byte[] strSerial)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var strItemParameter = strItem != null ?
+                new ObjectParameter("strItem", strItem) :
+                new ObjectParameter("strItem", typeof(byte[]));
+    
+            var strSerialParameter = strSerial != null ?
+                new ObjectParameter("strSerial", strSerial) :
+                new ObjectParameter("strSerial", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_ITEMDATA", strCharIDParameter, strItemParameter, strSerialParameter);
+        }
+    
+        public virtual ObjectResult<UPDATE_USER_KNIGHTS_RANK_Result> UPDATE_USER_KNIGHTS_RANK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UPDATE_USER_KNIGHTS_RANK_Result>("UPDATE_USER_KNIGHTS_RANK");
+        }
+    
+        public virtual ObjectResult<UPDATE_USER_PERSONAL_RANK_Result> UPDATE_USER_PERSONAL_RANK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UPDATE_USER_PERSONAL_RANK_Result>("UPDATE_USER_PERSONAL_RANK");
+        }
+    
+        public virtual int UPDATE_USER_POINTSDATA(string strCharID, Nullable<int> nLoyalty, Nullable<int> nLoyaltyMonthly, Nullable<int> nMannerPoint)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nLoyaltyParameter = nLoyalty.HasValue ?
+                new ObjectParameter("nLoyalty", nLoyalty) :
+                new ObjectParameter("nLoyalty", typeof(int));
+    
+            var nLoyaltyMonthlyParameter = nLoyaltyMonthly.HasValue ?
+                new ObjectParameter("nLoyaltyMonthly", nLoyaltyMonthly) :
+                new ObjectParameter("nLoyaltyMonthly", typeof(int));
+    
+            var nMannerPointParameter = nMannerPoint.HasValue ?
+                new ObjectParameter("nMannerPoint", nMannerPoint) :
+                new ObjectParameter("nMannerPoint", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_POINTSDATA", strCharIDParameter, nLoyaltyParameter, nLoyaltyMonthlyParameter, nMannerPointParameter);
+        }
+    
+        public virtual int UPDATE_USER_QUESTDATA(string strCharID, Nullable<short> sQuestCount, byte[] strQuest)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sQuestCountParameter = sQuestCount.HasValue ?
+                new ObjectParameter("sQuestCount", sQuestCount) :
+                new ObjectParameter("sQuestCount", typeof(short));
+    
+            var strQuestParameter = strQuest != null ?
+                new ObjectParameter("strQuest", strQuest) :
+                new ObjectParameter("strQuest", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_QUESTDATA", strCharIDParameter, sQuestCountParameter, strQuestParameter);
+        }
+    
+        public virtual int UPDATE_USER_SKILLSTATDATA(string strCharID, Nullable<short> sHp, Nullable<short> sMp, Nullable<short> sSp, Nullable<byte> bStr, Nullable<byte> bSta, Nullable<byte> bDex, Nullable<byte> bIntel, Nullable<byte> bCha, Nullable<short> sPoints, byte[] strSkill)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var sHpParameter = sHp.HasValue ?
+                new ObjectParameter("sHp", sHp) :
+                new ObjectParameter("sHp", typeof(short));
+    
+            var sMpParameter = sMp.HasValue ?
+                new ObjectParameter("sMp", sMp) :
+                new ObjectParameter("sMp", typeof(short));
+    
+            var sSpParameter = sSp.HasValue ?
+                new ObjectParameter("sSp", sSp) :
+                new ObjectParameter("sSp", typeof(short));
+    
+            var bStrParameter = bStr.HasValue ?
+                new ObjectParameter("bStr", bStr) :
+                new ObjectParameter("bStr", typeof(byte));
+    
+            var bStaParameter = bSta.HasValue ?
+                new ObjectParameter("bSta", bSta) :
+                new ObjectParameter("bSta", typeof(byte));
+    
+            var bDexParameter = bDex.HasValue ?
+                new ObjectParameter("bDex", bDex) :
+                new ObjectParameter("bDex", typeof(byte));
+    
+            var bIntelParameter = bIntel.HasValue ?
+                new ObjectParameter("bIntel", bIntel) :
+                new ObjectParameter("bIntel", typeof(byte));
+    
+            var bChaParameter = bCha.HasValue ?
+                new ObjectParameter("bCha", bCha) :
+                new ObjectParameter("bCha", typeof(byte));
+    
+            var sPointsParameter = sPoints.HasValue ?
+                new ObjectParameter("sPoints", sPoints) :
+                new ObjectParameter("sPoints", typeof(short));
+    
+            var strSkillParameter = strSkill != null ?
+                new ObjectParameter("strSkill", strSkill) :
+                new ObjectParameter("strSkill", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_SKILLSTATDATA", strCharIDParameter, sHpParameter, sMpParameter, sSpParameter, bStrParameter, bStaParameter, bDexParameter, bIntelParameter, bChaParameter, sPointsParameter, strSkillParameter);
+        }
+    
+        public virtual int UPDATE_USER_ZONEDATA(string strCharID, Nullable<byte> bZone, Nullable<short> sBind, Nullable<int> iPosX, Nullable<int> iPosZ, Nullable<int> iPosY)
+        {
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var bZoneParameter = bZone.HasValue ?
+                new ObjectParameter("bZone", bZone) :
+                new ObjectParameter("bZone", typeof(byte));
+    
+            var sBindParameter = sBind.HasValue ?
+                new ObjectParameter("sBind", sBind) :
+                new ObjectParameter("sBind", typeof(short));
+    
+            var iPosXParameter = iPosX.HasValue ?
+                new ObjectParameter("iPosX", iPosX) :
+                new ObjectParameter("iPosX", typeof(int));
+    
+            var iPosZParameter = iPosZ.HasValue ?
+                new ObjectParameter("iPosZ", iPosZ) :
+                new ObjectParameter("iPosZ", typeof(int));
+    
+            var iPosYParameter = iPosY.HasValue ?
+                new ObjectParameter("iPosY", iPosY) :
+                new ObjectParameter("iPosY", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_USER_ZONEDATA", strCharIDParameter, bZoneParameter, sBindParameter, iPosXParameter, iPosZParameter, iPosYParameter);
+        }
+    
+        public virtual int UPDATE_WAREHOUSE(string accountid, Nullable<int> money, Nullable<int> dwTime, byte[] strItem, byte[] strSerial)
+        {
+            var accountidParameter = accountid != null ?
+                new ObjectParameter("accountid", accountid) :
+                new ObjectParameter("accountid", typeof(string));
+    
+            var moneyParameter = money.HasValue ?
+                new ObjectParameter("Money", money) :
+                new ObjectParameter("Money", typeof(int));
+    
+            var dwTimeParameter = dwTime.HasValue ?
+                new ObjectParameter("dwTime", dwTime) :
+                new ObjectParameter("dwTime", typeof(int));
+    
+            var strItemParameter = strItem != null ?
+                new ObjectParameter("strItem", strItem) :
+                new ObjectParameter("strItem", typeof(byte[]));
+    
+            var strSerialParameter = strSerial != null ?
+                new ObjectParameter("strSerial", strSerial) :
+                new ObjectParameter("strSerial", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_WAREHOUSE", accountidParameter, moneyParameter, dwTimeParameter, strItemParameter, strSerialParameter);
+        }
+    
+        public virtual int UpdateUpgrade(Nullable<int> scrollid, string arti, Nullable<short> oran)
+        {
+            var scrollidParameter = scrollid.HasValue ?
+                new ObjectParameter("scrollid", scrollid) :
+                new ObjectParameter("scrollid", typeof(int));
+    
+            var artiParameter = arti != null ?
+                new ObjectParameter("arti", arti) :
+                new ObjectParameter("arti", typeof(string));
+    
+            var oranParameter = oran.HasValue ?
+                new ObjectParameter("oran", oran) :
+                new ObjectParameter("oran", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateUpgrade", scrollidParameter, artiParameter, oranParameter);
+        }
+    
+        public virtual int USER_ITEM_SEAL(string strAccountID, string strCharID, Nullable<long> nItemSerial, Nullable<int> nItemID, Nullable<byte> bSealType)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var strCharIDParameter = strCharID != null ?
+                new ObjectParameter("strCharID", strCharID) :
+                new ObjectParameter("strCharID", typeof(string));
+    
+            var nItemSerialParameter = nItemSerial.HasValue ?
+                new ObjectParameter("nItemSerial", nItemSerial) :
+                new ObjectParameter("nItemSerial", typeof(long));
+    
+            var nItemIDParameter = nItemID.HasValue ?
+                new ObjectParameter("nItemID", nItemID) :
+                new ObjectParameter("nItemID", typeof(int));
+    
+            var bSealTypeParameter = bSealType.HasValue ?
+                new ObjectParameter("bSealType", bSealType) :
+                new ObjectParameter("bSealType", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USER_ITEM_SEAL", strAccountIDParameter, strCharIDParameter, nItemSerialParameter, nItemIDParameter, bSealTypeParameter);
+        }
+    
+        public virtual int USER_ITEM_SEAL_PASSWORD(string strAccountID, string sealPassword)
+        {
+            var strAccountIDParameter = strAccountID != null ?
+                new ObjectParameter("strAccountID", strAccountID) :
+                new ObjectParameter("strAccountID", typeof(string));
+    
+            var sealPasswordParameter = sealPassword != null ?
+                new ObjectParameter("SealPassword", sealPassword) :
+                new ObjectParameter("SealPassword", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USER_ITEM_SEAL_PASSWORD", strAccountIDParameter, sealPasswordParameter);
+        }
+    
+        public virtual ObjectResult<string> ViewSkillPoints(string strUserId)
+        {
+            var strUserIdParameter = strUserId != null ?
+                new ObjectParameter("StrUserId", strUserId) :
+                new ObjectParameter("StrUserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ViewSkillPoints", strUserIdParameter);
+        }
+    
+        public virtual int VIP_STORAGE_PASSWORD(string accountid, string password)
+        {
+            var accountidParameter = accountid != null ?
+                new ObjectParameter("accountid", accountid) :
+                new ObjectParameter("accountid", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("VIP_STORAGE_PASSWORD", accountidParameter, passwordParameter);
+        }
+    
+        public virtual int VIP_STORAGE_USE_VAULTKEY(string accountid, Nullable<int> expiration)
+        {
+            var accountidParameter = accountid != null ?
+                new ObjectParameter("accountid", accountid) :
+                new ObjectParameter("accountid", typeof(string));
+    
+            var expirationParameter = expiration.HasValue ?
+                new ObjectParameter("expiration", expiration) :
+                new ObjectParameter("expiration", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("VIP_STORAGE_USE_VAULTKEY", accountidParameter, expirationParameter);
+        }
+    
+        public virtual int yedek()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("yedek");
+        }
+    
+        public virtual ObjectResult<string> ZZZZ_BugdanKurtar(string strUserID)
+        {
+            var strUserIDParameter = strUserID != null ?
+                new ObjectParameter("strUserID", strUserID) :
+                new ObjectParameter("strUserID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ZZZZ_BugdanKurtar", strUserIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> ZZZZ_SearchItem()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ZZZZ_SearchItem");
+        }
+    
+        public virtual int ZZZZ_UPGRADE_RATES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ZZZZ_UPGRADE_RATES");
+        }
     }
 }
