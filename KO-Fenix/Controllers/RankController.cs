@@ -106,10 +106,11 @@ namespace KO_Fenix.Controllers
             var levelupexp = db.LEVEL_UP.FirstOrDefault(x => x.level == queryusr.Level);
             ViewBag.levelupexp = levelupexp.Exp;
  
-            var degerler = db.Database.ExecuteSqlCommand("Exec [ITEMLERI_BUL] @p0", id);
-            degerler.ToString();
+            db.Database.ExecuteSqlCommand("Exec [sp_ITEM_INFO] @p0", id);
 
-            return View(degerler);
+            var qery = db.USER_ITEM_INFO.Where(x => x.stacksize != 0 & x.strUserId == id).ToList();
+
+            return View(qery);
         }
 
     }

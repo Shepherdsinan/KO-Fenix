@@ -10,12 +10,21 @@
 namespace KO_Fenix.Models.Entity
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class KNIGHTS_LOAD_MEMBERS_Result
+    public partial class USER_ITEM_INFO
     {
+        public string itemnum { get; set; }
+        public Nullable<short> stacksize { get; set; }
+        public Nullable<short> durability { get; set; }
         public string strUserId { get; set; }
-        public byte Fame { get; set; }
-        public byte Level { get; set; }
-        public short Class { get; set; }
+        public Nullable<int> sira { get; set; }
+        public string itembasicname { get; set; }
+        public string extname { get; set; }
+        public int id { get; set; }
+        public string kind { get; set; }
+        public string itemtype { get; set; }
+        public string Class { get; set; }
+
     }
 }

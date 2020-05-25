@@ -5671,6 +5671,7 @@
     <Content Include="Content\js\fusioneditor.js" />
     <Content Include="Content\js\html5shiv.min.js" />
     <Content Include="Content\js\inventory.js" />
+    <Content Include="Content\js\inventorytooltip.js" />
     <Content Include="Content\js\itemsearch.js" />
     <Content Include="Content\js\jquery.dataTables.min.js" />
     <Content Include="Content\js\jquery.min.js" />
@@ -11045,9 +11046,6 @@
     <Compile Include="Models\Entity\api_paywant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\AUTHORITY_CHANGE_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\AUTONOTICE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11064,9 +11062,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\BOX_RANDOM_ITEM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\CHARACTER_SEAL_LOAD_USER_DATA_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\COEFFICIENT.cs">
@@ -11153,22 +11148,10 @@
     <Compile Include="Models\Entity\GAME_SETTINGS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\GET_ALL_CHARID_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\HOME.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\INSERTITEM_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\ITEM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\ITEMLERI_BUL_BANKA_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\ITEMLERI_BUL_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\ITEMS_DUPER.cs">
@@ -11222,9 +11205,6 @@
     <Compile Include="Models\Entity\KING_ELECTION_LIST.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\KING_ELECTION_RESULTS_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\KING_NOMINATION_LIST.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11235,15 +11215,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\KNIGHTS_ALLIANCE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\KNIGHTS_LOAD_MEMBERSDATA_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\KNIGHTS_LOAD_MEMBERS_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\KNIGHTS_LOAD_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\KNIGHTS_RATING.cs">
@@ -11279,30 +11250,6 @@
     <Compile Include="Models\Entity\LEVEL_UP_PET.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\LOAD_CHAR_INFO_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_DRAKI_RANK_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_DRAKI_RANK_TOP_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_PREMIUM_SERVICE_USER_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_RENTAL_DATA_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_SEALED_ITEM_DATA_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_USER_DATA_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\LOAD_WEB_ITEMMALL_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\MAGIC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11336,19 +11283,7 @@
     <Compile Include="Models\Entity\MAIL_BOX.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\MAIL_BOX_GET_ITEM_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\MAIL_BOX_REQUEST_LIST_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\MAIL_ITEM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\MAIL_OPEN_NEWLETTER_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\MAIL_TAKE_LETTERITEM_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\MAKE_DEFENSIVE.cs">
@@ -11465,9 +11400,6 @@
     <Compile Include="Models\Entity\SET_ITEM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\SKILLSHORTCUT_LOAD_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entity\START_POSITION.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -11475,15 +11407,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TB_USER_PREMIUM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\UPDATE_RANKS_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\UPDATE_USER_KNIGHTS_RANK_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entity\UPDATE_USER_PERSONAL_RANK_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\USERDATA.cs">
@@ -11499,6 +11422,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\USER_DAILY_OP.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\USER_ITEM_INFO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\USER_KNIGHTS_RANK.cs">
@@ -11601,7 +11527,6 @@
     <Content Include="Content\images\inventory\tabs.bin" />
     <Content Include="Content\images\misc\Descr.bin" />
     <Content Include="Content\images\page-ucp\Descr.bin" />
-    <Content Include="Content\itemicons\itemicons.bin" />
     <EntityDeploy Include="Models\Entity\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -11609,6 +11534,7 @@
     <Content Include="Models\Entity\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\itemicons\itemicons.bin" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
