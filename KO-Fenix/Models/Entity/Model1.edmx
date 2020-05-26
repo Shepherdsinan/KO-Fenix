@@ -3551,9 +3551,7 @@ warning 6013: The table/view 'kn_online.dbo.USER_HDD_BAN_LIST' does not have a p
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="Class" Type="varchar" MaxLength="100" />
-          <Property Name="kind" Type="varchar" MaxLength="100" />
-          <Property Name="itemtype" Type="varchar" MaxLength="100" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="itemnum" Type="varchar" MaxLength="50" />
           <Property Name="stacksize" Type="smallint" />
           <Property Name="durability" Type="smallint" />
@@ -3561,7 +3559,45 @@ warning 6013: The table/view 'kn_online.dbo.USER_HDD_BAN_LIST' does not have a p
           <Property Name="sira" Type="int" />
           <Property Name="itembasicname" Type="varchar" MaxLength="100" />
           <Property Name="extname" Type="varchar" MaxLength="100" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="damage" Type="varchar" MaxLength="50" />
+          <Property Name="itemtype" Type="varchar" MaxLength="100" />
+          <Property Name="kind" Type="varchar" MaxLength="100" />
+          <Property Name="Class" Type="varchar" MaxLength="100" />
+          <Property Name="atakspeed" Type="varchar" MaxLength="50" />
+          <Property Name="Rangeinfo" Type="varchar" MaxLength="50" />
+          <Property Name="Weightinfo" Type="varchar" MaxLength="50" />
+          <Property Name="Acinfo" Type="varchar" MaxLength="50" />
+          <Property Name="DaggerAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="SwordAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="MaceAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="AxeAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="SpearAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="BowAcinfo" Type="varchar" MaxLength="50" />
+          <Property Name="FireDamageinfo" Type="varchar" MaxLength="50" />
+          <Property Name="IceDamageinfo" Type="varchar" MaxLength="50" />
+          <Property Name="LightningDamageinfo" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonDamageinfo" Type="varchar" MaxLength="50" />
+          <Property Name="HPDrainfo" Type="varchar" MaxLength="50" />
+          <Property Name="MPDrainfo" Type="varchar" MaxLength="50" />
+          <Property Name="MirrorDamageinfo" Type="varchar" MaxLength="50" />
+          <Property Name="StrBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="StaBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="DexBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="IntelBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ChaBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="MaxHpBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="MaxMpBinfo" Type="varchar" MaxLength="50" />
+          <Property Name="FireRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ColdRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="LightningRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="MagicRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="CurseRinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ReqStrinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ReqStainfo" Type="varchar" MaxLength="50" />
+          <Property Name="ReqDexinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ReqIntelinfo" Type="varchar" MaxLength="50" />
+          <Property Name="ReqChainfo" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'kn_online.dbo.USER_ITEM_LIST_ALL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -6048,9 +6084,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="Class" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="kind" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="itemtype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="itemnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="stacksize" Type="Int16" />
           <Property Name="durability" Type="Int16" />
@@ -6058,7 +6092,45 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <Property Name="sira" Type="Int32" />
           <Property Name="itembasicname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="extname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="damage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="itemtype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kind" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="atakspeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rangeinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weightinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Acinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DaggerAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SwordAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaceAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AxeAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpearAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BowAcinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireDamageinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IceDamageinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningDamageinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonDamageinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HPDrainfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MPDrainfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MirrorDamageinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StrBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StaBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DexBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IntelBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChaBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxHpBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxMpBinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColdRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MagicRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CurseRinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqStrinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqStainfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqDexinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqIntelinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqChainfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="USER_RENTAL_ITEM">
           <Key>
@@ -9474,9 +9546,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <EntitySetMapping Name="USER_ITEM_INFO">
             <EntityTypeMapping TypeName="kn_onlineModel.USER_ITEM_INFO">
               <MappingFragment StoreEntitySet="USER_ITEM_INFO">
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="kind" ColumnName="kind" />
-                <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="itemnum" ColumnName="itemnum" />
                 <ScalarProperty Name="stacksize" ColumnName="stacksize" />
                 <ScalarProperty Name="durability" ColumnName="durability" />
@@ -9484,7 +9554,45 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
                 <ScalarProperty Name="sira" ColumnName="sira" />
                 <ScalarProperty Name="itembasicname" ColumnName="itembasicname" />
                 <ScalarProperty Name="extname" ColumnName="extname" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="damage" ColumnName="damage" />
+                <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="atakspeed" ColumnName="atakspeed" />
+                <ScalarProperty Name="Rangeinfo" ColumnName="Rangeinfo" />
+                <ScalarProperty Name="Weightinfo" ColumnName="Weightinfo" />
+                <ScalarProperty Name="Acinfo" ColumnName="Acinfo" />
+                <ScalarProperty Name="DaggerAcinfo" ColumnName="DaggerAcinfo" />
+                <ScalarProperty Name="SwordAcinfo" ColumnName="SwordAcinfo" />
+                <ScalarProperty Name="MaceAcinfo" ColumnName="MaceAcinfo" />
+                <ScalarProperty Name="AxeAcinfo" ColumnName="AxeAcinfo" />
+                <ScalarProperty Name="SpearAcinfo" ColumnName="SpearAcinfo" />
+                <ScalarProperty Name="BowAcinfo" ColumnName="BowAcinfo" />
+                <ScalarProperty Name="FireDamageinfo" ColumnName="FireDamageinfo" />
+                <ScalarProperty Name="IceDamageinfo" ColumnName="IceDamageinfo" />
+                <ScalarProperty Name="LightningDamageinfo" ColumnName="LightningDamageinfo" />
+                <ScalarProperty Name="PoisonDamageinfo" ColumnName="PoisonDamageinfo" />
+                <ScalarProperty Name="HPDrainfo" ColumnName="HPDrainfo" />
+                <ScalarProperty Name="MPDrainfo" ColumnName="MPDrainfo" />
+                <ScalarProperty Name="MirrorDamageinfo" ColumnName="MirrorDamageinfo" />
+                <ScalarProperty Name="StrBinfo" ColumnName="StrBinfo" />
+                <ScalarProperty Name="StaBinfo" ColumnName="StaBinfo" />
+                <ScalarProperty Name="DexBinfo" ColumnName="DexBinfo" />
+                <ScalarProperty Name="IntelBinfo" ColumnName="IntelBinfo" />
+                <ScalarProperty Name="ChaBinfo" ColumnName="ChaBinfo" />
+                <ScalarProperty Name="MaxHpBinfo" ColumnName="MaxHpBinfo" />
+                <ScalarProperty Name="MaxMpBinfo" ColumnName="MaxMpBinfo" />
+                <ScalarProperty Name="FireRinfo" ColumnName="FireRinfo" />
+                <ScalarProperty Name="ColdRinfo" ColumnName="ColdRinfo" />
+                <ScalarProperty Name="LightningRinfo" ColumnName="LightningRinfo" />
+                <ScalarProperty Name="MagicRinfo" ColumnName="MagicRinfo" />
+                <ScalarProperty Name="PoisonRinfo" ColumnName="PoisonRinfo" />
+                <ScalarProperty Name="CurseRinfo" ColumnName="CurseRinfo" />
+                <ScalarProperty Name="ReqStrinfo" ColumnName="ReqStrinfo" />
+                <ScalarProperty Name="ReqStainfo" ColumnName="ReqStainfo" />
+                <ScalarProperty Name="ReqDexinfo" ColumnName="ReqDexinfo" />
+                <ScalarProperty Name="ReqIntelinfo" ColumnName="ReqIntelinfo" />
+                <ScalarProperty Name="ReqChainfo" ColumnName="ReqChainfo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

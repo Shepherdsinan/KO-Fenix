@@ -14,6 +14,7 @@ namespace KO_Fenix.Models.Entity
     
     public partial class USER_ITEM_INFO
     {
+        public int id { get; set; }
         public string itemnum { get; set; }
         public Nullable<short> stacksize { get; set; }
         public Nullable<short> durability { get; set; }
@@ -21,10 +22,44 @@ namespace KO_Fenix.Models.Entity
         public Nullable<int> sira { get; set; }
         public string itembasicname { get; set; }
         public string extname { get; set; }
-        public int id { get; set; }
-        public string kind { get; set; }
+        public string damage { get; set; }
         public string itemtype { get; set; }
+        public string kind { get; set; }
         public string Class { get; set; }
-
+        public string atakspeed { get; set; }
+        public string Rangeinfo { get; set; }
+        public string Weightinfo { get; set; }
+        public string Acinfo { get; set; }
+        public string DaggerAcinfo { get; set; }
+        public string SwordAcinfo { get; set; }
+        public string MaceAcinfo { get; set; }
+        public string AxeAcinfo { get; set; }
+        public string SpearAcinfo { get; set; }
+        public string BowAcinfo { get; set; }
+        public string FireDamageinfo { get; set; }
+        public string IceDamageinfo { get; set; }
+        public string LightningDamageinfo { get; set; }
+        public string PoisonDamageinfo { get; set; }
+        public string HPDrainfo { get; set; }
+        public string MPDrainfo { get; set; }
+        public string MirrorDamageinfo { get; set; }
+        public string StrBinfo { get; set; }
+        public string StaBinfo { get; set; }
+        public string DexBinfo { get; set; }
+        public string IntelBinfo { get; set; }
+        public string ChaBinfo { get; set; }
+        public string MaxHpBinfo { get; set; }
+        public string MaxMpBinfo { get; set; }
+        public string FireRinfo { get; set; }
+        public string ColdRinfo { get; set; }
+        public string LightningRinfo { get; set; }
+        public string MagicRinfo { get; set; }
+        public string PoisonRinfo { get; set; }
+        public string CurseRinfo { get; set; }
+        public string ReqStrinfo { get; set; }
+        public string ReqStainfo { get; set; }
+        public string ReqDexinfo { get; set; }
+        public string ReqIntelinfo { get; set; }
+        public string ReqChainfo { get; set; }
     }
 }

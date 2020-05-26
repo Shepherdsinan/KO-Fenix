@@ -2819,6 +2819,7 @@
     <Content Include="Content\itemicons\399292000.png" />
     <Content Include="Content\itemicons\399295000.png" />
     <Content Include="Content\itemicons\399296000.png" />
+    <Content Include="Content\itemicons\399300000.png" />
     <Content Include="Content\itemicons\399430000.png" />
     <Content Include="Content\itemicons\399440000.png" />
     <Content Include="Content\itemicons\399444000.png" />
@@ -5671,7 +5672,6 @@
     <Content Include="Content\js\fusioneditor.js" />
     <Content Include="Content\js\html5shiv.min.js" />
     <Content Include="Content\js\inventory.js" />
-    <Content Include="Content\js\inventorytooltip.js" />
     <Content Include="Content\js\itemsearch.js" />
     <Content Include="Content\js\jquery.dataTables.min.js" />
     <Content Include="Content\js\jquery.min.js" />
@@ -11527,6 +11527,7 @@
     <Content Include="Content\images\inventory\tabs.bin" />
     <Content Include="Content\images\misc\Descr.bin" />
     <Content Include="Content\images\page-ucp\Descr.bin" />
+    <Content Include="Content\itemicons\itemicons.bin" />
     <EntityDeploy Include="Models\Entity\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -11534,7 +11535,6 @@
     <Content Include="Models\Entity\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\itemicons\itemicons.bin" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
