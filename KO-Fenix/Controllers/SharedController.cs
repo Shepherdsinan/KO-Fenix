@@ -14,13 +14,18 @@ namespace KO_Fenix.Controllers
         
         public ActionResult _Layout()
         {
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery; 
+            
             return View();
         }
         public ActionResult __Layout()
         {
             return View();
+        }
+        public JsonResult onlineplayergetir()
+        {
+            var deger = db.CURRENTUSER.Count();
+
+            return Json(deger, JsonRequestBehavior.AllowGet);
         }
     }
 }

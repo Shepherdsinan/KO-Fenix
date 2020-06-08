@@ -809,7 +809,7 @@ ul.monster_info_list {
     }
 
 
-#mob_count {
+.mob_count {
     font-size: 12px;
     font-weight: bold;
     color: #a48f4f;

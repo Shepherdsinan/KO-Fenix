@@ -30,7 +30,7 @@
                                 <td style="padding-bottom:5px;">
 
 
-                                    <select id="strUserID" name="strUserID">
+                                    <select id="strUserID" name="strUserID" required>
                                         @foreach (var karakterler in Model.Deger10)
                                         {
                                             if (karakterler.strAccountID.Trim() == @Session["strAccountID"].ToString())
@@ -64,7 +64,7 @@
                                 <td style="width:40%;"><label for="Subject">Konu</label> :</td>
                                 <td>
 
-                                    <select data-val="true" data-val-number="The field Konu must be a number." data-val-required="Konu Boş geçilemez." id="Subject" name="Subject">
+                                    <select data-val="true" data-val-number="The field Konu must be a number." id="Subject" name="Subject" required>
                                         <option value="">- Konu seçiniz -</option>
                                         <option value="1">Power Up Store</option>
                                         <option value="2">Hesap Islemleri</option>
@@ -81,7 +81,7 @@
                     </table>
                     <br>
 
-                    <textarea cols="70" rows="20" name="Message"></textarea>
+                    <textarea cols="70" rows="20" name="Message" required></textarea>
   
                     
 

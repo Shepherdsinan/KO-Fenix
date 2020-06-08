@@ -29,6 +29,7 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<C_DESTEKMESAJ> C_DESTEKMESAJ { get; set; }
         public virtual DbSet<api_paywant> api_paywant { get; set; }
         public virtual DbSet<AUTONOTICE> AUTONOTICE { get; set; }
+        public virtual DbSet<DROP_MONSTER_ITEMDETAY> DROP_MONSTER_ITEMDETAY { get; set; }
         public virtual DbSet<DUPE_CHECK> DUPE_CHECK { get; set; }
         public virtual DbSet<FRIEND_LIST> FRIEND_LIST { get; set; }
         public virtual DbSet<ITEMS_DUPER> ITEMS_DUPER { get; set; }
@@ -164,5 +165,6 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<WAREHOUSE_ITEMLER> WAREHOUSE_ITEMLER { get; set; }
         public virtual DbSet<WEB_ITEMMALL_LOG> WEB_ITEMMALL_LOG { get; set; }
         public virtual DbSet<WHEEL_OF_FUN_LOG> WHEEL_OF_FUN_LOG { get; set; }
+        public virtual DbSet<ITEM_EXCHANGE_ITEMDETAY> ITEM_EXCHANGE_ITEMDETAY { get; set; }
     }
 }

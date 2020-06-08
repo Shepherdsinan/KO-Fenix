@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KO_Fenix.Models.Sinif.MyModel>
+﻿
 @{
     ViewBag.Title = "Klan Sıralaması";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,7 +18,7 @@
         </div>
         <div class="mainbox-body page-body self_clear">
             <!-- CONTENT -->
-            <form action="" method="post" id="frmranking" onchange="ajaxRoute('ClanRankings')">
+            
                 <div id="ranking_select_container">
                     <select styled="true" name="rank_nation" id="frmselect">
                         <option value="0" selected="selected" disabled="disabled">Irk</option>
@@ -27,7 +27,7 @@
                         <option value="2">El Morad</option>
                     </select>
                 </div>
-            </form>
+            
             <div id="dataDiv">
                 <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
@@ -37,97 +37,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <table id="dataTable" class="rankTable All2 dataTable no-footer" role="grid" style="width: 708px;">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 200px;">Klan</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 157px;">Lider</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Üyeler</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @{int RowNo = 0;}
-                                    @foreach (var klnveri in Model)
-                                    {
-                                        <tr role="row">
-                                            <td class="sorting_1">@{RowNo++;} @RowNo</td>
-                                            <td class="sorting_1">
-                                                @if (klnveri.Nation == 1)
-                                                {<span class="nation n1"></span> }
-                                                else
-                                                {<span class="nation n2"></span>}
-                                                @switch (klnveri.Ranking)
-                                                {
-                                                    case 1:
-                                                        <span class="grade g15"></span>
-                                                        break;
-                                                    case 2:
-                                                        <span class="grade g14"></span>
-                                                        break;
-                                                    case 3:
-                                                        <span class="grade g13"></span>
-                                                        break;
-                                                    case 4:
-                                                        <span class="grade g12"></span>
-                                                        break;
-                                                    case 5:
-                                                        <span class="grade g11"></span>
-                                                        break;
-                                                }
-
-                                                <a href="/Rank/ClanProfile/@klnveri.IDNum"> @klnveri.IDName</a>
-
-                                            </td>
-                                            <td class="sorting_1">
-                                                @if (klnveri.Class == 201 || klnveri.Class == 205 || klnveri.Class == 206)
-                                                {
-                                                    <span class="class c21"></span>
-                                                }
-                                                else if (klnveri.Class == 202 || klnveri.Class == 207 || klnveri.Class == 208)
-                                                {
-                                                    <span class="class c22"></span>
-                                                }
-                                                else if (klnveri.Class == 203 || klnveri.Class == 209 || klnveri.Class == 210)
-                                                {
-                                                    <span class="class c23"></span>
-                                                }
-                                                else if (klnveri.Class == 204 || klnveri.Class == 211 || klnveri.Class == 212)
-                                                {
-                                                    <span class="class c24"></span>
-                                                }
-
-                                                @*Karus Sınıf Simgeleri*@
-
-                                                else if (klnveri.Class == 101 || klnveri.Class == 105 || klnveri.Class == 106)
-                                                {
-                                                    <span class="class c11"></span>
-                                                }
-                                                else if (klnveri.Class == 102 || klnveri.Class == 107 || klnveri.Class == 108)
-                                                {
-                                                    <span class="class c12"></span>
-                                                }
-                                                else if (klnveri.Class == 103 || klnveri.Class == 109 || klnveri.Class == 110)
-                                                {
-                                                    <span class="class c13"></span>
-                                                }
-                                                else if (klnveri.Class == 104 || klnveri.Class == 111 || klnveri.Class == 112)
-                                                {
-                                                    <span class="class c14"></span>
-                                                }
-
-
-                                                <a href="/Rank/UserProfile/@klnveri.Chief"> @klnveri.Chief</a>
-
-
-                                            </td>
-                                            <td class="sorting_1">@klnveri.Members</td>
-                                            <td class="sorting_1">@klnveri.Points</td>
-                                        </tr>
-                                    }
-
-                                </tbody>
                             </table>
                         </div>
                     </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
@@ -137,5 +47,150 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#frmselect').change(function () {
+        $("#dataTable").empty();
+        var id = $('#frmselect').val();       
+        var a = 1;
+        var b;
+        var nation;
+        var grade;
+        var classdt;
+        $("#dataTable").append('<thead><tr role = "row" ><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 200px;">Klan</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 157px;">Lider</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Üyeler</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th></tr></thead>');
+        $.ajax({
+            url: '/Rank/ClanRankingsdata/' + id,
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    b = a++;
+                    if (item.Nation == 1) { nation = '<span class="nation n1"></span>'; }
+                    else { nation = '<span class="nation n2"></span>'; }
+                    switch (item.Ranking) {
+                        case 1:
+                            grade = '<span class="grade g15"></span>'
+                            break;
+                        case 2:
+                            grade = '<span class="grade g14"></span>'
+                            break;
+                        case 3:
+                            grade = '<span class="grade g13"></span>'
+                            break;
+                        case 4:
+                            grade = '<span class="grade g12"></span>'
+                            break;
+                        case 5:
+                            grade = '<span class="grade g11"></span>'
+                            break;
+                    }
+                    if (item.Class == 201 || item.Class == 205 || item.Class == 206) {
+                        classdt = '<span class="class c21"></span>'
+                    }
+                    else if (item.Class == 202 || item.Class == 207 || item.Class == 208) {
+                        classdt = '<span class="class c22"></span>'
+                    }
+                    else if (item.Class == 203 || item.Class == 209 || item.Class == 210) {
+                        classdt = '<span class="class c23"></span>'
+                    }
+                    else if (item.Class == 204 || item.Class == 211 || item.Class == 212) {
+                        classdt = '<span class="class c24"></span>'
+                    }
+
+                    @* Karus Sınıf Simgeleri *@
+
+                     else if(item.Class == 101 || item.Class == 105 || item.Class == 106)
+        {
+            classdt = '<span class="class c11"></span>'
+        }
+                     else if (item.Class == 102 || item.Class == 107 || item.Class == 108) {
+            classdt = '<span class="class c12"></span>'
+        }
+        else if (item.Class == 103 || item.Class == 109 || item.Class == 110) {
+            classdt = '<span class="class c13"></span>'
+        }
+        else if (item.Class == 104 || item.Class == 111 || item.Class == 112) {
+            classdt = '<span class="class c14"></span>'
+        }
+
+        $("#dataTable").append('<tbody><tr role="row"><td class="sorting_1">' + b + '</td><td>' + nation + '' + grade + '<a href="/Rank/ClanProfile/' + item.IDNum + '"> ' + item.IDName + '</a></td><td>' + classdt + '<a href="/Rank/UserProfile/' + item.Chief + '"> ' + item.Chief + '</a></td><td>' + item.Members + '</td><td>' + item.Points + '</td></tr></tbody>');
+
+
+
+    });
+            }
+        });
+    });
+    $(document).ready(function () {
+        var a = 1;
+        var b;
+        var nation;
+        var grade;
+        var classdt;
+        $("#dataTable").append('<thead><tr role = "row" ><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 10px;">#</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Takma İsim: activate to sort column ascending" style="width: 200px;">Klan</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Klan: activate to sort column ascending" style="width: 157px;">Lider</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Seviye: activate to sort column ascending" style="width: 65px;">Üyeler</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Puanlar: activate to sort column ascending" style="width: 76px;">Puanlar</th></tr></thead>');
+        $.ajax({
+            url: '/Rank/ClanRankingsdata/0',
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    b = a++;
+                    if (item.Nation == 1) { nation = '<span class="nation n1"></span>'; }
+                    else { nation = '<span class="nation n2"></span>'; }
+                    switch (item.Ranking) {
+                        case 1:
+                            grade = '<span class="grade g15"></span>'
+                            break;
+                        case 2:
+                            grade = '<span class="grade g14"></span>'
+                            break;
+                        case 3:
+                            grade = '<span class="grade g13"></span>'
+                            break;
+                        case 4:
+                            grade = '<span class="grade g12"></span>'
+                            break;
+                        case 5:
+                            grade = '<span class="grade g11"></span>'
+                            break;
+                    }
+                    if (item.Class == 201 || item.Class == 205 || item.Class == 206) {
+                        classdt = '<span class="class c21"></span>'
+                    }
+                    else if (item.Class == 202 || item.Class == 207 || item.Class == 208) {
+                        classdt = '<span class="class c22"></span>'
+                    }
+                    else if (item.Class == 203 || item.Class == 209 || item.Class == 210) {
+                        classdt = '<span class="class c23"></span>'
+                    }
+                    else if (item.Class == 204 || item.Class == 211 || item.Class == 212) {
+                        classdt = '<span class="class c24"></span>'
+                    }
+
+                    @* Karus Sınıf Simgeleri *@
+
+                     else if(item.Class == 101 || item.Class == 105 || item.Class == 106)
+        {
+            classdt = '<span class="class c11"></span>'
+        }
+                     else if (item.Class == 102 || item.Class == 107 || item.Class == 108) {
+            classdt = '<span class="class c12"></span>'
+        }
+        else if (item.Class == 103 || item.Class == 109 || item.Class == 110) {
+            classdt = '<span class="class c13"></span>'
+        }
+        else if (item.Class == 104 || item.Class == 111 || item.Class == 112) {
+            classdt = '<span class="class c14"></span>'
+        }
+
+        $("#dataTable").append('<tbody><tr role="row"><td class="sorting_1">' + b + '</td><td>' + nation + '' + grade + '<a href="/Rank/ClanProfile/' + item.IDNum + '"> ' + item.IDName + '</a></td><td>' + classdt + '<a href="/Rank/UserProfile/' + item.Chief + '"> ' + item.Chief + '</a></td><td>' + item.Members + '</td><td>' + item.Points + '</td></tr></tbody>');
+
+
+
+    });
+            }
+        });
+    });
+</script>
 
 

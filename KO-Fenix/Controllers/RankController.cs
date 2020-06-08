@@ -25,46 +25,115 @@ namespace KO_Fenix.Controllers
             cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).ToList();
             cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
             cs.Deger3 = db.KNIGHTS.ToList();
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+            
             return View(cs);
         }
-        
+
+        public JsonResult UserRankingsdata(int id)
+        {
+            
+            if (id == 0)
+            {
+                var userdatjsn0 = (from u in db.USERDATA
+                                  join k in db.KNIGHTS on u.ClanID equals k.IDNum
+                                  into t
+                                  from subsorgu in t.DefaultIfEmpty()
+                                  where u.Authority == 1
+                                  orderby (u.Loyalty) descending
+                                  select new
+                                  {
+                                      u.Nation,
+                                      u.Class,
+                                      u.strUserID,
+                                      u.Level,
+                                      u.Loyalty,
+                                      u.LoyaltyMonthly,
+                                      Ranking = subsorgu.Ranking.ToString(),
+                                      IDNum = subsorgu.IDNum.ToString(),
+                                      IDName = subsorgu.IDName.ToString()
+                                  });
+                return Json(userdatjsn0, JsonRequestBehavior.AllowGet);
+            }
+            
+            
+            var userdatjsn1 = (from u in db.USERDATA
+                              join k in db.KNIGHTS on u.ClanID equals k.IDNum                              
+                              into t from subsorgu in t.DefaultIfEmpty()
+                              where u.Authority == 1
+                              orderby (u.LoyaltyMonthly) descending
+                              select new
+                              {
+                                  u.Nation,u.Class,u.strUserID,u.Level,u.Loyalty,u.LoyaltyMonthly,
+                                  Ranking = subsorgu.Ranking.ToString(),
+                                  IDNum= subsorgu.IDNum.ToString(),
+                                  IDName= subsorgu.IDName.ToString()
+                              });
+            return Json(userdatjsn1, JsonRequestBehavior.AllowGet);
+
+
+
+        }
+
+        public JsonResult ClanRankingsdata(int id)
+        {
+
+            //0 sa tüm veri
+            if (id == 0)
+            {
+                var myModelall = (from k in db.KNIGHTS
+                               join u in db.USERDATA on k.Chief equals u.strUserID                               
+                               orderby (k.Ranking) ascending
+                               select new MyModel()
+                               {
+                                   Class = u.Class,
+                                   IDName = k.IDName,
+                                   IDNum = k.IDNum,
+                                   Nation = k.Nation,
+                                   Ranking = k.Ranking,
+                                   Members = k.Members,
+                                   Chief = k.Chief,
+                                   Points = k.Points
+                               });
+                return Json(myModelall, JsonRequestBehavior.AllowGet);
+            }
+            //1 ve 2 de yeni veri çek
+            else
+            {
+                var myModel = (from k in db.KNIGHTS
+                               join u in db.USERDATA on k.Chief equals u.strUserID
+                               where u.Nation == id
+                               orderby (k.Ranking) ascending
+                               select new MyModel()
+                               {
+                                   Class = u.Class,
+                                   IDName = k.IDName,
+                                   IDNum = k.IDNum,
+                                   Nation = k.Nation,
+                                   Ranking = k.Ranking,
+                                   Members = k.Members,
+                                   Chief = k.Chief,
+                                   Points = k.Points
+                               });
+                return Json(myModel, JsonRequestBehavior.AllowGet);
+            }
+            
+        }
+
+
         public ActionResult ClanRankings()
         {
-            //MyModel myModel = new MyModel();
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
-            IEnumerable<MyModel> myModel = (from k in db.KNIGHTS
-                        join u in db.USERDATA on k.Chief equals u.strUserID
-                        orderby (k.Ranking) ascending
-                        select new MyModel()
-                        {
-                            Class=u.Class,
-                            IDName=k.IDName,
-                            IDNum = k.IDNum,
-                            Nation=k.Nation,
-                            Ranking=k.Ranking,
-                            Members = k.Members,
-                            Chief=k.Chief,
-                            Points=k.Points
-                        });            
-
-            return View(myModel);
+            return View();
         }
         public ActionResult ForbidUsers()
 
         {
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+           
             cs.Deger1 = (from a in db.USERDATA where a.Authority == 255  select a).ToList();
             cs.Deger3 = db.KNIGHTS.ToList();
             return View(cs);
         }
         public ActionResult KingSystem()
         {
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
             return View();
         }
         public ActionResult ClanProfile(int id)
@@ -79,8 +148,7 @@ namespace KO_Fenix.Controllers
             cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 && a.ClanID == id orderby a.Loyalty descending select a).ToList();
             cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
             cs.Deger3 = db.KNIGHTS.ToList();
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+            
 
             return View(cs);
         }
@@ -106,9 +174,9 @@ namespace KO_Fenix.Controllers
             var levelupexp = db.LEVEL_UP.FirstOrDefault(x => x.level == queryusr.Level);
             ViewBag.levelupexp = levelupexp.Exp;
  
-            db.Database.ExecuteSqlCommand("Exec [sp_ITEM_INFO] @p0", id);
+            db.Database.ExecuteSqlCommand("Exec [sp_ITEM_INFO] @p0", id.Trim());
 
-            var qery = db.USER_ITEM_INFO.Where(x => x.stacksize != 0 & x.strUserId == id).ToList();
+            var qery = db.USER_ITEM_INFO.Where(x => x.stacksize != 0 & x.strUserId == id.Trim()).ToList();
 
             return View(qery);
         }

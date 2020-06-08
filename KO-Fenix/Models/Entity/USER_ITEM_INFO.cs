@@ -61,5 +61,7 @@ namespace KO_Fenix.Models.Entity
         public string ReqDexinfo { get; set; }
         public string ReqIntelinfo { get; set; }
         public string ReqChainfo { get; set; }
+        public Nullable<int> classtip { get; set; }
+        public string duration { get; set; }
     }
 }

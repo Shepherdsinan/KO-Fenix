@@ -23,6 +23,6 @@ namespace KO_Fenix.Models.Entity
         public string tarih { get; set; }
         public string sef { get; set; }
         public Nullable<int> views { get; set; }
-        public string img { get; set; }
+        public string link { get; set; }
     }
 }

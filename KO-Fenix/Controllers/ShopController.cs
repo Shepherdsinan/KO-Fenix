@@ -13,8 +13,7 @@ namespace KO_Fenix.Controllers
         kn_onlineEntities2 db = new kn_onlineEntities2();
         public ActionResult Resellers()
         {
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+           
             return View();
             
         }

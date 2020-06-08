@@ -7,31 +7,36 @@ using KO_Fenix.Models.Entity;
 using KO_Fenix.Models.Sinif;
 
 namespace KO_Fenix.Controllers
-{
+{   
+    [Authorize]
     public class TicketController : Controller
     {
         // GET: Ticket
         kn_onlineEntities2 db = new kn_onlineEntities2();
         Class1 cs = new Class1();
+        
         public ActionResult Index()
         {
             //Daha sonra detaylı araştır fantazilere bak :)
             //cs.Deger9 = db.C_DESTEK.Where(x => x.StrAccountID == Session["strAccountID"].ToString()).ToList();
             //cs.Deger9 = (from a in db.C_DESTEK where a.StrAccountID == Session["strAccountID"] select a).ToList();
+            
             cs.Deger9 = db.C_DESTEK.ToList();
             return View(cs);
         }
-
+        
         public ActionResult Send()
         {
             cs.Deger10 = db.ACCOUNT_CHAR.ToList();
             return View(cs);
         }
+        
         [HttpGet]
         public ActionResult Saveticket()
         {            
             return View();
         }
+        
         [HttpPost]
         public ActionResult Saveticket(Class1 p1)
         {
@@ -57,16 +62,19 @@ namespace KO_Fenix.Controllers
             db.SaveChanges();
             return RedirectToAction("Read", "Ticket", new { @id = mesajid });
         }
+        
         public ActionResult Read(int id)
         {         
             cs.Deger11 = (from a in db.C_DESTEKMESAJ where a.Ticketid == id select a).ToList();            
             return View(cs);
         }
+        
         [HttpGet]
         public ActionResult Answer()
         {
             return View();
         }
+        
         [HttpPost]
         public ActionResult Answer(Class1 deger)
         {

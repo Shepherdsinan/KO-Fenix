@@ -4,146 +4,148 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="96c2b61916d1465d96daacab45b9d30b" Name="Diagram1">
+      <Diagram DiagramId="602d6bf85ea64b2ebd9fd2e6ee1185a5" Name="Diagram1">
         <EntityTypeShape EntityType="kn_onlineModel.C_DESTEK" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.C_DESTEKMESAJ" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.api_paywant" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.AUTONOTICE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.DUPE_CHECK" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.FRIEND_LIST" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.DROP_MONSTER_ITEMDETAY" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.DUPE_CHECK" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.FRIEND_LIST" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.ITEMS_DUPER" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.KNIGHT_CASH" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.LEVEL_UP" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAIL_BOX" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MALL_LIST" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_SERVICE_USER" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PUS_BANNER" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PUS_CASH" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PUS_LOG" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PUS_MENU" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.KNIGHT_CASH" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.LEVEL_UP" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAIL_BOX" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MALL_LIST" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_SERVICE_USER" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PUS_BANNER" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PUS_CASH" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PUS_LOG" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PUS_MENU" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.PUS_SESSIONS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.RENTAL_ITEM" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.RENTAL_ITEM_LIST" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.TB_USER" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_ACHIEVE_DATA" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_DAILY_OP" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_ITEM_INFO" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_RENTAL_ITEM" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_SAVED_MAGIC" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.RENTAL_ITEM_LIST" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.TB_USER" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_ACHIEVE_DATA" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_DAILY_OP" Width="1.5" PointX="10.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_ITEM_INFO" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_RENTAL_ITEM" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_SAVED_MAGIC" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.USERDATA" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USERDATA_SKILLSHORTCUT" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.VIP_WAREHOUSE" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WEB_ITEMMALL" Width="1.5" PointX="8.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ZONE_INFO" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_BANKALAR" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_BLOCK" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_CASHPAKETI" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_CODEHISTORY" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_DOWNLOADS" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_LINKS" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_MENU" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_NEWS" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_PANELSETTINGS" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_PAYMENTNOTICE" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_POLLS" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_PUSSETTINGS" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_SIPARISLER" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_SOCIAL" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_UCRETSIZLOG" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_VOTES" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.C_WEBSETTINGS" Width="1.5" PointX="20.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ACCOUNT_CHAR" Width="1.5" PointX="10.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ACHIEVE_TITLE" Width="1.5" PointX="12.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.BATTLE" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.BEGINNER_ITEM" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.BEGINNER_ITEM2" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.BLACKLIST" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.BOX_RANDOM_ITEM" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.COEFFICIENT" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.CONCURRENT" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.CURRENTUSER" Width="1.5" PointX="22.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.EDITOR_LOGS" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.EVENT" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.EVENT_SCHEDULER" Width="1.5" PointX="14.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.GAME_SETTINGS" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.HOME" Width="1.5" PointX="2.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM" Width="1.5" PointX="24.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_CRASH" Width="1.5" PointX="16.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE_EXP" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE_INFO" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXPIRATION" Width="1.5" PointX="24.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USERDATA_SKILLSHORTCUT" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.VIP_WAREHOUSE" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WEB_ITEMMALL" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ZONE_INFO" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_BANKALAR" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_BLOCK" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_CASHPAKETI" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_CODEHISTORY" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_DOWNLOADS" Width="1.5" PointX="16.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_LINKS" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_MENU" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_NEWS" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_PANELSETTINGS" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_PAYMENTNOTICE" Width="1.5" PointX="20.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_POLLS" Width="1.5" PointX="20.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_PUSSETTINGS" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_SIPARISLER" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_SOCIAL" Width="1.5" PointX="4.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_UCRETSIZLOG" Width="1.5" PointX="6.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_VOTES" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.C_WEBSETTINGS" Width="1.5" PointX="10.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ACCOUNT_CHAR" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ACHIEVE_TITLE" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.BATTLE" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.BEGINNER_ITEM" Width="1.5" PointX="22.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.BEGINNER_ITEM2" Width="1.5" PointX="22.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.BLACKLIST" Width="1.5" PointX="18.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.BOX_RANDOM_ITEM" Width="1.5" PointX="20.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.COEFFICIENT" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.CONCURRENT" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.CURRENTUSER" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.EDITOR_LOGS" Width="1.5" PointX="2.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.EVENT" Width="1.5" PointX="24.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.EVENT_SCHEDULER" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.GAME_SETTINGS" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.HOME" Width="1.5" PointX="24.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_CRASH" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE_EXP" Width="1.5" PointX="14.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE_INFO" Width="1.5" PointX="16.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXPIRATION" Width="1.5" PointX="18.75" PointY="25.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.ITEM_FISHING_LIST" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.ITEM_GROUP" Width="1.5" PointX="26.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_MINING_LIST" Width="1.5" PointX="26.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_OP" Width="1.5" PointX="26.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_SPECIAL_EXCHANGE" Width="1.5" PointX="26.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEM_UPGRADE" Width="1.5" PointX="26.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.ITEMUP_PROBABILITY" Width="1.5" PointX="16.75" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_MONSTER" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_MONSTER_ITEM" Width="1.5" PointX="28.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_NPC" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_NPC_ITEM" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_OBJECTPOS" Width="1.5" PointX="20.75" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.K_WARPINFO" Width="1.5" PointX="22.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_MINING_LIST" Width="1.5" PointX="10.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_OP" Width="1.5" PointX="26.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_SPECIAL_EXCHANGE" Width="1.5" PointX="26.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_UPGRADE" Width="1.5" PointX="20.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEMUP_PROBABILITY" Width="1.5" PointX="26.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_MONSTER" Width="1.5" PointX="26.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_MONSTER_ITEM" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_NPC" Width="1.5" PointX="28.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_NPC_ITEM" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_OBJECTPOS" Width="1.5" PointX="28.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.K_WARPINFO" Width="1.5" PointX="28.75" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KILL_RANDOM_ITEM" Width="1.5" PointX="28.75" PointY="26.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.KING_BALLOT_BOX" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.KING_CANDIDACY_NOTICE_BOARD" Width="1.5" PointX="12.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.KING_BALLOT_BOX" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.KING_CANDIDACY_NOTICE_BOARD" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KING_ELECTION_LIST" Width="1.5" PointX="28.75" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KING_NOMINATION_LIST" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KING_SYSTEM" Width="1.5" PointX="30.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KNIGHTS" Width="1.5" PointX="30.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.KNIGHTS_ALLIANCE" Width="1.5" PointX="14.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.KNIGHTS_ALLIANCE" Width="1.5" PointX="12.75" PointY="30.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KNIGHTS_RATING" Width="1.5" PointX="30.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.KNIGHTS_SIEGE_WARFARE" Width="1.5" PointX="30.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.LEVEL_UP_PET" Width="1.5" PointX="24.75" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE1" Width="1.5" PointX="4.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE2" Width="1.5" PointX="32.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE3" Width="1.5" PointX="32.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE4" Width="1.5" PointX="10.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE5" Width="1.5" PointX="32.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE6" Width="1.5" PointX="16.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE7" Width="1.5" PointX="32.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE8" Width="1.5" PointX="18.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE9" Width="1.5" PointX="20.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAIL_ITEM" Width="1.5" PointX="32.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_DEFENSIVE" Width="1.5" PointX="26.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM" Width="1.5" PointX="32.75" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_GRADECODE" Width="1.5" PointX="28.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_GROUP" Width="1.5" PointX="32.75" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_LARECODE" Width="1.5" PointX="0.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MAKE_WEAPON" Width="1.5" PointX="12.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_CHALLENGE" Width="1.5" PointX="22.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_CHALLENGE_SUMMON_LIST" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_RESPAWN_LIST" Width="1.5" PointX="34.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_SUMMON_LIST" Width="1.5" PointX="6.75" PointY="34.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_SUMMON_LIST_ZONE" Width="1.5" PointX="34.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PETDATA" Width="1.5" PointX="34.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM" Width="1.5" PointX="34.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM_EXP" Width="1.5" PointX="34.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM_GIFT" Width="1.5" PointX="34.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.QUEST_HELPER" Width="1.5" PointX="34.75" PointY="26.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.QUEST_MENU" Width="1.5" PointX="34.75" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.QUEST_MONSTER" Width="1.5" PointX="34.75" PointY="34.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.QUEST_TALK" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.SEALED_ITEMS" Width="1.5" PointX="0.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.SEND_MESSAGES" Width="1.5" PointX="2.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.SERVER_LIST" Width="1.5" PointX="36.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.SERVER_RESOURCE" Width="1.5" PointX="36.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.SET_ITEM" Width="1.5" PointX="36.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.START_POSITION" Width="1.5" PointX="36.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.TB_USER_PREMIUM" Width="1.5" PointX="22.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.LEVEL_UP_PET" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC" Width="1.5" PointX="0.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE1" Width="1.5" PointX="32.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE2" Width="1.5" PointX="6.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE3" Width="1.5" PointX="32.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE4" Width="1.5" PointX="8.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE5" Width="1.5" PointX="32.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE6" Width="1.5" PointX="32.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE7" Width="1.5" PointX="18.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE8" Width="1.5" PointX="20.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAGIC_TYPE9" Width="1.5" PointX="32.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAIL_ITEM" Width="1.5" PointX="32.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_DEFENSIVE" Width="1.5" PointX="28.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM" Width="1.5" PointX="30.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_GRADECODE" Width="1.5" PointX="32.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_GROUP" Width="1.5" PointX="10.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_ITEM_LARECODE" Width="1.5" PointX="12.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MAKE_WEAPON" Width="1.5" PointX="22.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_CHALLENGE" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_CHALLENGE_SUMMON_LIST" Width="1.5" PointX="34.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_RESPAWN_LIST" Width="1.5" PointX="34.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_SUMMON_LIST" Width="1.5" PointX="34.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.MONSTER_SUMMON_LIST_ZONE" Width="1.5" PointX="34.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PETDATA" Width="1.5" PointX="14.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM" Width="1.5" PointX="34.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM_EXP" Width="1.5" PointX="34.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.PREMIUM_ITEM_GIFT" Width="1.5" PointX="34.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.QUEST_HELPER" Width="1.5" PointX="34.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.QUEST_MENU" Width="1.5" PointX="34.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.QUEST_MONSTER" Width="1.5" PointX="24.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.QUEST_TALK" Width="1.5" PointX="30.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.SEALED_ITEMS" Width="1.5" PointX="32.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.SEND_MESSAGES" Width="1.5" PointX="34.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.SERVER_LIST" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.SERVER_RESOURCE" Width="1.5" PointX="36.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.SET_ITEM" Width="1.5" PointX="36.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.START_POSITION" Width="1.5" PointX="36.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.TB_USER_PREMIUM" Width="1.5" PointX="36.75" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kn_onlineModel.USER_CHARACTER_SEAL_ITEMS" Width="1.5" PointX="36.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_KNIGHTS_RANK" Width="1.5" PointX="24.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.USER_PERSONAL_RANK" Width="1.5" PointX="26.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.VERSION" Width="1.5" PointX="36.75" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WAITING_COMMANDS" Width="1.5" PointX="28.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE_CLAN" Width="1.5" PointX="36.75" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE_ITEMLER" Width="1.5" PointX="36.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WEB_ITEMMALL_LOG" Width="1.5" PointX="36.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="kn_onlineModel.WHEEL_OF_FUN_LOG" Width="1.5" PointX="4.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_KNIGHTS_RANK" Width="1.5" PointX="26.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.USER_PERSONAL_RANK" Width="1.5" PointX="36.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.VERSION" Width="1.5" PointX="36.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WAITING_COMMANDS" Width="1.5" PointX="36.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE_CLAN" Width="1.5" PointX="16.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WAREHOUSE_ITEMLER" Width="1.5" PointX="18.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WEB_ITEMMALL_LOG" Width="1.5" PointX="38.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.WHEEL_OF_FUN_LOG" Width="1.5" PointX="38.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kn_onlineModel.ITEM_EXCHANGE_ITEMDETAY" Width="1.5" PointX="21.375" PointY="38.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

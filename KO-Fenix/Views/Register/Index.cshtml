@@ -36,7 +36,7 @@
                         <tr>
                             <td><label>Kullanıcı Adı</label></td>
                             <td>:</td>
-                            <td>@Html.EditorFor(c => c.strAccountID, new { style = "width=75px" })</td>
+                            <td>@Html.EditorFor(c => c.strAccountID, new { style = "width=75px" , maxlength = "10" })</td>
                             <td>@Html.ValidationMessageFor(c => c.strAccountID)</td>
                         </tr>
 

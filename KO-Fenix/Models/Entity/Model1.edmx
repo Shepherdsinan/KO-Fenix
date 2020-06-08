@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="kn_onlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="kn_onlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._BANKALAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="_BANKALAR">
@@ -18,16 +18,6 @@ warning 6002: The table/view 'kn_online.dbo._BANKALAR' does not have a primary k
           <Property Name="Isim" Type="varchar" MaxLength="50" />
           <Property Name="IBAN" Type="varchar" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo._BASLANGIC_ITEMLERI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="_BASLANGIC_ITEMLERI">
-          <Property Name="Warrior" Type="varchar" MaxLength="255" />
-          <Property Name="Rogue" Type="varchar" MaxLength="255" />
-          <Property Name="Mage" Type="varchar" MaxLength="255" />
-          <Property Name="Priest" Type="varchar" MaxLength="255" />
-          <Property Name="durum" Type="int" />
-          <Property Name="inventory" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._BLOCK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="_BLOCK">
@@ -97,15 +87,6 @@ warning 6002: The table/view 'kn_online.dbo._DOWNLOADS' does not have a primary 
           <Property Name="tarih" Type="varchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo._KESN' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="_KESN">
-          <Property Name="ESN" Type="nvarchar" MaxLength="40" />
-          <Property Name="Passwd" Type="nvarchar" MaxLength="9" />
-          <Property Name="Cash" Type="int" />
-          <Property Name="Durum" Type="int" />
-          <Property Name="Kullanan" Type="nvarchar" MaxLength="21" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._LINKS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="_LINKS">
           <Key>
@@ -130,15 +111,6 @@ warning 6002: The table/view 'kn_online.dbo._MENU' does not have a primary key d
           <Property Name="stabil" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo._MYKOL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="_MYKOL">
-          <Property Name="StrAccountID" Type="varchar" MaxLength="21" />
-          <Property Name="MyKOLSoru" Type="varchar" MaxLength="500" />
-          <Property Name="MyKOLCevap" Type="varchar" MaxLength="500" />
-          <Property Name="MyKOLMail" Type="varchar" MaxLength="250" />
-          <Property Name="MyKOLcepno" Type="nchar" MaxLength="11" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._NEWS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="_NEWS">
           <Key>
@@ -153,7 +125,7 @@ warning 6002: The table/view 'kn_online.dbo._NEWS' does not have a primary key d
           <Property Name="tarih" Type="varchar" MaxLength="50" />
           <Property Name="sef" Type="varchar" MaxLength="200" />
           <Property Name="views" Type="int" />
-          <Property Name="img" Type="varchar" MaxLength="250" />
+          <Property Name="link" Type="varchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._PANELSETTINGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -275,14 +247,6 @@ warning 6002: The table/view 'kn_online.dbo._VOTES' does not have a primary key 
           <Property Name="vote" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo._WARTIMES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="_WARTIMES">
-          <Property Name="LunarWartr" Type="varchar" MaxLength="50" />
-          <Property Name="LunarWaren" Type="varchar" MaxLength="50" />
-          <Property Name="DelosWartr" Type="varchar" MaxLength="50" />
-          <Property Name="DelosWaren" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo._WEBSETTINGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="_WEBSETTINGS">
           <Key>
@@ -322,56 +286,6 @@ warning 6002: The table/view 'kn_online.dbo.ACCOUNT_CHAR' does not have a primar
           <Property Name="strCharID4" Type="char" MaxLength="21" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ACHIEVE_COM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ACHIEVE_COM">
-          <Property Name="sIndex" Type="int" />
-          <Property Name="type" Type="tinyint" />
-          <Property Name="Req1" Type="int" />
-          <Property Name="Req2" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ACHIEVE_MAIN' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ACHIEVE_MAIN">
-          <Property Name="sIndex" Type="int" />
-          <Property Name="Type" Type="tinyint" />
-          <Property Name="TitleID" Type="smallint" />
-          <Property Name="Point" Type="smallint" />
-          <Property Name="ItemNum" Type="int" />
-          <Property Name="Count" Type="int" />
-          <Property Name="ZoneID" Type="tinyint" />
-          <Property Name="unknown2" Type="tinyint" />
-          <Property Name="AchieveType" Type="tinyint" />
-          <Property Name="ReqTime" Type="smallint" />
-          <Property Name="strName" Type="char" MaxLength="255" />
-          <Property Name="strDesc" Type="char" MaxLength="255" />
-          <Property Name="byte1" Type="tinyint" />
-          <Property Name="byte2" Type="tinyint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ACHIEVE_MON' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ACHIEVE_MON">
-          <Property Name="sIndex" Type="int" />
-          <Property Name="Type" Type="tinyint" />
-          <Property Name="byte" Type="tinyint" />
-          <Property Name="Monster1_1" Type="int" />
-          <Property Name="Monster1_2" Type="int" />
-          <Property Name="Monster1_3" Type="int" />
-          <Property Name="Monster1_4" Type="int" />
-          <Property Name="MonCount1" Type="int" />
-          <Property Name="Monster2_1" Type="int" />
-          <Property Name="Monster2_2" Type="int" />
-          <Property Name="Monster2_3" Type="int" />
-          <Property Name="Monster2_4" Type="int" />
-          <Property Name="MonCount2" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ACHIEVE_NORMAL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ACHIEVE_NORMAL">
-          <Property Name="sIndex" Type="int" />
-          <Property Name="Type" Type="smallint" />
-          <Property Name="Count" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.ACHIEVE_TITLE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ACHIEVE_TITLE">
           <Key>
@@ -406,13 +320,6 @@ warning 6002: The table/view 'kn_online.dbo.ACHIEVE_TITLE' does not have a prima
           <Property Name="sCurseResist" Type="smallint" />
           <Property Name="sPoisonResist" Type="smallint" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ACHIEVE_WAR' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ACHIEVE_WAR">
-          <Property Name="sIndex" Type="int" />
-          <Property Name="Type" Type="tinyint" />
-          <Property Name="sCount" Type="int" />
-        </EntityType>-->
         <EntityType Name="api_paywant">
           <Key>
             <PropertyRef Name="ID" />
@@ -440,18 +347,6 @@ warning 6013: The table/view 'kn_online.dbo.ACHIEVE_WAR' does not have a primary
           <Property Name="isActive" Type="tinyint" Nullable="false" />
           <Property Name="bType" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.BAN_LOG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="BAN_LOG">
-          <Property Name="GameMaster" Type="varchar" MaxLength="21" />
-          <Property Name="BannedUser" Type="varchar" MaxLength="21" />
-          <Property Name="BanReason" Type="varchar" MaxLength="21" />
-          <Property Name="Authority" Type="smallint" />
-          <Property Name="Period" Type="int" />
-          <Property Name="BanDate" Type="datetime" />
-          <Property Name="Status" Type="tinyint" />
-          <Property Name="Notes" Type="varchar" MaxLength="100" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.BATTLE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BATTLE">
@@ -537,11 +432,6 @@ warning 6002: The table/view 'kn_online.dbo.BLACKLIST' does not have a primary k
           <Property Name="CreateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.BLOCKIP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="BLOCKIP">
-          <Property Name="ipler" Type="char" MaxLength="150" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.BOX_RANDOM_ITEM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BOX_RANDOM_ITEM">
           <Key>
@@ -607,21 +497,6 @@ warning 6002: The table/view 'kn_online.dbo.CONCURRENT' does not have a primary 
           <Property Name="zone3_count" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.CR_EVENT_MONSTER_SETTINGS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CR_EVENT_MONSTER_SETTINGS">
-          <Property Name="ID" Type="int" />
-          <Property Name="MonsterNum1" Type="smallint" />
-          <Property Name="MonsterName1" Type="varchar" MaxLength="50" />
-          <Property Name="MonsterKillCount1" Type="int" />
-          <Property Name="MonsterNum2" Type="smallint" />
-          <Property Name="MonsterName2" Type="varchar" MaxLength="50" />
-          <Property Name="MonsterKillCount2" Type="int" />
-          <Property Name="MonsterNum3" Type="smallint" />
-          <Property Name="MonsterName3" Type="varchar" MaxLength="50" />
-          <Property Name="MonsterKillCount3" Type="int" />
-          <Property Name="EventZone" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.CURRENTUSER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CURRENTUSER">
           <Key>
@@ -644,23 +519,62 @@ warning 6002: The table/view 'kn_online.dbo.CURRENTUSER' does not have a primary
           <Property Name="MACAddress" Type="int" />
           <Property Name="slot" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.DEATHMATCH_ITEMS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DEATHMATCH_ITEMS">
-          <Property Name="SlotID" Type="tinyint" />
-          <Property Name="ItemID" Type="int" />
-          <Property Name="ItemDuration" Type="smallint" />
-          <Property Name="ItemCount" Type="smallint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.DRAKI_TOWER_RANK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DRAKI_TOWER_RANK">
-          <Property Name="StrUserName" Type="char" MaxLength="21" />
-          <Property Name="DrakiTowerSec" Type="int" />
-          <Property Name="DrakiTowerStage" Type="int" />
-          <Property Name="Nation" Type="tinyint" />
-          <Property Name="BaseClass" Type="tinyint" />
-        </EntityType>-->
+        <EntityType Name="DROP_MONSTER_ITEMDETAY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="monster_id" Type="int" />
+          <Property Name="image_id" Type="int" />
+          <Property Name="monster_name" Type="varchar" MaxLength="50" />
+          <Property Name="monster_hp" Type="int" />
+          <Property Name="monster_defans" Type="int" />
+          <Property Name="monster_atak" Type="int" />
+          <Property Name="ZoneID" Type="int" />
+          <Property Name="drop_oran" Type="int" />
+          <Property Name="imagenum" Type="varchar" MaxLength="50" />
+          <Property Name="strName" Type="varchar" MaxLength="50" />
+          <Property Name="damage" Type="varchar" MaxLength="50" />
+          <Property Name="itemtype" Type="varchar" MaxLength="100" />
+          <Property Name="kind" Type="varchar" MaxLength="100" />
+          <Property Name="Class" Type="varchar" MaxLength="100" />
+          <Property Name="atakspeed" Type="varchar" MaxLength="50" />
+          <Property Name="Range" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="varchar" MaxLength="50" />
+          <Property Name="Ac" Type="varchar" MaxLength="50" />
+          <Property Name="DaggerAc" Type="varchar" MaxLength="50" />
+          <Property Name="SwordAc" Type="varchar" MaxLength="50" />
+          <Property Name="MaceAc" Type="varchar" MaxLength="50" />
+          <Property Name="AxeAc" Type="varchar" MaxLength="50" />
+          <Property Name="SpearAc" Type="varchar" MaxLength="50" />
+          <Property Name="BowAc" Type="varchar" MaxLength="50" />
+          <Property Name="FireDamage" Type="varchar" MaxLength="50" />
+          <Property Name="IceDamage" Type="varchar" MaxLength="50" />
+          <Property Name="LightningDamage" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonDamage" Type="varchar" MaxLength="50" />
+          <Property Name="HPDra" Type="varchar" MaxLength="50" />
+          <Property Name="MPDra" Type="varchar" MaxLength="50" />
+          <Property Name="MirrorDamage" Type="varchar" MaxLength="50" />
+          <Property Name="StrB" Type="varchar" MaxLength="50" />
+          <Property Name="StaB" Type="varchar" MaxLength="50" />
+          <Property Name="DexB" Type="varchar" MaxLength="50" />
+          <Property Name="IntelB" Type="varchar" MaxLength="50" />
+          <Property Name="ChaB" Type="varchar" MaxLength="50" />
+          <Property Name="MaxHpB" Type="varchar" MaxLength="50" />
+          <Property Name="MaxMpB" Type="varchar" MaxLength="50" />
+          <Property Name="FireR" Type="varchar" MaxLength="50" />
+          <Property Name="ColdR" Type="varchar" MaxLength="50" />
+          <Property Name="LightningR" Type="varchar" MaxLength="50" />
+          <Property Name="MagicR" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonR" Type="varchar" MaxLength="50" />
+          <Property Name="CurseR" Type="varchar" MaxLength="50" />
+          <Property Name="ReqStr" Type="varchar" MaxLength="50" />
+          <Property Name="ReqSta" Type="varchar" MaxLength="50" />
+          <Property Name="ReqDex" Type="varchar" MaxLength="50" />
+          <Property Name="ReqIntel" Type="varchar" MaxLength="50" />
+          <Property Name="ReqCha" Type="varchar" MaxLength="50" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="classtip" Type="int" />
+        </EntityType>
         <EntityType Name="DUPE_CHECK">
           <Key>
             <PropertyRef Name="iIndex" />
@@ -750,14 +664,6 @@ warning 6002: The table/view 'kn_online.dbo.EVENT_SCHEDULER' does not have a pri
           <Property Name="Extra4" Type="int" Nullable="false" />
           <Property Name="Status" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.EVENT_TRIGGER' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="EVENT_TRIGGER">
-          <Property Name="nIndex" Type="int" />
-          <Property Name="bNpcType" Type="smallint" />
-          <Property Name="sNpcID" Type="int" />
-          <Property Name="nTriggerNum" Type="int" />
-        </EntityType>-->
         <EntityType Name="FRIEND_LIST">
           <Key>
             <PropertyRef Name="strUserID" />
@@ -1271,6 +1177,56 @@ warning 6002: The table/view 'kn_online.dbo.ITEM_EXCHANGE_INFO' does not have a 
           <Property Name="nExchangeItemNum5" Type="int" Nullable="false" />
           <Property Name="nExchangeItemCount5" Type="smallint" Nullable="false" />
         </EntityType>
+        <EntityType Name="ITEM_EXCHANGE_ITEMDETAY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="itemnumber" Type="int" />
+          <Property Name="oran" Type="int" />
+          <Property Name="imagenum" Type="varchar" MaxLength="50" />
+          <Property Name="strName" Type="varchar" MaxLength="50" />
+          <Property Name="damage" Type="varchar" MaxLength="50" />
+          <Property Name="itemtype" Type="varchar" MaxLength="100" />
+          <Property Name="kind" Type="varchar" MaxLength="100" />
+          <Property Name="Class" Type="varchar" MaxLength="100" />
+          <Property Name="atakspeed" Type="varchar" MaxLength="50" />
+          <Property Name="Range" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="varchar" MaxLength="50" />
+          <Property Name="Ac" Type="varchar" MaxLength="50" />
+          <Property Name="DaggerAc" Type="varchar" MaxLength="50" />
+          <Property Name="SwordAc" Type="varchar" MaxLength="50" />
+          <Property Name="MaceAc" Type="varchar" MaxLength="50" />
+          <Property Name="AxeAc" Type="varchar" MaxLength="50" />
+          <Property Name="SpearAc" Type="varchar" MaxLength="50" />
+          <Property Name="BowAc" Type="varchar" MaxLength="50" />
+          <Property Name="FireDamage" Type="varchar" MaxLength="50" />
+          <Property Name="IceDamage" Type="varchar" MaxLength="50" />
+          <Property Name="LightningDamage" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonDamage" Type="varchar" MaxLength="50" />
+          <Property Name="HPDra" Type="varchar" MaxLength="50" />
+          <Property Name="MPDra" Type="varchar" MaxLength="50" />
+          <Property Name="MirrorDamage" Type="varchar" MaxLength="50" />
+          <Property Name="StrB" Type="varchar" MaxLength="50" />
+          <Property Name="StaB" Type="varchar" MaxLength="50" />
+          <Property Name="DexB" Type="varchar" MaxLength="50" />
+          <Property Name="IntelB" Type="varchar" MaxLength="50" />
+          <Property Name="ChaB" Type="varchar" MaxLength="50" />
+          <Property Name="MaxHpB" Type="varchar" MaxLength="50" />
+          <Property Name="MaxMpB" Type="varchar" MaxLength="50" />
+          <Property Name="FireR" Type="varchar" MaxLength="50" />
+          <Property Name="ColdR" Type="varchar" MaxLength="50" />
+          <Property Name="LightningR" Type="varchar" MaxLength="50" />
+          <Property Name="MagicR" Type="varchar" MaxLength="50" />
+          <Property Name="PoisonR" Type="varchar" MaxLength="50" />
+          <Property Name="CurseR" Type="varchar" MaxLength="50" />
+          <Property Name="ReqStr" Type="varchar" MaxLength="50" />
+          <Property Name="ReqSta" Type="varchar" MaxLength="50" />
+          <Property Name="ReqDex" Type="varchar" MaxLength="50" />
+          <Property Name="ReqIntel" Type="varchar" MaxLength="50" />
+          <Property Name="ReqCha" Type="varchar" MaxLength="50" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="classtip" Type="int" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.ITEM_EXPIRATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ITEM_EXPIRATION">
@@ -1397,37 +1353,6 @@ warning 6002: The table/view 'kn_online.dbo.ITEM_OP' does not have a primary key
           <Property Name="bTriggerRate" Type="tinyint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ITEM_SELLTABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ITEM_SELLTABLE">
-          <Property Name="nIndex" Type="int" />
-          <Property Name="iSellingGroup" Type="int" />
-          <Property Name="Item1" Type="int" />
-          <Property Name="Item2" Type="int" />
-          <Property Name="Item3" Type="int" />
-          <Property Name="Item4" Type="int" />
-          <Property Name="Item5" Type="int" />
-          <Property Name="Item6" Type="int" />
-          <Property Name="Item7" Type="int" />
-          <Property Name="Item8" Type="int" />
-          <Property Name="Item9" Type="int" />
-          <Property Name="Item10" Type="int" />
-          <Property Name="Item11" Type="int" />
-          <Property Name="Item12" Type="int" />
-          <Property Name="Item13" Type="int" />
-          <Property Name="Item14" Type="int" />
-          <Property Name="Item15" Type="int" />
-          <Property Name="Item16" Type="int" />
-          <Property Name="Item17" Type="int" />
-          <Property Name="Item18" Type="int" />
-          <Property Name="Item19" Type="int" />
-          <Property Name="Item20" Type="int" />
-          <Property Name="Item21" Type="int" />
-          <Property Name="Item22" Type="int" />
-          <Property Name="Item23" Type="int" />
-          <Property Name="Item24" Type="int" />
-          <Property Name="test" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.ITEM_SPECIAL_EXCHANGE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ITEM_SPECIAL_EXCHANGE">
           <Key>
@@ -1524,17 +1449,6 @@ warning 6002: The table/view 'kn_online.dbo.ITEM_UPGRADE' does not have a primar
           <Property Name="nGenRate" Type="smallint" Nullable="false" />
           <Property Name="nGiveItem" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.ITEMLER' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ITEMLER">
-          <Property Name="dwid" Type="int" />
-          <Property Name="stacksize" Type="smallint" />
-          <Property Name="durability" Type="smallint" />
-          <Property Name="strUserId" Type="varchar" MaxLength="50" />
-          <Property Name="sira" Type="int" />
-          <Property Name="itembasicname" Type="varchar" MaxLength="100" />
-          <Property Name="extname" Type="varchar" MaxLength="100" />
-        </EntityType>-->
         <EntityType Name="ITEMS_DUPER">
           <Key>
             <PropertyRef Name="nIndex" />
@@ -1560,29 +1474,6 @@ warning 6002: The table/view 'kn_online.dbo.ITEMUP_PROBABILITY' does not have a 
           <Property Name="nCurSuccess" Type="smallint" Nullable="false" />
           <Property Name="nCurFail" Type="smallint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.K_BOSSPOS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="K_BOSSPOS">
-          <Property Name="NpcID" Type="int" />
-          <Property Name="strName" Type="varchar" MaxLength="50" />
-          <Property Name="Zone" Type="smallint" />
-          <Property Name="Posx1" Type="int" />
-          <Property Name="Posz1" Type="int" />
-          <Property Name="Posx2" Type="int" />
-          <Property Name="Posz2" Type="int" />
-          <Property Name="Posx3" Type="int" />
-          <Property Name="Posz3" Type="int" />
-          <Property Name="Posx4" Type="int" />
-          <Property Name="Posz4" Type="int" />
-          <Property Name="RegTime" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.K_MOB_US' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="K_MOB_US">
-          <Property Name="sSid" Type="int" />
-          <Property Name="strName" Type="varchar" MaxLength="50" />
-          <Property Name="sPid" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.K_MONSTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="K_MONSTER">
@@ -1815,31 +1706,6 @@ warning 6002: The table/view 'kn_online.dbo.K_NPC_ITEM' does not have a primary 
           <Property Name="iItem05" Type="int" />
           <Property Name="sPersent05" Type="smallint" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.K_NPCPOS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="K_NPCPOS">
-          <Property Name="ZoneID" Type="smallint" />
-          <Property Name="NpcID" Type="int" />
-          <Property Name="ActType" Type="tinyint" />
-          <Property Name="RegenType" Type="tinyint" />
-          <Property Name="DungeonFamily" Type="tinyint" />
-          <Property Name="SpecialType" Type="tinyint" />
-          <Property Name="TrapNumber" Type="tinyint" />
-          <Property Name="LimitMinX" Type="int" />
-          <Property Name="LeftX" Type="int" />
-          <Property Name="LimitMaxX" Type="int" />
-          <Property Name="RightX" Type="int" />
-          <Property Name="LimitMinZ" Type="int" />
-          <Property Name="TopZ" Type="int" />
-          <Property Name="LimitMaxZ" Type="int" />
-          <Property Name="BottomZ" Type="int" />
-          <Property Name="NumNPC" Type="tinyint" />
-          <Property Name="RegTime" Type="int" />
-          <Property Name="byDirection" Type="int" />
-          <Property Name="DotCnt" Type="tinyint" />
-          <Property Name="path" Type="text" />
-          <Property Name="Room" Type="smallint" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.K_OBJECTPOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="K_OBJECTPOS">
@@ -2084,25 +1950,6 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS_ALLIANCE' does not have a pr
           <Property Name="sMercenaryClan_1" Type="smallint" Nullable="false" />
           <Property Name="sMercenaryClan_2" Type="smallint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.KNIGHTS_CAPE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="KNIGHTS_CAPE">
-          <Property Name="sCapeIndex" Type="int" />
-          <Property Name="strName" Type="varchar(max)" />
-          <Property Name="nBuyPrice" Type="int" />
-          <Property Name="nDuration" Type="int" />
-          <Property Name="byGrade" Type="tinyint" />
-          <Property Name="nBuyLoyalty" Type="int" />
-          <Property Name="byRanking" Type="tinyint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.KNIGHTS_NCS_LOG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="KNIGHTS_NCS_LOG">
-          <Property Name="strClanLeaderID" Type="varchar" MaxLength="21" />
-          <Property Name="strOldClanID" Type="varchar" MaxLength="21" />
-          <Property Name="strNewClanID" Type="varchar" MaxLength="21" />
-          <Property Name="Date" Type="datetime" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.KNIGHTS_RATING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="KNIGHTS_RATING">
@@ -2812,19 +2659,6 @@ warning 6002: The table/view 'kn_online.dbo.MONSTER_RESPAWN_LIST' does not have 
           <Property Name="sCount" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.MONSTER_RESPAWN_LIST_INFORMATION' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="MONSTER_RESPAWN_LIST_INFORMATION">
-          <Property Name="sIndex" Type="smallint" />
-          <Property Name="sSid" Type="smallint" />
-          <Property Name="ZoneID" Type="tinyint" />
-          <Property Name="bType" Type="tinyint" />
-          <Property Name="X" Type="smallint" />
-          <Property Name="Y" Type="smallint" />
-          <Property Name="Z" Type="smallint" />
-          <Property Name="sCount" Type="smallint" />
-          <Property Name="bRadius" Type="tinyint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.MONSTER_SUMMON_LIST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MONSTER_SUMMON_LIST">
           <Key>
@@ -2885,24 +2719,6 @@ warning 6002: The table/view 'kn_online.dbo.PETDATA' does not have a primary key
           <Property Name="strItemEx" Type="binary" MaxLength="24" />
           <Property Name="StrSarial" Type="binary" MaxLength="48" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.PPCARD_LIST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PPCARD_LIST">
-          <Property Name="PPKeyCode" Type="char" MaxLength="20" />
-          <Property Name="KnightCash" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.PREMIUM_GIFT_ITEM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PREMIUM_GIFT_ITEM">
-          <Property Name="bPremiumType" Type="tinyint" />
-          <Property Name="strPremiumName" Type="varchar" MaxLength="50" />
-          <Property Name="iBonusItemNum" Type="int" />
-          <Property Name="strItemName" Type="varchar" MaxLength="50" />
-          <Property Name="sCount" Type="smallint" />
-          <Property Name="strSender" Type="varchar" MaxLength="50" />
-          <Property Name="strSubject" Type="varchar" MaxLength="50" />
-          <Property Name="strMessage" Type="varchar" MaxLength="150" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.PREMIUM_ITEM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PREMIUM_ITEM">
@@ -2998,68 +2814,6 @@ warning 6002: The table/view 'kn_online.dbo.PREMIUM_ITEM_GIFT' does not have a p
           <Property Name="Aciklama" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="PID" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.PUS_ITEMLERI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PUS_ITEMLERI">
-          <Property Name="Type" Type="varchar" MaxLength="50" />
-          <Property Name="Rank" Type="int" />
-          <Property Name="GoodsNo" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="sImage" Type="varchar" MaxLength="50" />
-          <Property Name="bImage" Type="varchar" MaxLength="50" />
-          <Property Name="MainIcon" Type="varchar" MaxLength="50" />
-          <Property Name="SubIcon" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="int" />
-          <Property Name="Dc" Type="int" />
-          <Property Name="Event" Type="varchar" MaxLength="50" />
-          <Property Name="Dtype" Type="varchar" MaxLength="50" />
-          <Property Name="BuyType" Type="varchar" MaxLength="50" />
-          <Property Name="InvenCnt" Type="varchar" MaxLength="50" />
-          <Property Name="Explain1" Type="varchar" MaxLength="1024" />
-          <Property Name="Explain2" Type="varchar" MaxLength="1024" />
-          <Property Name="ItemType" Type="varchar" MaxLength="50" />
-          <Property Name="LimitType" Type="varchar" MaxLength="50" />
-          <Property Name="LimitTotal" Type="varchar" MaxLength="50" />
-          <Property Name="LimitRemain" Type="varchar" MaxLength="50" />
-          <Property Name="LimitSDate" Type="varchar" MaxLength="50" />
-          <Property Name="LimitEDate" Type="varchar" MaxLength="50" />
-          <Property Name="LimitAge" Type="varchar" MaxLength="50" />
-          <Property Name="IssueCheck" Type="varchar" MaxLength="50" />
-          <Property Name="IssueImage" Type="varchar" MaxLength="50" />
-          <Property Name="CharSex" Type="varchar" MaxLength="50" />
-          <Property Name="ItemProperty" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.PUS_ITEMS_indirimli' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PUS_ITEMS_indirimli">
-          <Property Name="Type" Type="varchar" MaxLength="50" />
-          <Property Name="Rank" Type="int" />
-          <Property Name="GoodsNo" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="sImage" Type="varchar" MaxLength="50" />
-          <Property Name="bImage" Type="varchar" MaxLength="50" />
-          <Property Name="MainIcon" Type="varchar" MaxLength="50" />
-          <Property Name="SubIcon" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="int" />
-          <Property Name="Dc" Type="int" />
-          <Property Name="Event" Type="varchar" MaxLength="50" />
-          <Property Name="Dtype" Type="varchar" MaxLength="50" />
-          <Property Name="BuyType" Type="varchar" MaxLength="50" />
-          <Property Name="InvenCnt" Type="varchar" MaxLength="50" />
-          <Property Name="Explain1" Type="varchar" MaxLength="1024" />
-          <Property Name="Explain2" Type="varchar" MaxLength="1024" />
-          <Property Name="ItemType" Type="varchar" MaxLength="50" />
-          <Property Name="LimitType" Type="varchar" MaxLength="50" />
-          <Property Name="LimitTotal" Type="varchar" MaxLength="50" />
-          <Property Name="LimitRemain" Type="varchar" MaxLength="50" />
-          <Property Name="LimitSDate" Type="varchar" MaxLength="50" />
-          <Property Name="LimitEDate" Type="varchar" MaxLength="50" />
-          <Property Name="LimitAge" Type="varchar" MaxLength="50" />
-          <Property Name="IssueCheck" Type="varchar" MaxLength="50" />
-          <Property Name="IssueImage" Type="varchar" MaxLength="50" />
-          <Property Name="CharSex" Type="varchar" MaxLength="50" />
-          <Property Name="ItemProperty" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="PUS_LOG">
           <Key>
             <PropertyRef Name="ID" />
@@ -3314,16 +3068,6 @@ warning 6002: The table/view 'kn_online.dbo.SERVER_RESOURCE' does not have a pri
           <Property Name="strResource" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.SERVER_STATUS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="SERVER_STATUS">
-          <Property Name="State" Type="tinyint" />
-          <Property Name="Ram" Type="int" />
-          <Property Name="ActiveUsers" Type="smallint" />
-          <Property Name="UpdateTime" Type="datetime" />
-          <Property Name="MaxRam" Type="int" />
-          <Property Name="MaxUser" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.SET_ITEM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SET_ITEM">
           <Key>
@@ -3427,14 +3171,6 @@ warning 6002: The table/view 'kn_online.dbo.START_POSITION' does not have a prim
           <Property Name="bRangeX" Type="tinyint" Nullable="false" />
           <Property Name="bRangeZ" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.START_POSITION_RANDOM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="START_POSITION_RANDOM">
-          <Property Name="ZoneID" Type="tinyint" />
-          <Property Name="PosX" Type="smallint" />
-          <Property Name="PosZ" Type="smallint" />
-          <Property Name="Radius" Type="tinyint" />
-        </EntityType>-->
         <EntityType Name="TB_USER">
           <Key>
             <PropertyRef Name="strAccountID" />
@@ -3513,18 +3249,6 @@ warning 6002: The table/view 'kn_online.dbo.USER_CHARACTER_SEAL_ITEMS' does not 
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="isUsed" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.USER_CLASSCHANGE_LOG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="USER_CLASSCHANGE_LOG">
-          <Property Name="strAccountID" Type="varchar" MaxLength="30" />
-          <Property Name="strUserID" Type="varchar" MaxLength="30" />
-          <Property Name="sOldClass" Type="smallint" />
-          <Property Name="sNewClass" Type="smallint" />
-          <Property Name="sOldRace" Type="smallint" />
-          <Property Name="sNewRace" Type="smallint" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="NPoints" Type="smallint" />
-        </EntityType>-->
         <EntityType Name="USER_DAILY_OP">
           <Key>
             <PropertyRef Name="strUserID" />
@@ -3539,14 +3263,6 @@ warning 6013: The table/view 'kn_online.dbo.USER_CLASSCHANGE_LOG' does not have 
           <Property Name="KeeperKillerTime" Type="int" Nullable="false" />
           <Property Name="UserLoyaltyWingRewardTime" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.USER_HDD_BAN_LIST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="USER_HDD_BAN_LIST">
-          <Property Name="UserID" Type="varchar" MaxLength="21" />
-          <Property Name="HwidKey" Type="bigint" />
-          <Property Name="MacKey" Type="int" />
-          <Property Name="Banned" Type="tinyint" />
-        </EntityType>-->
         <EntityType Name="USER_ITEM_INFO">
           <Key>
             <PropertyRef Name="id" />
@@ -3598,13 +3314,9 @@ warning 6013: The table/view 'kn_online.dbo.USER_HDD_BAN_LIST' does not have a p
           <Property Name="ReqDexinfo" Type="varchar" MaxLength="50" />
           <Property Name="ReqIntelinfo" Type="varchar" MaxLength="50" />
           <Property Name="ReqChainfo" Type="varchar" MaxLength="50" />
+          <Property Name="classtip" Type="int" />
+          <Property Name="duration" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.USER_ITEM_LIST_ALL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="USER_ITEM_LIST_ALL">
-          <Property Name="nItemID" Type="smallint" />
-          <Property Name="nItemSerial" Type="smallint" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.USER_KNIGHTS_RANK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="USER_KNIGHTS_RANK">
@@ -3626,14 +3338,6 @@ warning 6002: The table/view 'kn_online.dbo.USER_KNIGHTS_RANK' does not have a p
           <Property Name="nMoney" Type="int" Nullable="false" />
           <Property Name="UpdateTime" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.USER_NCS_LOG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="USER_NCS_LOG">
-          <Property Name="strAccountID" Type="varchar" MaxLength="21" />
-          <Property Name="strOldUserID" Type="varchar" MaxLength="21" />
-          <Property Name="strNewUserID" Type="varchar" MaxLength="21" />
-          <Property Name="Date" Type="datetime" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.USER_PERSONAL_RANK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="USER_PERSONAL_RANK">
@@ -3791,12 +3495,6 @@ warning 6002: The table/view 'kn_online.dbo.VERSION' does not have a primary key
           <Property Name="strFilename" Type="nchar" MaxLength="40" Nullable="false" />
           <Property Name="strCompressName" Type="nchar" MaxLength="40" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.VERSION_URL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="VERSION_URL">
-          <Property Name="PatchAddress" Type="varchar" MaxLength="50" />
-          <Property Name="PatchDirectory" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="VIP_WAREHOUSE">
           <Key>
             <PropertyRef Name="strAccountID" />
@@ -3807,14 +3505,6 @@ warning 6013: The table/view 'kn_online.dbo.VERSION_URL' does not have a primary
           <Property Name="VIPWarehouseData" Type="binary" MaxLength="576" />
           <Property Name="strSerial" Type="binary" MaxLength="384" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.VS_EVENT_LOGS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="VS_EVENT_LOGS">
-          <Property Name="WinnerPlayer" Type="char" MaxLength="21" />
-          <Property Name="LoserPlayer" Type="char" MaxLength="21" />
-          <Property Name="NationalPoint" Type="char" MaxLength="21" />
-          <Property Name="DateTime" Type="datetime" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.WAITING_COMMANDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WAITING_COMMANDS">
@@ -3908,16 +3598,6 @@ warning 6002: The table/view 'kn_online.dbo.WEB_ITEMMALL_LOG' does not have a pr
           <Property Name="nExpirationTime" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'kn_online.dbo.WHEEL_OF_FUN_ITEM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="WHEEL_OF_FUN_ITEM">
-          <Property Name="ID" Type="tinyint" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Num" Type="int" />
-          <Property Name="Count" Type="tinyint" />
-          <Property Name="Percent" Type="tinyint" />
-          <Property Name="Days" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WHEEL_OF_FUN_LOG">
           <Key>
@@ -3948,8 +3628,10 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <EntitySet Name="_DESTEKMESAJ" EntityType="Self._DESTEKMESAJ" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="api_paywant" EntityType="Self.api_paywant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUTONOTICE" EntityType="Self.AUTONOTICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DROP_MONSTER_ITEMDETAY" EntityType="Self.DROP_MONSTER_ITEMDETAY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DUPE_CHECK" EntityType="Self.DUPE_CHECK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FRIEND_LIST" EntityType="Self.FRIEND_LIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_EXCHANGE_ITEMDETAY" EntityType="Self.ITEM_EXCHANGE_ITEMDETAY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITEMS_DUPER" EntityType="Self.ITEMS_DUPER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KNIGHT_CASH" EntityType="Self.KNIGHT_CASH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LEVEL_UP" EntityType="Self.LEVEL_UP" Schema="dbo" store:Type="Tables" />
@@ -4046,7 +3728,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
     [_NEWS].[tarih] AS [tarih], 
     [_NEWS].[sef] AS [sef], 
     [_NEWS].[views] AS [views], 
-    [_NEWS].[img] AS [img]
+    [_NEWS].[link] AS [link]
     FROM [dbo].[_NEWS] AS [_NEWS]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="_PANELSETTINGS" EntityType="Self._PANELSETTINGS" store:Type="Tables" store:Schema="dbo">
@@ -5730,8 +5412,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
     FROM [dbo].[WHEEL_OF_FUN_LOG] AS [WHEEL_OF_FUN_LOG]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="kn_onlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -5784,6 +5465,62 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <Property Name="bDay" Type="Byte" Nullable="false" />
           <Property Name="isActive" Type="Byte" Nullable="false" />
           <Property Name="bType" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DROP_MONSTER_ITEMDETAY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="classtip" Type="Int32" />
+          <Property Name="monster_id" Type="Int32" />
+          <Property Name="image_id" Type="Int32" />
+          <Property Name="monster_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="monster_hp" Type="Int32" />
+          <Property Name="monster_defans" Type="Int32" />
+          <Property Name="monster_atak" Type="Int32" />
+          <Property Name="ZoneID" Type="Int32" />
+          <Property Name="drop_oran" Type="Int32" />
+          <Property Name="imagenum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="damage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="itemtype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kind" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="atakspeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Range" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DaggerAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SwordAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaceAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AxeAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpearAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BowAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IceDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HPDra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MPDra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MirrorDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StrB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StaB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DexB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IntelB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChaB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxHpB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxMpB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColdR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MagicR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CurseR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqSta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqDex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqIntel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqCha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="DUPE_CHECK">
           <Key>
@@ -6131,6 +5868,8 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <Property Name="ReqDexinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ReqIntelinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ReqChainfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="classtip" Type="Int32" />
+          <Property Name="duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="USER_RENTAL_ITEM">
           <Key>
@@ -6388,7 +6127,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <Property Name="tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="sef" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="views" Type="Int32" />
-          <Property Name="img" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="C_PANELSETTINGS">
           <Key>
@@ -9034,6 +8773,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <EntitySet Name="C_DESTEKMESAJ" EntityType="Self.C_DESTEKMESAJ" />
           <EntitySet Name="api_paywant" EntityType="Self.api_paywant" />
           <EntitySet Name="AUTONOTICE" EntityType="Self.AUTONOTICE" />
+          <EntitySet Name="DROP_MONSTER_ITEMDETAY" EntityType="Self.DROP_MONSTER_ITEMDETAY" />
           <EntitySet Name="DUPE_CHECK" EntityType="Self.DUPE_CHECK" />
           <EntitySet Name="FRIEND_LIST" EntityType="Self.FRIEND_LIST" />
           <EntitySet Name="ITEMS_DUPER" EntityType="Self.ITEMS_DUPER" />
@@ -9169,7 +8909,58 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
           <EntitySet Name="WAREHOUSE_ITEMLER" EntityType="Self.WAREHOUSE_ITEMLER" />
           <EntitySet Name="WEB_ITEMMALL_LOG" EntityType="Self.WEB_ITEMMALL_LOG" />
           <EntitySet Name="WHEEL_OF_FUN_LOG" EntityType="Self.WHEEL_OF_FUN_LOG" />
+          <EntitySet Name="ITEM_EXCHANGE_ITEMDETAY" EntityType="kn_onlineModel.ITEM_EXCHANGE_ITEMDETAY" />
         </EntityContainer>
+        <EntityType Name="ITEM_EXCHANGE_ITEMDETAY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="itemnumber" Type="Int32" />
+          <Property Name="oran" Type="Int32" />
+          <Property Name="imagenum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="strName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="damage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="itemtype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kind" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="atakspeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Range" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DaggerAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SwordAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaceAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AxeAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpearAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BowAc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IceDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HPDra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MPDra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MirrorDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StrB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StaB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DexB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IntelB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChaB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxHpB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxMpB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FireR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColdR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LightningR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MagicR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoisonR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CurseR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqSta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqDex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqIntel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReqCha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="classtip" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9227,6 +9018,64 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
                 <ScalarProperty Name="bDay" ColumnName="bDay" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="bType" ColumnName="bType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DROP_MONSTER_ITEMDETAY">
+            <EntityTypeMapping TypeName="kn_onlineModel.DROP_MONSTER_ITEMDETAY">
+              <MappingFragment StoreEntitySet="DROP_MONSTER_ITEMDETAY">
+                <ScalarProperty Name="monster_id" ColumnName="monster_id" />
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="monster_name" ColumnName="monster_name" />
+                <ScalarProperty Name="monster_hp" ColumnName="monster_hp" />
+                <ScalarProperty Name="monster_defans" ColumnName="monster_defans" />
+                <ScalarProperty Name="monster_atak" ColumnName="monster_atak" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="drop_oran" ColumnName="drop_oran" />
+                <ScalarProperty Name="imagenum" ColumnName="imagenum" />
+                <ScalarProperty Name="strName" ColumnName="strName" />
+                <ScalarProperty Name="damage" ColumnName="damage" />
+                <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="atakspeed" ColumnName="atakspeed" />
+                <ScalarProperty Name="Range" ColumnName="Range" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Ac" ColumnName="Ac" />
+                <ScalarProperty Name="DaggerAc" ColumnName="DaggerAc" />
+                <ScalarProperty Name="SwordAc" ColumnName="SwordAc" />
+                <ScalarProperty Name="MaceAc" ColumnName="MaceAc" />
+                <ScalarProperty Name="AxeAc" ColumnName="AxeAc" />
+                <ScalarProperty Name="SpearAc" ColumnName="SpearAc" />
+                <ScalarProperty Name="BowAc" ColumnName="BowAc" />
+                <ScalarProperty Name="FireDamage" ColumnName="FireDamage" />
+                <ScalarProperty Name="IceDamage" ColumnName="IceDamage" />
+                <ScalarProperty Name="LightningDamage" ColumnName="LightningDamage" />
+                <ScalarProperty Name="PoisonDamage" ColumnName="PoisonDamage" />
+                <ScalarProperty Name="HPDra" ColumnName="HPDra" />
+                <ScalarProperty Name="MPDra" ColumnName="MPDra" />
+                <ScalarProperty Name="MirrorDamage" ColumnName="MirrorDamage" />
+                <ScalarProperty Name="StrB" ColumnName="StrB" />
+                <ScalarProperty Name="StaB" ColumnName="StaB" />
+                <ScalarProperty Name="DexB" ColumnName="DexB" />
+                <ScalarProperty Name="IntelB" ColumnName="IntelB" />
+                <ScalarProperty Name="ChaB" ColumnName="ChaB" />
+                <ScalarProperty Name="MaxHpB" ColumnName="MaxHpB" />
+                <ScalarProperty Name="MaxMpB" ColumnName="MaxMpB" />
+                <ScalarProperty Name="FireR" ColumnName="FireR" />
+                <ScalarProperty Name="ColdR" ColumnName="ColdR" />
+                <ScalarProperty Name="LightningR" ColumnName="LightningR" />
+                <ScalarProperty Name="MagicR" ColumnName="MagicR" />
+                <ScalarProperty Name="PoisonR" ColumnName="PoisonR" />
+                <ScalarProperty Name="CurseR" ColumnName="CurseR" />
+                <ScalarProperty Name="ReqStr" ColumnName="ReqStr" />
+                <ScalarProperty Name="ReqSta" ColumnName="ReqSta" />
+                <ScalarProperty Name="ReqDex" ColumnName="ReqDex" />
+                <ScalarProperty Name="ReqIntel" ColumnName="ReqIntel" />
+                <ScalarProperty Name="ReqCha" ColumnName="ReqCha" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="classtip" ColumnName="classtip" />
+                
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -9593,6 +9442,9 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
                 <ScalarProperty Name="ReqDexinfo" ColumnName="ReqDexinfo" />
                 <ScalarProperty Name="ReqIntelinfo" ColumnName="ReqIntelinfo" />
                 <ScalarProperty Name="ReqChainfo" ColumnName="ReqChainfo" />
+                <ScalarProperty Name="classtip" ColumnName="classtip" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -9865,7 +9717,7 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
                 <ScalarProperty Name="tarih" ColumnName="tarih" />
                 <ScalarProperty Name="sef" ColumnName="sef" />
                 <ScalarProperty Name="views" ColumnName="views" />
-                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="link" ColumnName="link" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -11746,6 +11598,57 @@ warning 6002: The table/view 'kn_online.dbo.WHEEL_OF_FUN_LOG' does not have a pr
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="NPoints" ColumnName="NPoints" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_EXCHANGE_ITEMDETAY">
+            <EntityTypeMapping TypeName="kn_onlineModel.ITEM_EXCHANGE_ITEMDETAY">
+              <MappingFragment StoreEntitySet="ITEM_EXCHANGE_ITEMDETAY">
+                <ScalarProperty Name="classtip" ColumnName="classtip" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ReqCha" ColumnName="ReqCha" />
+                <ScalarProperty Name="ReqIntel" ColumnName="ReqIntel" />
+                <ScalarProperty Name="ReqDex" ColumnName="ReqDex" />
+                <ScalarProperty Name="ReqSta" ColumnName="ReqSta" />
+                <ScalarProperty Name="ReqStr" ColumnName="ReqStr" />
+                <ScalarProperty Name="CurseR" ColumnName="CurseR" />
+                <ScalarProperty Name="PoisonR" ColumnName="PoisonR" />
+                <ScalarProperty Name="MagicR" ColumnName="MagicR" />
+                <ScalarProperty Name="LightningR" ColumnName="LightningR" />
+                <ScalarProperty Name="ColdR" ColumnName="ColdR" />
+                <ScalarProperty Name="FireR" ColumnName="FireR" />
+                <ScalarProperty Name="MaxMpB" ColumnName="MaxMpB" />
+                <ScalarProperty Name="MaxHpB" ColumnName="MaxHpB" />
+                <ScalarProperty Name="ChaB" ColumnName="ChaB" />
+                <ScalarProperty Name="IntelB" ColumnName="IntelB" />
+                <ScalarProperty Name="DexB" ColumnName="DexB" />
+                <ScalarProperty Name="StaB" ColumnName="StaB" />
+                <ScalarProperty Name="StrB" ColumnName="StrB" />
+                <ScalarProperty Name="MirrorDamage" ColumnName="MirrorDamage" />
+                <ScalarProperty Name="MPDra" ColumnName="MPDra" />
+                <ScalarProperty Name="HPDra" ColumnName="HPDra" />
+                <ScalarProperty Name="PoisonDamage" ColumnName="PoisonDamage" />
+                <ScalarProperty Name="LightningDamage" ColumnName="LightningDamage" />
+                <ScalarProperty Name="IceDamage" ColumnName="IceDamage" />
+                <ScalarProperty Name="FireDamage" ColumnName="FireDamage" />
+                <ScalarProperty Name="BowAc" ColumnName="BowAc" />
+                <ScalarProperty Name="SpearAc" ColumnName="SpearAc" />
+                <ScalarProperty Name="AxeAc" ColumnName="AxeAc" />
+                <ScalarProperty Name="MaceAc" ColumnName="MaceAc" />
+                <ScalarProperty Name="SwordAc" ColumnName="SwordAc" />
+                <ScalarProperty Name="DaggerAc" ColumnName="DaggerAc" />
+                <ScalarProperty Name="Ac" ColumnName="Ac" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Range" ColumnName="Range" />
+                <ScalarProperty Name="atakspeed" ColumnName="atakspeed" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+                <ScalarProperty Name="damage" ColumnName="damage" />
+                <ScalarProperty Name="strName" ColumnName="strName" />
+                <ScalarProperty Name="imagenum" ColumnName="imagenum" />
+                <ScalarProperty Name="oran" ColumnName="oran" />
+                <ScalarProperty Name="itemnumber" ColumnName="itemnumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

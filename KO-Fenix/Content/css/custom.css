@@ -1201,6 +1201,23 @@ legend {
     margin-right: 10px;
 }
 
+#frmselect1 {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+
+#frmselect2 {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+#frmselect3 {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+
 #ranking_select_container {
     margin-left: 16px;
     margin-top: 10px;

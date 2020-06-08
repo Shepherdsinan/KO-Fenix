@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "notfounderror";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .mainside .mainbox .mainbox-inner .mainbox-body {
+        padding: 0
+    }
+</style>
+<div id="page-character" class="mainbox page page-character">
+
+
+    <div class="mainbox-inner page-inner">
+        <div class="mainbox-header page-header border_box">
+            <h3 class="page_title overflow_ellipsis"><span>KoFeNiX</span> &#129138; Geçersiz İşlem</h3>
+            <div id="cache_time"></div>
+        </div>
+
+        <div class="mainbox-body page-body self_clear">
+            <div id="forgotpw_container">
+                <br />
+                <div id="login_content" class="container_2">
+                    <div class="complete_msg">
+                        <p style="color:#ffb62c;">Uyarı!!</p> Yetkiniz olmayan bir sayfaya erişmeye çalıştınız.<br />Anasayfaya yönlendiriliyorsunuz lütfen bekleyiniz...
+                        <br />
+                        <br />
+                        <center><img src="/Content/images/ajax.gif" /></center>
+                        <center><img src="/Content/images/404.png" /></center>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    setTimeout(function () {
+        window.location.assign("/");
+        //9 saniye sonra yönlenecek
+    }, 9000);
+</script>

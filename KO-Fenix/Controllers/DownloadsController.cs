@@ -16,8 +16,7 @@ namespace KO_Fenix.Controllers
         public ActionResult Index()
         {
             cs.Deger6 = db.C_DOWNLOADS.ToList();
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+            
 
             return View(cs);
         }

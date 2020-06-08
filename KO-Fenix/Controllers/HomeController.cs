@@ -24,8 +24,7 @@ namespace KO_Fenix.Controllers
             cs.Deger3 = db.KNIGHTS.ToList();
             var habersayisi = db.C_NEWS.Count();
             ViewBag.hbrsayi1 = habersayisi;
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+            
             cs.Deger8 = (from k in db.KNIGHTS
                          join u in db.USERDATA on k.Chief equals u.strUserID
                          orderby (k.Points) descending
@@ -73,6 +72,10 @@ namespace KO_Fenix.Controllers
             return View();
         }
 
-        
+        public ActionResult notfounderror()
+        {
+            return View();
+        }
+
     }
 }

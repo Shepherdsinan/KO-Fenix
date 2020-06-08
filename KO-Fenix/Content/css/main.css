@@ -258,7 +258,7 @@ img {
     }
 
         .topbar .topbar-inner .topbar-left {
-            width: 50%;
+            width: 100%;
             height: 100%;
             float: left
         }
@@ -430,7 +430,7 @@ img {
     .header .header-inner {
         width: 1134px;
         height: 100%;
-        margin: 0 auto;
+        margin: 10px auto;
         display: block;
         background-color: transparent;
         background-image: url(../images/misc/navigation.png);
@@ -439,9 +439,9 @@ img {
     }
 
         .header .header-inner .logo_holder {
-            width: 130px;
-            height: 130px;
-            top: 2.5px;
+            width: 150px;
+            height: 150px;
+            top: -13.5px;
             left: 18px;
             right: 0;
             margin: 0 auto;
@@ -469,13 +469,13 @@ img {
                     .header .header-inner .logo_holder h1 .logo:before {
                         width: 100%;
                         height: 100%;
-                        top: -50px;
+                        top: -5px;
                         left: 0;
                         content: "";
                         opacity: 0;
                         position: absolute;
                         background-color: transparent;
-                        background-image: url(../images/misc/logo.png);
+                        background-image: url(../images/misc/logo_hover.png);
                         background-repeat: no-repeat;
                         background-position: bottom center;
                         transition: opacity .3s ease-in-out;

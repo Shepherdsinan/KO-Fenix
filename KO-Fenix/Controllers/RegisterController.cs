@@ -17,8 +17,7 @@ namespace KO_Fenix.Controllers
         {
             //var qery = db.Database.ExecuteSqlCommand("Exec [kayitol] @p0, @p1, @p2, @p3, @p4", 1, "dsfdfsd",1,2);  //new SqlParameter("@p0", p0), new SqlParameter("@p1", p1)  //new SqlParameter("@p1", p1);
 
-            var qery = db.CURRENTUSER.Count();
-            ViewBag.dgr1 = qery;
+          
             return View();
         }
         
@@ -52,6 +51,7 @@ namespace KO_Fenix.Controllers
                 Session["Email"] = p.Email.ToString();
                 return View("SaveMember");
             }
+          
 
             //doğrulama yapılmamış ise yapılacak işlemler.
             return View("Index");

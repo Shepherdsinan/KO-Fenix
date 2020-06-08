@@ -18,6 +18,7 @@ namespace KO_Fenix.Models.Sinif
         public IEnumerable<C_DESTEK> Deger9 { get; set; }
         public IEnumerable<ACCOUNT_CHAR> Deger10 { get; set; }
         public IEnumerable<C_DESTEKMESAJ> Deger11 { get; set; }
+        public IEnumerable<DROP_MONSTER_ITEMDETAY> Deger12 { get; set; }
         public string strUserID { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
