@@ -27,36 +27,9 @@ namespace KO_Fenix.Models.Entity
     
         public virtual DbSet<C_DESTEK> C_DESTEK { get; set; }
         public virtual DbSet<C_DESTEKMESAJ> C_DESTEKMESAJ { get; set; }
-        public virtual DbSet<api_paywant> api_paywant { get; set; }
-        public virtual DbSet<AUTONOTICE> AUTONOTICE { get; set; }
-        public virtual DbSet<DROP_MONSTER_ITEMDETAY> DROP_MONSTER_ITEMDETAY { get; set; }
-        public virtual DbSet<DUPE_CHECK> DUPE_CHECK { get; set; }
-        public virtual DbSet<FRIEND_LIST> FRIEND_LIST { get; set; }
-        public virtual DbSet<ITEMS_DUPER> ITEMS_DUPER { get; set; }
-        public virtual DbSet<KNIGHT_CASH> KNIGHT_CASH { get; set; }
+        public virtual DbSet<ITEM_EXCHANGE_ITEMDETAY> ITEM_EXCHANGE_ITEMDETAY { get; set; }
         public virtual DbSet<LEVEL_UP> LEVEL_UP { get; set; }
-        public virtual DbSet<MAIL_BOX> MAIL_BOX { get; set; }
-        public virtual DbSet<MALL_LIST> MALL_LIST { get; set; }
-        public virtual DbSet<PREMIUM_SERVICE_USER> PREMIUM_SERVICE_USER { get; set; }
-        public virtual DbSet<PUS_BANNER> PUS_BANNER { get; set; }
-        public virtual DbSet<PUS_CASH> PUS_CASH { get; set; }
-        public virtual DbSet<PUS_LOG> PUS_LOG { get; set; }
-        public virtual DbSet<PUS_MENU> PUS_MENU { get; set; }
-        public virtual DbSet<PUS_SESSIONS> PUS_SESSIONS { get; set; }
-        public virtual DbSet<RENTAL_ITEM> RENTAL_ITEM { get; set; }
-        public virtual DbSet<RENTAL_ITEM_LIST> RENTAL_ITEM_LIST { get; set; }
-        public virtual DbSet<TB_USER> TB_USER { get; set; }
-        public virtual DbSet<USER_ACHIEVE_DATA> USER_ACHIEVE_DATA { get; set; }
-        public virtual DbSet<USER_DAILY_OP> USER_DAILY_OP { get; set; }
-        public virtual DbSet<USER_ITEM_INFO> USER_ITEM_INFO { get; set; }
-        public virtual DbSet<USER_RENTAL_ITEM> USER_RENTAL_ITEM { get; set; }
-        public virtual DbSet<USER_SAVED_MAGIC> USER_SAVED_MAGIC { get; set; }
         public virtual DbSet<USERDATA> USERDATA { get; set; }
-        public virtual DbSet<USERDATA_SKILLSHORTCUT> USERDATA_SKILLSHORTCUT { get; set; }
-        public virtual DbSet<VIP_WAREHOUSE> VIP_WAREHOUSE { get; set; }
-        public virtual DbSet<WAREHOUSE> WAREHOUSE { get; set; }
-        public virtual DbSet<WEB_ITEMMALL> WEB_ITEMMALL { get; set; }
-        public virtual DbSet<ZONE_INFO> ZONE_INFO { get; set; }
         public virtual DbSet<C_BANKALAR> C_BANKALAR { get; set; }
         public virtual DbSet<C_BLOCK> C_BLOCK { get; set; }
         public virtual DbSet<C_CASHPAKETI> C_CASHPAKETI { get; set; }
@@ -75,96 +48,10 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<C_VOTES> C_VOTES { get; set; }
         public virtual DbSet<C_WEBSETTINGS> C_WEBSETTINGS { get; set; }
         public virtual DbSet<ACCOUNT_CHAR> ACCOUNT_CHAR { get; set; }
-        public virtual DbSet<ACHIEVE_TITLE> ACHIEVE_TITLE { get; set; }
-        public virtual DbSet<BATTLE> BATTLE { get; set; }
-        public virtual DbSet<BEGINNER_ITEM> BEGINNER_ITEM { get; set; }
-        public virtual DbSet<BEGINNER_ITEM2> BEGINNER_ITEM2 { get; set; }
-        public virtual DbSet<BLACKLIST> BLACKLIST { get; set; }
-        public virtual DbSet<BOX_RANDOM_ITEM> BOX_RANDOM_ITEM { get; set; }
-        public virtual DbSet<COEFFICIENT> COEFFICIENT { get; set; }
-        public virtual DbSet<CONCURRENT> CONCURRENT { get; set; }
         public virtual DbSet<CURRENTUSER> CURRENTUSER { get; set; }
-        public virtual DbSet<EDITOR_LOGS> EDITOR_LOGS { get; set; }
-        public virtual DbSet<EVENT> EVENT { get; set; }
-        public virtual DbSet<EVENT_SCHEDULER> EVENT_SCHEDULER { get; set; }
-        public virtual DbSet<GAME_SETTINGS> GAME_SETTINGS { get; set; }
-        public virtual DbSet<HOME> HOME { get; set; }
-        public virtual DbSet<ITEM> ITEM { get; set; }
-        public virtual DbSet<ITEM_CRASH> ITEM_CRASH { get; set; }
-        public virtual DbSet<ITEM_EXCHANGE> ITEM_EXCHANGE { get; set; }
-        public virtual DbSet<ITEM_EXCHANGE_EXP> ITEM_EXCHANGE_EXP { get; set; }
-        public virtual DbSet<ITEM_EXCHANGE_INFO> ITEM_EXCHANGE_INFO { get; set; }
-        public virtual DbSet<ITEM_EXPIRATION> ITEM_EXPIRATION { get; set; }
-        public virtual DbSet<ITEM_FISHING_LIST> ITEM_FISHING_LIST { get; set; }
-        public virtual DbSet<ITEM_GROUP> ITEM_GROUP { get; set; }
-        public virtual DbSet<ITEM_MINING_LIST> ITEM_MINING_LIST { get; set; }
-        public virtual DbSet<ITEM_OP> ITEM_OP { get; set; }
-        public virtual DbSet<ITEM_SPECIAL_EXCHANGE> ITEM_SPECIAL_EXCHANGE { get; set; }
-        public virtual DbSet<ITEM_UPGRADE> ITEM_UPGRADE { get; set; }
-        public virtual DbSet<ITEMUP_PROBABILITY> ITEMUP_PROBABILITY { get; set; }
-        public virtual DbSet<K_MONSTER> K_MONSTER { get; set; }
-        public virtual DbSet<K_MONSTER_ITEM> K_MONSTER_ITEM { get; set; }
-        public virtual DbSet<K_NPC> K_NPC { get; set; }
-        public virtual DbSet<K_NPC_ITEM> K_NPC_ITEM { get; set; }
-        public virtual DbSet<K_OBJECTPOS> K_OBJECTPOS { get; set; }
-        public virtual DbSet<K_WARPINFO> K_WARPINFO { get; set; }
-        public virtual DbSet<KILL_RANDOM_ITEM> KILL_RANDOM_ITEM { get; set; }
-        public virtual DbSet<KING_BALLOT_BOX> KING_BALLOT_BOX { get; set; }
-        public virtual DbSet<KING_CANDIDACY_NOTICE_BOARD> KING_CANDIDACY_NOTICE_BOARD { get; set; }
-        public virtual DbSet<KING_ELECTION_LIST> KING_ELECTION_LIST { get; set; }
-        public virtual DbSet<KING_NOMINATION_LIST> KING_NOMINATION_LIST { get; set; }
-        public virtual DbSet<KING_SYSTEM> KING_SYSTEM { get; set; }
         public virtual DbSet<KNIGHTS> KNIGHTS { get; set; }
-        public virtual DbSet<KNIGHTS_ALLIANCE> KNIGHTS_ALLIANCE { get; set; }
-        public virtual DbSet<KNIGHTS_RATING> KNIGHTS_RATING { get; set; }
-        public virtual DbSet<KNIGHTS_SIEGE_WARFARE> KNIGHTS_SIEGE_WARFARE { get; set; }
-        public virtual DbSet<LEVEL_UP_PET> LEVEL_UP_PET { get; set; }
-        public virtual DbSet<MAGIC> MAGIC { get; set; }
-        public virtual DbSet<MAGIC_TYPE1> MAGIC_TYPE1 { get; set; }
-        public virtual DbSet<MAGIC_TYPE2> MAGIC_TYPE2 { get; set; }
-        public virtual DbSet<MAGIC_TYPE3> MAGIC_TYPE3 { get; set; }
-        public virtual DbSet<MAGIC_TYPE4> MAGIC_TYPE4 { get; set; }
-        public virtual DbSet<MAGIC_TYPE5> MAGIC_TYPE5 { get; set; }
-        public virtual DbSet<MAGIC_TYPE6> MAGIC_TYPE6 { get; set; }
-        public virtual DbSet<MAGIC_TYPE7> MAGIC_TYPE7 { get; set; }
-        public virtual DbSet<MAGIC_TYPE8> MAGIC_TYPE8 { get; set; }
-        public virtual DbSet<MAGIC_TYPE9> MAGIC_TYPE9 { get; set; }
-        public virtual DbSet<MAIL_ITEM> MAIL_ITEM { get; set; }
-        public virtual DbSet<MAKE_DEFENSIVE> MAKE_DEFENSIVE { get; set; }
-        public virtual DbSet<MAKE_ITEM> MAKE_ITEM { get; set; }
-        public virtual DbSet<MAKE_ITEM_GRADECODE> MAKE_ITEM_GRADECODE { get; set; }
-        public virtual DbSet<MAKE_ITEM_GROUP> MAKE_ITEM_GROUP { get; set; }
-        public virtual DbSet<MAKE_ITEM_LARECODE> MAKE_ITEM_LARECODE { get; set; }
-        public virtual DbSet<MAKE_WEAPON> MAKE_WEAPON { get; set; }
-        public virtual DbSet<MONSTER_CHALLENGE> MONSTER_CHALLENGE { get; set; }
-        public virtual DbSet<MONSTER_CHALLENGE_SUMMON_LIST> MONSTER_CHALLENGE_SUMMON_LIST { get; set; }
-        public virtual DbSet<MONSTER_RESPAWN_LIST> MONSTER_RESPAWN_LIST { get; set; }
-        public virtual DbSet<MONSTER_SUMMON_LIST> MONSTER_SUMMON_LIST { get; set; }
-        public virtual DbSet<MONSTER_SUMMON_LIST_ZONE> MONSTER_SUMMON_LIST_ZONE { get; set; }
-        public virtual DbSet<PETDATA> PETDATA { get; set; }
-        public virtual DbSet<PREMIUM_ITEM> PREMIUM_ITEM { get; set; }
-        public virtual DbSet<PREMIUM_ITEM_EXP> PREMIUM_ITEM_EXP { get; set; }
-        public virtual DbSet<PREMIUM_ITEM_GIFT> PREMIUM_ITEM_GIFT { get; set; }
-        public virtual DbSet<QUEST_HELPER> QUEST_HELPER { get; set; }
-        public virtual DbSet<QUEST_MENU> QUEST_MENU { get; set; }
-        public virtual DbSet<QUEST_MONSTER> QUEST_MONSTER { get; set; }
-        public virtual DbSet<QUEST_TALK> QUEST_TALK { get; set; }
-        public virtual DbSet<SEALED_ITEMS> SEALED_ITEMS { get; set; }
-        public virtual DbSet<SEND_MESSAGES> SEND_MESSAGES { get; set; }
-        public virtual DbSet<SERVER_LIST> SERVER_LIST { get; set; }
-        public virtual DbSet<SERVER_RESOURCE> SERVER_RESOURCE { get; set; }
-        public virtual DbSet<SET_ITEM> SET_ITEM { get; set; }
-        public virtual DbSet<START_POSITION> START_POSITION { get; set; }
-        public virtual DbSet<TB_USER_PREMIUM> TB_USER_PREMIUM { get; set; }
-        public virtual DbSet<USER_CHARACTER_SEAL_ITEMS> USER_CHARACTER_SEAL_ITEMS { get; set; }
-        public virtual DbSet<USER_KNIGHTS_RANK> USER_KNIGHTS_RANK { get; set; }
-        public virtual DbSet<USER_PERSONAL_RANK> USER_PERSONAL_RANK { get; set; }
-        public virtual DbSet<VERSION> VERSION { get; set; }
-        public virtual DbSet<WAITING_COMMANDS> WAITING_COMMANDS { get; set; }
-        public virtual DbSet<WAREHOUSE_CLAN> WAREHOUSE_CLAN { get; set; }
-        public virtual DbSet<WAREHOUSE_ITEMLER> WAREHOUSE_ITEMLER { get; set; }
-        public virtual DbSet<WEB_ITEMMALL_LOG> WEB_ITEMMALL_LOG { get; set; }
-        public virtual DbSet<WHEEL_OF_FUN_LOG> WHEEL_OF_FUN_LOG { get; set; }
-        public virtual DbSet<ITEM_EXCHANGE_ITEMDETAY> ITEM_EXCHANGE_ITEMDETAY { get; set; }
+        public virtual DbSet<USER_ITEM_INFO> USER_ITEM_INFO { get; set; }
+        public virtual DbSet<DROP_MONSTER_ITEMDETAY> DROP_MONSTER_ITEMDETAY { get; set; }
+        public virtual DbSet<TB_USER> TB_USER { get; set; }
     }
 }

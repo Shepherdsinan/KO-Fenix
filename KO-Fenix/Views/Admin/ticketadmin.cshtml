@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "ticketadmin";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Ticket Yönetimi</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Panel</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ticketadmin</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            
+            <div class="table-responsive">
+                <table id="zero_config" class="table table-striped table-bordered">
+                    
+                </table>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            veriler();
+        });
+    function veriler() {
+        $("#zero_config").empty();
+        $("#zero_config").append('<thead><th>#Ticketid</th><th>Talep</th><th>Durum</th><th>Tarih</th><th>İşlem</th></thead>')
+        var tabledt;
+        var catid;
+        var durum;
+        
+        $.ajax({
+            url: '/Admin/ticketget',
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, tveri) {
+
+
+
+                    switch (tveri.StrCatID)
+                     {
+                        case "1":
+                            catid = 'Power Up Store';
+                     break;
+                        case "2":
+                            catid = 'Hesap Islemleri';
+                     break;
+                        case "3":
+                            catid = 'Bug Bildirimi';
+                     break;
+                        case "4":
+                            catid = 'Diger';
+                     break;
+                        case "5":
+                            catid = 'Neden Banlandim ?';
+                     break;
+                        case "6":
+                            catid = 'TL/KC IHBAR';
+                     break;
+
+                    }
+                    switch (tveri.StrDurum) {
+                        case "0":
+                            durum = 'İşleme Alındı';
+                            break;
+                        case "1":
+                            durum = 'Cevaplandı';
+                            break;
+                    }
+                    var MyDate_String_Value = tveri.StrTarih;
+                    var value = new Date
+                        (
+                            parseInt(MyDate_String_Value.replace(/(^.*\()|([+-].*$)/g, ''))
+                        );
+                    var dat = value.getMonth() +
+                        1 +
+                        "/" +
+                        value.getDate() +
+                        "/" +
+                        value.getFullYear();
+                   
+                    
+
+                        tabledt = '<tbody><tr><td>' + tveri.id + '</td><td>' + catid + '</td><td>' + durum + '</td><td>' + dat + '</td><td><a href="/admin/Read/' + tveri.id + '"><img src="/Content/images/shop-30-24.png"></a></td></tr></tbody>';
+                    $("#zero_config").append(tabledt);
+                });
+            }
+        });
+
+        
+
+    }
+    </script>
+    
+    
+
+

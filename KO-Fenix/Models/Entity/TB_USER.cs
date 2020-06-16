@@ -11,34 +11,19 @@ namespace KO_Fenix.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-
+    
     public partial class TB_USER
     {
-        [Required(ErrorMessage = "Kullanýcý Adý alaný boþ geçilemez!")]
-        [StringLength(10, ErrorMessage = "Kullanýcý Adý alaný en fazla {1}, en az 4 karakter uzunluðunda olmalýdýr!", MinimumLength = 4)]
         public string strAccountID { get; set; }
-
-        [Required(ErrorMessage = "Parola alaný boþ geçilemez!")]
-        [StringLength(10, ErrorMessage = "Parola alaný en fazla {1}, en az 4 karakter uzunluðunda olmalýdýr!", MinimumLength = 4)]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
         public byte bAuthority { get; set; }
         public string IPAddress { get; set; }
         public string CountryCode { get; set; }
         public int HardDiskSerial { get; set; }
         public int MACAddress { get; set; }
-        [StringLength(25, ErrorMessage = "Email alaný en fazla {1} karakter uzunluðunda olmalýdýr!")]
-        [Required(ErrorMessage = "Email alaný gereklidir!")]
-        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                        @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                        @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
-                        ErrorMessage = "Email adresi geçersiz!")]
         public string Email { get; set; }
         public byte SecretQuestionID { get; set; }
         public string SecretQuestionAnswer { get; set; }
-        [StringLength(8, ErrorMessage = "Eþya Kilit alaný en fazla {1}, en az 4 karakter uzunluðunda olmalýdýr!", MinimumLength = 4)]
         public string SealPassword { get; set; }
         public string EmailNew { get; set; }
         public string AuthCode { get; set; }
@@ -52,8 +37,6 @@ namespace KO_Fenix.Models.Entity
         public Nullable<System.DateTime> dtNationChange { get; set; }
         public Nullable<byte> PanelAdmin { get; set; }
         public string VipKey { get; set; }
-        [Required(ErrorMessage = "Telefon Numarasý alaný boþ geçilemez!")]
-        [StringLength(15, ErrorMessage = "Telefon Numarasý alaný en fazla {1}, en az 11 karakter uzunluðunda olmalýdýr!", MinimumLength = 11)]
         public string Phone { get; set; }
         public byte EnableOtp { get; set; }
         public string OtpSecret { get; set; }
@@ -65,8 +48,7 @@ namespace KO_Fenix.Models.Entity
         public Nullable<System.DateTime> PunishmentDate { get; set; }
         public Nullable<byte> PunishmentPeriod { get; set; }
         public int id { get; set; }
-        [Compare("Password", ErrorMessage = "Ýki þifre eþleþmiyor!")]
-        [DataType(DataType.Password)]
         public string Sifre { get; set; }
+        public string strRole { get; set; }
     }
 }

@@ -56,8 +56,43 @@ namespace KO_Fenix.Controllers
             //doğrulama yapılmamış ise yapılacak işlemler.
             return View("Index");
         }
+        [HttpPost]
+        public JsonResult Ekle(string strAccountIDdt, string Passworddt, string Sifredt, string SealPassworddt, string Emaildt, string Phonedt)
+        {
+            if (db.TB_USER.Any(x => x.strAccountID == strAccountIDdt))
+            {
+                
+            }
+            if (db.TB_USER.Any(x => x.Email == Emaildt))
+            {
+                
+            }
+            else
+            {
+                db.Database.ExecuteSqlCommand("Exec [kayitol] @p0, @p1, @p2, @p3, @p4, @p5", strAccountIDdt, Passworddt, Sifredt, SealPassworddt, Emaildt, Phonedt);
+                FormsAuthentication.SetAuthCookie(strAccountIDdt, false);
+                Session["strAccountID"] = strAccountIDdt.ToString();
+                Session["CreateTime"] = DateTime.Now.ToString();
+                Session["phone"] = Phonedt.ToString();
+                Session["Email"] = Emaildt.ToString();
+                return Json("1");
+            }
+            return Json("0");
 
-       
+        }
+        [HttpPost]
+        public JsonResult namecheck(string strAccountIDdtt)
+        {
+           var count = db.TB_USER.Where(x => x.strAccountID == strAccountIDdtt).Count();
+            return Json(count);
+        }
+        [HttpPost]
+        public JsonResult mailcheck(string Emaildtt)
+        {
+            var count = db.TB_USER.Where(x => x.Email == Emaildtt).Count();
+            return Json(count);
+        }
+
 
 
     }

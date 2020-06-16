@@ -22,11 +22,11 @@ namespace KO_Fenix.Controllers
             //var query = (from a in db.USERDATA where a.Authority == 1 orderby a.Loyalty descending select a).ToList();
             
            
-            cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).ToList();
-            cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
-            cs.Deger3 = db.KNIGHTS.ToList();
+            //cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).ToList();
+            //cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
+            //cs.Deger3 = db.KNIGHTS.ToList();
             
-            return View(cs);
+            return View();
         }
 
         public JsonResult UserRankingsdata(int id)
@@ -146,10 +146,9 @@ namespace KO_Fenix.Controllers
             ViewBag.Members = query.Members;
             ViewBag.Ranking = query.Ranking;
             cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 && a.ClanID == id orderby a.Loyalty descending select a).ToList();
-            cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
+            
             cs.Deger3 = db.KNIGHTS.ToList();
             
-
             return View(cs);
         }
         public ActionResult UserProfile(string id)

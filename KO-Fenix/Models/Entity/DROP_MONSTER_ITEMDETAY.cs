@@ -14,7 +14,6 @@ namespace KO_Fenix.Models.Entity
     
     public partial class DROP_MONSTER_ITEMDETAY
     {
-        public Nullable<int> classtip { get; set; }
         public Nullable<int> monster_id { get; set; }
         public Nullable<int> image_id { get; set; }
         public string monster_name { get; set; }
@@ -65,5 +64,6 @@ namespace KO_Fenix.Models.Entity
         public string ReqIntel { get; set; }
         public string ReqCha { get; set; }
         public int id { get; set; }
+        public Nullable<int> classtip { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model KO_Fenix.Models.Entity.TB_USER
+﻿
 
 @{
     ViewBag.Title = "Kayıt Ol";
@@ -28,62 +28,251 @@
                 }
                 else
                 {
+                    <div id="registerformshow" style="display:none">
+                        <br />
+                        <br />
+                        <p style="color:#ffb62c;">Tebrikler</p> Üyeliğiniz başarıyla oluşturuldu.<br />Kullanıcı paneline yönlendiriliyorsunuz lütfen bekleyiniz...
+                        <br />
+                        <br />
+                        <center><img src="Content/images/ajax.gif" /></center>
 
-                using (Html.BeginForm("SaveMember", "Register", FormMethod.Post))
-                {
-                    @Html.ValidationSummary(true)
-                    <table style="width:100%; padding:10px;">
+                    </div>
+
+                    <table id="ragisterform" style="width:100%; padding:10px;">
                         <tr>
                             <td><label>Kullanıcı Adı</label></td>
                             <td>:</td>
-                            <td>@Html.EditorFor(c => c.strAccountID, new { style = "width=75px" , maxlength = "10" })</td>
-                            <td>@Html.ValidationMessageFor(c => c.strAccountID)</td>
-                        </tr>
+                            <td><input type="text" id="strAccountID" required maxlength="10" /></td>
 
+                        </tr>
                         <tr>
                             <td><label>Parola</label></td>
                             <td>:</td>
-                            <td>@Html.PasswordFor(c => c.Password)</td>
-                            <td>@Html.ValidationMessageFor(c => c.Password)</td>
+                            <td><input type="Password" id="Password" required maxlength="10" /></td>
                         </tr>
                         <tr>
                             <td><label>Parola Tekrar</label></td>
                             <td>:</td>
-                            <td>@Html.PasswordFor(c => c.Sifre)</td>
-                            <td>@Html.ValidationMessageFor(c => c.Sifre)</td>
+                            <td><input type="Password" id="Sifre" required maxlength="10" /></td>
                         </tr>
                         <tr>
                             <td><label>Eşya Kilit</label></td>
                             <td>:</td>
-                            <td>@Html.TextBoxFor(c => c.SealPassword)</td>
-                            <td>@Html.ValidationMessageFor(c => c.SealPassword)</td>
+                            <td><input type="Password" id="SealPassword" required maxlength="10" /></td>
                         </tr>
                         <tr>
                             <td><label>E-Mail</label></td>
                             <td>:</td>
-                            <td>@Html.TextBoxFor(c => c.Email)</td>
-                            <td>@Html.ValidationMessageFor(c => c.Email)</td>
+                            <td><input type="email" id="Email" required /></td>
                         </tr>
-
                         <tr>
                             <td><label>Telefon Numarası</label></td>
                             <td>:</td>
-                            <td>@Html.TextBoxFor(c => c.Phone)</td>
-                            <td>@Html.ValidationMessageFor(c => c.Phone)</td>
+                            <td><input type="text" id="Phone" required /></td>
                         </tr>
-
                         <tr>
 
-                            <br />
-                            <br />
-                            <td colspan="3" align="Right"><input type="submit" value="Tamamla!" /></td>
+                            
+                            <td colspan="3" align="Right"><input type="submit" id="ekle" value="Tamamla!" /></td>
                             <td></td>
                         </tr>
+
+
                     </table>
+                    <div id="uyari8" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Kullanıcı Adı kullanılmaktadır!</p></div>
+                    <div id="uyari1" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Kullanıcı Adı alanı en fazla 10, en az 4 karakter uzunluğunda olmalıdır!</p></div>
+                    <div id="uyari2" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Parola alanı en fazla 10, en az 4 karakter uzunluğunda olmalıdır!</p></div>
+                    <div id="uyari7" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>İki şifre eşleşmiyor!</p></div>
+                    <div id="uyari3" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Parola tekrar alanı en fazla 10, en az 4 karakter uzunluğunda olmalıdır!</p></div>
+                    <div id="uyari4" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Eşya kilit alanı en fazla 10, en az 4 karakter uzunluğunda olmalıdır!</p></div>
+                    <div id="uyari5" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>E-mail alanı en fazla 35, en az 8 karakter uzunluğunda olmalıdır!</p></div>
+                    <div id="uyari9" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>E-mail kullanılmaktadır!</p></div>
+                    <div id="uyari6" class="container_3 red wide fading-notification" align="left" style="display: none;"><span class="error_icons atention"></span><p>Telefon Numarası alanı en fazla 15, en az 11 karakter uzunluğunda olmalıdır!</p></div>
                 }
 
-                }
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        
+        $("#registerformshow").css("display", "none");
+        
+        $("#ekle").prop("disabled", true);
+        $("#strAccountID").on("change paste keyup select propertychange input", function () {
+            var kadi = $("#strAccountID").val();
+            if (kadi.length > 10 || kadi.length < 4 ) {
+                
+                $("#uyari1").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari1").css("display", "none");
+                $("#ekle").prop("disabled", false);
+            }
+            var degerler = {
+                strAccountIDdtt: $("#strAccountID").val()
+                
+            };
+            $.ajax({
+                url: '/Register/namecheck',
+                type: 'POST',
+                data: JSON.stringify(degerler),
+                dataType: 'json',
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                   
+                        if (data == 1) {
+
+                            $("#uyari8").css("display", "block");
+                            $("#ekle").prop("disabled", true);
+                        }
+                        else {
+                            $("#uyari8").css("display", "none");
+                            $("#ekle").prop("disabled", false);
+                        }
+
+
+                    
+                }
+
+            });
+            
+        });
+        $("#Password").on("change paste keyup select propertychange input", function () {
+            var passw = $("#Password").val();
+            if (passw.length > 10 || passw.length < 4) {
+
+                $("#uyari2").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari2").css("display", "none");
+                $("#ekle").prop("disabled", false);
+            }
+
+
+        });
+        $("#Sifre").on("change paste keyup select propertychange input", function () {
+            var sifre = $("#Sifre").val();
+            var passwcheck = $("#Password").val();
+            if (sifre.length > 10 || sifre.length < 4) {
+
+                $("#uyari3").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari3").css("display", "none");
+                $("#ekle").prop("disabled", false);
+            }
+            if (passwcheck == sifre) {
+                $("#uyari7").css("display", "none");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari7").css("display", "block");
+                $("#ekle").prop("disabled", false);
+            }
+        });
+        $("#SealPassword").on("change paste keyup select propertychange input", function () {
+            var spw = $("#SealPassword").val();
+            if (spw.length > 10 || spw.length < 4) {
+
+                $("#uyari4").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari4").css("display", "none");
+                $("#ekle").prop("disabled", false);
+            }
+        });
+        $("#Email").on("change paste keyup select propertychange input", function () {
+            var email = $("#Email").val();
+            if (email.length > 35 || email.length < 8) {
+
+                $("#uyari5").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari5").css("display", "none");
+                $("#ekle").prop("disabled", false);
+                var degerler = {
+                    Emaildtt: $("#Email").val()
+
+                };
+                $.ajax({
+                    url: '/Register/mailcheck/',
+                    type: 'POST',
+                    data: JSON.stringify(degerler),
+                    dataType: 'json',
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        
+                            if (data == 1) {
+
+                                $("#uyari9").css("display", "block");
+                                $("#ekle").prop("disabled", true);
+                            }
+                            else {
+                                $("#uyari9").css("display", "none");
+                                $("#ekle").prop("disabled", false);
+                            }
+
+                        
+
+                    }
+
+                });
+            }
+           
+        });
+        $("#Phone").on("change paste keyup select propertychange input", function () {
+            var pnum = $("#Phone").val();
+            if (pnum.length > 15 || pnum.length < 11) {
+
+                $("#uyari6").css("display", "block");
+                $("#ekle").prop("disabled", true);
+            }
+            else {
+                $("#uyari6").css("display", "none");
+                $("#ekle").prop("disabled", false);
+            }
+        });
+    });
+    $(document).on("click", "#ekle", function () {
+        var degerler = {
+            strAccountIDdt: $("#strAccountID").val(),
+            Passworddt: $("#Password").val(),
+            Sifredt: $("#Sifre").val(),
+            SealPassworddt: $("#SealPassword").val(),
+            Emaildt: $("#Email").val(),
+            Phonedt: $("#Phone").val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/Register/Ekle',
+            data: JSON.stringify(degerler),
+            dataType: "JSON",
+            contentType: "application/json;charset=utf-8",
+            success: function (gelenDeg) {
+                if (gelenDeg == 1) {
+                   
+                    $("#ragisterform").css("display", "none");
+                    $("#registerformshow").css("display", "block");
+                    setTimeout(function () {
+                        window.location.assign("/Account");
+                        //4 saniye sonra yönlenecek
+                    }, 4000);
+                }
+                else {
+                    alert("Kayıt Eklenirken Hata Oluştu!");
+                }
+            }
+
+        });
+    });
+  
+
+</script>

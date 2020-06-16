@@ -20,7 +20,7 @@ namespace KO_Fenix.Controllers
             //(from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).Take(10).ToList();
             cs.Deger1 = db.USERDATA.Where(a => a.Authority == 1).OrderByDescending(b => b.Loyalty).Take(10).ToList();
             cs.Deger7 = db.USERDATA.Where(a => a.Authority == 1).OrderByDescending(b => b.LoyaltyMonthly).Take(10).ToList();
-            cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
+            
             cs.Deger3 = db.KNIGHTS.ToList();
             var habersayisi = db.C_NEWS.Count();
             ViewBag.hbrsayi1 = habersayisi;
@@ -77,5 +77,24 @@ namespace KO_Fenix.Controllers
             return View();
         }
 
+        public JsonResult Resetpw(string username)
+        {
+            var tbuserdata = db.TB_USER.FirstOrDefault(x => x.strAccountID == username);
+            /////
+
+
+            //string bodyMessage = string.Format("Yeni Şifreniz {0}", newPassword);
+
+            //var message = new System.Net.Mail.MailMessage("sinan37coban@gmail.com", user.Email)
+            //{
+            //    Subject = "Yeni şifre oluşturma isteği.",
+            //    Body = bodyMessage
+            //};
+
+            //var client = new System.Net.Mail.SmtpClient();
+            //client.Send(message);
+            return Json(tbuserdata, JsonRequestBehavior.AllowGet);
+        }
+        
     }
 }

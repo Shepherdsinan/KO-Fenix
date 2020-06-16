@@ -1,0 +1,98 @@
+﻿@model KO_Fenix.Models.Sinif.Class1
+@{
+    ViewBag.Title = "read";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Ticket Yönetimi</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Panel</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Ticketadmin</li>
+                        <li class="breadcrumb-item active" aria-current="page">Read</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <!-- Card -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+            <div class="chat-box scrollable" style="height:475px;">
+                <!--chat Row -->
+                <ul class="chat-list">
+                    @foreach (var mesajayr in Model.Deger11)
+                    {
+                        if (mesajayr.Senduser == "0")
+                        {
+                            <!--chat Row -->
+                            <li class="chat-item">
+                                <div class="chat-img"><img src="~/Content/admin/assets/images/users/1.jpg" alt="user"></div>
+                                <div class="chat-content">
+                                    <h6 class="font-medium">@mesajayr.StrUserID</h6>
+                                    <div class="box bg-light-info">@mesajayr.Message</div>
+                                </div>
+                                <div class="chat-time">@mesajayr.Date</div>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <!--chat Row -->
+                            <li class="odd chat-item">
+
+                                <div class="chat-content">
+
+                                    <h6 class="font-medium">@mesajayr.StrUserID</h6>
+                                    <div class="box bg-light-inverse">@mesajayr.Message</div>
+                                    <br>
+
+                                </div>
+                                <div class="chat-time">@mesajayr.Date</div>
+
+                            </li>
+                            <!--chat Row -->
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+        <form action="/Admin/adminanswer" enctype="multipart/form-data" id="register_form" method="post">
+            <div class="card-body border-top">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="input-field m-t-0 m-b-0">
+                            <textarea name="Messageanswer" id="textarea1" placeholder="Type and enter" class="form-control border-0"></textarea>
+                        </div>
+                    </div>
+                    @foreach (var item in Model.Deger11)
+                    {
+                        <input type="hidden" name="Ticketid" value="@item.Ticketid" />
+                        <input type="hidden" name="StrUserID" value="Admin" />
+
+                    }
+                <div class="col-3">
+                    
+                        <a href="#" id="submit_link" class="btn-circle btn-lg btn-cyan float-right text-white" ><i class="fas fa-paper-plane"></i></a>
+                 
+ 
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>       
+</div>
+<script>
+    $(function () {
+        $('a#submit_link').click(function () {
+            $('form#register_form').submit();
+        });
+    });
+</script>
