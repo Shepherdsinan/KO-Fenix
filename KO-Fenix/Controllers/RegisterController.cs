@@ -23,39 +23,39 @@ namespace KO_Fenix.Controllers
         
         
         
-        [HttpGet]
-        public ActionResult SaveMember()
-        {
+        //[HttpGet]
+        //public ActionResult SaveMember()
+        //{
             
-            return View();
-        }
-        [HttpPost]
-        public ActionResult SaveMember(TB_USER p)
-        {
-            if (db.TB_USER.Any(x => x.strAccountID == p.strAccountID))
-            {
-                ModelState.AddModelError("strAccountID", ""+p.strAccountID+" isimli kayıt mevcut");
-            }
-            if (db.TB_USER.Any(x => x.Email == p.Email))
-            {
-                ModelState.AddModelError("Email", "" + p.Email + " mail adresi mevcut");
-            }
-            if (ModelState.IsValid)
-            {                
-                db.Database.ExecuteSqlCommand("Exec [kayitol] @p0, @p1, @p2, @p3, @p4, @p5", p.strAccountID, p.Password, p.Sifre, p.SealPassword, p.Email, p.Phone);
-                db.SaveChanges();
-                FormsAuthentication.SetAuthCookie(p.strAccountID, false);
-                Session["strAccountID"] = p.strAccountID.ToString();
-                Session["CreateTime"] = p.CreateTime.ToString();
-                Session["phone"] = p.Phone.ToString();
-                Session["Email"] = p.Email.ToString();
-                return View("SaveMember");
-            }
-          
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult SaveMember(TB_USER p)
+        //{
+        //    //********Bu kısım Json a çevrildi
+        //    //if (db.TB_USER.Any(x => x.strAccountID == p.strAccountID))
+        //    //{
+        //    //    ModelState.AddModelError("strAccountID", ""+p.strAccountID+" isimli kayıt mevcut");
+        //    //}
+        //    //if (db.TB_USER.Any(x => x.Email == p.Email))
+        //    //{
+        //    //    ModelState.AddModelError("Email", "" + p.Email + " mail adresi mevcut");
+        //    //}
+        //    //if (ModelState.IsValid)
+        //    //{                
+        //    //    db.Database.ExecuteSqlCommand("Exec [kayitol] @p0, @p1, @p2, @p3, @p4, @p5", p.strAccountID, p.Password, p.Sifre, p.SealPassword, p.Email, p.Phone);
+        //    //    db.SaveChanges();
+        //    //    FormsAuthentication.SetAuthCookie(p.strAccountID, false);
+        //    //    Session["strAccountID"] = p.strAccountID.ToString();
+        //    //    Session["CreateTime"] = p.CreateTime.ToString();
+        //    //    Session["phone"] = p.Phone.ToString();
+        //    //    Session["Email"] = p.Email.ToString();
+        //    //    return View("SaveMember");
+        //    //}          
 
-            //doğrulama yapılmamış ise yapılacak işlemler.
-            return View("Index");
-        }
+        //    //doğrulama yapılmamış ise yapılacak işlemler.
+        //    return View("");
+        //}
         [HttpPost]
         public JsonResult Ekle(string strAccountIDdt, string Passworddt, string Sifredt, string SealPassworddt, string Emaildt, string Phonedt)
         {
