@@ -13,6 +13,7 @@ namespace KO_Fenix.Controllers
     {
         kn_onlineEntities2 db = new kn_onlineEntities2();
         Class1 cs = new Class1();
+        emailsender emailgonder = new emailsender();
         // GET: Home
         public ActionResult Index()
         {
@@ -79,20 +80,19 @@ namespace KO_Fenix.Controllers
 
         public JsonResult Resetpw(string username)
         {
+
             var tbuserdata = db.TB_USER.FirstOrDefault(x => x.strAccountID == username);
-            /////
+            var token = "65465435421332153";
+            var lnkHref = "<a href='" + Url.Action("ResetPassword", "Account", new { email = tbuserdata.Email, code = token }, "http") + "'>Şifremi Yenile</a>";
 
 
-            //string bodyMessage = string.Format("Yeni Şifreniz {0}", newPassword);
+            //HTML Template for Send email  
 
-            //var message = new System.Net.Mail.MailMessage("sinan37coban@gmail.com", user.Email)
-            //{
-            //    Subject = "Yeni şifre oluşturma isteği.",
-            //    Body = bodyMessage
-            //};
+            string subject = "Kofenix.Net Şifre Yenileme Linki";
 
-            //var client = new System.Net.Mail.SmtpClient();
-            //client.Send(message);
+            string body = "<b>Şifre Yenileme linkine tıklayarak yeni bir şifre oluşturabilirsiniz. </b><br/>" + lnkHref;
+            emailgonder.Mail(tbuserdata.Email,subject, body);
+            
             return Json(tbuserdata, JsonRequestBehavior.AllowGet);
         }
         
