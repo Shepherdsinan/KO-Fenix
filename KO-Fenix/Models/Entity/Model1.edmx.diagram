@@ -33,6 +33,7 @@
         <EntityTypeShape EntityType="kn_onlineModel.USER_ITEM_INFO" Width="1.5" PointX="5.375" PointY="15.75" />
         <EntityTypeShape EntityType="kn_onlineModel.DROP_MONSTER_ITEMDETAY" Width="1.5" PointX="15.375" PointY="11.75" />
         <EntityTypeShape EntityType="kn_onlineModel.TB_USER" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="kn_onlineModel.TBLFORGOTPASSW" Width="1.5" PointX="7.375" PointY="17.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

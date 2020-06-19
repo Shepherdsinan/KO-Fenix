@@ -517,6 +517,18 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS' does not have a primary key
           <Property Name="Sifre" Type="varchar" MaxLength="28" />
           <Property Name="strRole" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="TBLFORGOTPASSW">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="strAccountID" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="INSDATE" Type="date" />
+          <Property Name="GUID" Type="varchar" MaxLength="100" />
+          <Property Name="TIP" Type="varchar" MaxLength="20" />
+          <Property Name="ISLEM" Type="varchar" MaxLength="20" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="USER_ITEM_INFO">
           <Key>
             <PropertyRef Name="id" />
@@ -648,6 +660,7 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS' does not have a primary key
           <EntitySet Name="ITEM_EXCHANGE_ITEMDETAY" EntityType="Self.ITEM_EXCHANGE_ITEMDETAY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LEVEL_UP" EntityType="Self.LEVEL_UP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLFORGOTPASSW" EntityType="Self.TBLFORGOTPASSW" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_ITEM_INFO" EntityType="Self.USER_ITEM_INFO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERDATA" EntityType="Self.USERDATA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="_BANKALAR" EntityType="Self._BANKALAR" store:Type="Tables" store:Schema="dbo">
@@ -1306,6 +1319,7 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS' does not have a primary key
           <EntitySet Name="USER_ITEM_INFO" EntityType="kn_onlineModel.USER_ITEM_INFO" />
           <EntitySet Name="DROP_MONSTER_ITEMDETAY" EntityType="kn_onlineModel.DROP_MONSTER_ITEMDETAY" />
           <EntitySet Name="TB_USER" EntityType="kn_onlineModel.TB_USER" />
+          <EntitySet Name="TBLFORGOTPASSW" EntityType="kn_onlineModel.TBLFORGOTPASSW" />
         </EntityContainer>
         <EntityType Name="KNIGHTS">
           <Key>
@@ -1510,6 +1524,18 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS' does not have a primary key
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Sifre" Type="String" MaxLength="28" FixedLength="false" Unicode="false" />
           <Property Name="strRole" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLFORGOTPASSW">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="strAccountID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="INSDATE" Type="DateTime" Precision="0" />
+          <Property Name="GUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ISLEM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2092,6 +2118,19 @@ warning 6002: The table/view 'kn_online.dbo.KNIGHTS' does not have a primary key
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
                 <ScalarProperty Name="bAuthority" ColumnName="bAuthority" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="strAccountID" ColumnName="strAccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLFORGOTPASSW">
+            <EntityTypeMapping TypeName="kn_onlineModel.TBLFORGOTPASSW">
+              <MappingFragment StoreEntitySet="TBLFORGOTPASSW">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ISLEM" ColumnName="ISLEM" />
+                <ScalarProperty Name="TIP" ColumnName="TIP" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="INSDATE" ColumnName="INSDATE" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="strAccountID" ColumnName="strAccountID" />
               </MappingFragment>
             </EntityTypeMapping>

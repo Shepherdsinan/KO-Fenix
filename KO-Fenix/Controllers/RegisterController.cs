@@ -20,13 +20,12 @@ namespace KO_Fenix.Controllers
           
             return View();
         }
-        
-        
-        
+
+        #region Mvckayıtol
         //[HttpGet]
         //public ActionResult SaveMember()
         //{
-            
+
         //    return View();
         //}
         //[HttpPost]
@@ -56,6 +55,9 @@ namespace KO_Fenix.Controllers
         //    //doğrulama yapılmamış ise yapılacak işlemler.
         //    return View("");
         //}
+        #endregion
+
+
         [HttpPost]
         public JsonResult Ekle(string strAccountIDdt, string Passworddt, string Sifredt, string SealPassworddt, string Emaildt, string Phonedt)
         {

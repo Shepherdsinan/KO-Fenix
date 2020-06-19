@@ -53,5 +53,6 @@ namespace KO_Fenix.Models.Entity
         public virtual DbSet<USER_ITEM_INFO> USER_ITEM_INFO { get; set; }
         public virtual DbSet<DROP_MONSTER_ITEMDETAY> DROP_MONSTER_ITEMDETAY { get; set; }
         public virtual DbSet<TB_USER> TB_USER { get; set; }
+        public virtual DbSet<TBLFORGOTPASSW> TBLFORGOTPASSW { get; set; }
     }
 }

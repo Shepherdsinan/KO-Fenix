@@ -82,19 +82,35 @@ namespace KO_Fenix.Controllers
         {
 
             var tbuserdata = db.TB_USER.FirstOrDefault(x => x.strAccountID == username);
-            var token = "65465435421332153";
-            var lnkHref = "<a href='" + Url.Action("ResetPassword", "Account", new { email = tbuserdata.Email, code = token }, "http") + "'>Şifremi Yenile</a>";
+            db.Database.ExecuteSqlCommand("Exec [sp_forgotpassword] @p0, @p1, @p2, @p3", username, tbuserdata.Email, "1", "0");
+            var forgotdata = db.TBLFORGOTPASSW.OrderByDescending(x=>x.id).Take(1).FirstOrDefault(x => x.strAccountID == username && x.TIP == "1" && x.ISLEM == "0");
+
+
+
+            var token = forgotdata.GUID;
+            
 
 
             //HTML Template for Send email  
 
-            string subject = "Kofenix.Net Şifre Yenileme Linki";
+            string subject = "Kofenix.Net Şifre Yenileme Kodu";
 
-            string body = "<b>Şifre Yenileme linkine tıklayarak yeni bir şifre oluşturabilirsiniz. </b><br/>" + lnkHref;
+            string body = "<b>Şifre Yenileme kodunu kullanarak yeni bir şifre oluşturabilirsiniz. </b><br/>" + token;
             emailgonder.Mail(tbuserdata.Email,subject, body);
             
-            return Json(tbuserdata, JsonRequestBehavior.AllowGet);
+            return Json("1", JsonRequestBehavior.AllowGet);
         }
-        
+
+        public JsonResult Resetpwcommit(string kod,string pw1,string pw2)
+        {
+            var countcode = db.TBLFORGOTPASSW.Where(x => x.GUID == kod).Count();
+            if (countcode == 1)
+            {
+
+            }
+
+            return Json("1", JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
