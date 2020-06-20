@@ -77,7 +77,7 @@ namespace KO_Fenix.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public JsonResult Resetpw(string username)
         {
 
@@ -100,7 +100,7 @@ namespace KO_Fenix.Controllers
             
             return Json("1", JsonRequestBehavior.AllowGet);
         }
-
+        [HttpPost]
         public JsonResult Resetpwcommit(string kod,string pass, string passnew)
         {
             //var countcode = db.TBLFORGOTPASSW.Where(x => x.GUID == kod).Count();

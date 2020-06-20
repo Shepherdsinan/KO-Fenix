@@ -11960,8 +11960,6 @@
     <Content Include="Views\Account\PasswordChange.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Rank\UserProfile.cshtml" />
-    <Content Include="Views\Account\Passsend.cshtml" />
-    <Content Include="Views\Account\SealPasssend.cshtml" />
     <Content Include="Views\Ticket\Index.cshtml" />
     <Content Include="Views\Ticket\Send.cshtml" />
     <Content Include="Views\Ticket\Read.cshtml" />
