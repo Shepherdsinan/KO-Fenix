@@ -101,12 +101,14 @@ namespace KO_Fenix.Controllers
             return Json("1", JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Resetpwcommit(string kod,string pw1,string pw2)
+        public JsonResult Resetpwcommit(string kod,string pass, string passnew)
         {
-            var countcode = db.TBLFORGOTPASSW.Where(x => x.GUID == kod).Count();
+            //var countcode = db.TBLFORGOTPASSW.Where(x => x.GUID == kod).Count();
+            var fgdata = db.TBLFORGOTPASSW.FirstOrDefault(x => x.GUID == kod);
+            var countcode = Convert.ToUInt32(fgdata.TIP);
             if (countcode == 1)
             {
-
+                db.Database.ExecuteSqlCommand("Exec [sp_updatepassword] @p0, @p1, @p2, @p3, @p4", fgdata.strAccountID, fgdata.Email, fgdata.GUID, pass,passnew);
             }
 
             return Json("1", JsonRequestBehavior.AllowGet);
