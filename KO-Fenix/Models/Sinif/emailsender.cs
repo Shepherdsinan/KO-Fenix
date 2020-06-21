@@ -51,7 +51,7 @@ namespace KO_Fenix.Models.Sinif
             msg.Subject = subject;
             msg.Body += "Gönderen Mail Adresi " + to + " | <h1> " + body + " </h1>"; //burada başında gönderen kişinin mail adresi geliyor
             msg.CC.Add(sendMailAdress);//herkes görür
-            NetworkCredential info = new NetworkCredential("sinan37coban@gmail.com", "sinan001903*");
+            NetworkCredential info = new NetworkCredential("sinan37coban@gmail.com", "şifre buraya");
             client.Port = 587;
             client.Host = "smtp.gmail.com";
             client.EnableSsl = true;
