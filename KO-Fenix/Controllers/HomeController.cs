@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using KO_Fenix.Models.Entity;
+using KO_Fenix.Models.Sinif;
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using KO_Fenix.Models.Entity;
-using KO_Fenix.Models.Sinif;
 
 namespace KO_Fenix.Controllers
 {
@@ -13,7 +11,7 @@ namespace KO_Fenix.Controllers
     {
         kn_onlineEntities2 db = new kn_onlineEntities2();
         Class1 cs = new Class1();
-        emailsender emailgonder = new emailsender();
+
         // GET: Home
         public ActionResult Index()
         {
@@ -21,11 +19,11 @@ namespace KO_Fenix.Controllers
             //(from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).Take(10).ToList();
             cs.Deger1 = db.USERDATA.Where(a => a.Authority == 1).OrderByDescending(b => b.Loyalty).Take(10).ToList();
             cs.Deger7 = db.USERDATA.Where(a => a.Authority == 1).OrderByDescending(b => b.LoyaltyMonthly).Take(10).ToList();
-            
+
             cs.Deger3 = db.KNIGHTS.ToList();
             var habersayisi = db.C_NEWS.Count();
             ViewBag.hbrsayi1 = habersayisi;
-            
+
             cs.Deger8 = (from k in db.KNIGHTS
                          join u in db.USERDATA on k.Chief equals u.strUserID
                          orderby (k.Points) descending
@@ -41,7 +39,7 @@ namespace KO_Fenix.Controllers
                              Points = k.Points
                          }).Take(10);
             return View(cs);
-            
+
 
         }
         [HttpGet]
@@ -64,14 +62,15 @@ namespace KO_Fenix.Controllers
             }
             else
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
-            
+
         }
         public ActionResult ForgotPassword()
         {
             return View();
         }
+
 
         public ActionResult notfounderror()
         {
@@ -81,37 +80,15 @@ namespace KO_Fenix.Controllers
         public JsonResult Resetpw(string username)
         {
 
-            var tbuserdata = db.TB_USER.FirstOrDefault(x => x.strAccountID == username);
-            db.Database.ExecuteSqlCommand("Exec [sp_forgotpassword] @p0, @p1, @p2, @p3", username, tbuserdata.Email, "1", "0");
-            var forgotdata = db.TBLFORGOTPASSW.OrderByDescending(x=>x.id).Take(1).FirstOrDefault(x => x.strAccountID == username && x.TIP == "1" && x.ISLEM == "0");
+            return Json(emailsender.kodGonder(username, "1", db) ? "1" : "0", JsonRequestBehavior.AllowGet);
 
-
-
-            var token = forgotdata.GUID;
-            
-
-
-            //HTML Template for Send email  
-
-            string subject = "Kofenix.Net Şifre Yenileme Kodu";
-
-            string body = "<b>Şifre Yenileme kodunu kullanarak yeni bir şifre oluşturabilirsiniz. </b><br/>" + token;
-            emailgonder.Mail(tbuserdata.Email,subject, body);
-            
-            return Json("1", JsonRequestBehavior.AllowGet);
         }
-        [HttpPost]
-        public JsonResult Resetpwcommit(string kod,string pass, string passnew)
-        {
-            //var countcode = db.TBLFORGOTPASSW.Where(x => x.GUID == kod).Count();
-            var fgdata = db.TBLFORGOTPASSW.FirstOrDefault(x => x.GUID == kod);
-            var countcode = Convert.ToUInt32(fgdata.TIP);
-            if (countcode == 1)
-            {
-                db.Database.ExecuteSqlCommand("Exec [sp_updatepassword] @p0, @p1, @p2, @p3, @p4", fgdata.strAccountID, fgdata.Email, fgdata.GUID, pass,passnew);
-            }
 
-            return Json("1", JsonRequestBehavior.AllowGet);
+
+        [HttpPost]
+        public JsonResult Resetpwcommit(string kod, string pass, string passnew)
+        {
+            return Json(emailsender.newpasswork(kod, pass, passnew, 1, db) ? "1" : "0", JsonRequestBehavior.AllowGet);
         }
 
     }

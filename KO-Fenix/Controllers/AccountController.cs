@@ -14,7 +14,7 @@ namespace KO_Fenix.Controllers
     {
         // GET: Account
         kn_onlineEntities2 db = new kn_onlineEntities2();
-        emailsender emailgonder = new emailsender();
+        
         [Authorize]
         public ActionResult Index()
         {
@@ -53,39 +53,20 @@ namespace KO_Fenix.Controllers
         {
             return View();
         }
-
+       
         [HttpPost]
         public JsonResult Newpw(string username)
         {
+            return Json(emailsender.kodGonder(username, "2", db) ? "1" : "0", JsonRequestBehavior.AllowGet);
 
-            var tbuserdata = db.TB_USER.FirstOrDefault(x => x.strAccountID == username);
-            db.Database.ExecuteSqlCommand("Exec [sp_forgotpassword] @p0, @p1, @p2, @p3", username, tbuserdata.Email, "2", "0");
-            var forgotdata = db.TBLFORGOTPASSW.OrderByDescending(x => x.id).Take(1).FirstOrDefault(x => x.strAccountID == username && x.TIP == "2" && x.ISLEM == "0");
-
-            var token = forgotdata.GUID;
-
-            //HTML Template for Send email  
-
-            string subject = "Kofenix.Net Şifre Yenileme Kodu";
-
-            string body = "<b>Şifre Yenileme kodunu kullanarak yeni bir şifre oluşturabilirsiniz. </b><br/><br/>" + token;
-            emailgonder.Mail(tbuserdata.Email, subject, body);
-
-            return Json("1", JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         public JsonResult Newpwcommit(string kod, string pass, string passnew)
         {
-            
-            var fgdata = db.TBLFORGOTPASSW.FirstOrDefault(x => x.GUID == kod);
-            var countcode = Convert.ToUInt32(fgdata.TIP);
-            if (countcode == 2)
-            {
-                db.Database.ExecuteSqlCommand("Exec [sp_updatepassword] @p0, @p1, @p2, @p3, @p4", fgdata.strAccountID, fgdata.Email, fgdata.GUID, pass, passnew);
-            }
+            return Json(emailsender.newpasswork(kod,pass,passnew, 2, db) ? "1" : "0", JsonRequestBehavior.AllowGet);
 
-            return Json("1", JsonRequestBehavior.AllowGet);
         }
 
+        
     }
 }

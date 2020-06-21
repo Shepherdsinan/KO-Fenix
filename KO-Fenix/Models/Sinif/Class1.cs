@@ -21,6 +21,7 @@ namespace KO_Fenix.Models.Sinif
         public string Message { get; set; }
         public string Messageanswer { get; set; }
         public int Ticketid { get; set; }
+
         
     }
 
