@@ -11952,7 +11952,6 @@
     <Content Include="Views\Shop\Resellers.cshtml" />
     <Content Include="Views\Shop\Products.cshtml" />
     <Content Include="Views\Shop\Premiums.cshtml" />
-    <Content Include="Views\Register\SaveMember.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Rank\ClanProfile.cshtml" />
     <Content Include="Views\Account\SealPasswordChange.cshtml" />

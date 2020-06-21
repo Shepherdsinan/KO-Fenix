@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KO_Fenix.Models.Entity;
-using KO_Fenix.Models.Sinif;
+
 namespace KO_Fenix.Controllers
 {
     public class GuideController : Controller
     {
         // GET: Guide
         kn_onlineEntities2 db = new kn_onlineEntities2();
-        Class1 cs = new Class1();
+        
         public ActionResult Upgrade()
         {
             

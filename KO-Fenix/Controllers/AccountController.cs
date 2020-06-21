@@ -42,17 +42,7 @@ namespace KO_Fenix.Controllers
         public ActionResult Coupon()
         {
             return View();
-        }
-        [Authorize]
-        public ActionResult Passsend()
-        {
-            return View();
-        }
-        [Authorize]
-        public ActionResult SealPasssend()
-        {
-            return View();
-        }
+        }       
        
         [HttpPost]
         public JsonResult Newpw(string username)

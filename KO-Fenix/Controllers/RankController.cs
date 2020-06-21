@@ -18,14 +18,7 @@ namespace KO_Fenix.Controllers
         kn_onlineEntities2 db = new kn_onlineEntities2();
         Class1 cs = new Class1();
         public ActionResult UserRankings()
-        {                        
-            //var query = (from a in db.USERDATA where a.Authority == 1 orderby a.Loyalty descending select a).ToList();
-            
-           
-            //cs.Deger1 = (from a in db.USERDATA where a.Authority == 1 orderby a.LoyaltyMonthly descending select a).ToList();
-            //cs.Deger2 = db.USER_PERSONAL_RANK.ToList();
-            //cs.Deger3 = db.KNIGHTS.ToList();
-            
+        {                      
             return View();
         }
 

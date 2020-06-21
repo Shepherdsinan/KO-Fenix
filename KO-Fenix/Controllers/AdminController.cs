@@ -90,7 +90,13 @@ namespace KO_Fenix.Controllers
             db.SaveChanges();
             return RedirectToAction("Read", "Admin", new { @id = deger.Ticketid });
         }
-        
+        [Authorize(Roles = "828164713")]
+        [HttpPost]
+        public JsonResult newsget()
+        {
+            var newsdata = db.C_NEWS;
 
+            return Json(newsdata, JsonRequestBehavior.AllowGet);
+        }
     }
 }
